@@ -1,0 +1,93 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    color: #3d3d3d;
+    font-weight: 400;
+    letter-spacing: -0.06em;
+    line-height: keep-all;
+}/* body에 기본 글자의 스타일을 설정 - body안에 있는 모든 태그는 글자의 스타일을 상속 받는다.*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+   width: 1280px;
+   margin: 0 auto;
+}
+/*넓이 1280에 가운데 정렬*/
+
+h1 {
+    font-size: 25px;
+    color: #1d1d1d;
+    font-weight: 700;
+    margin: 81px 0 32px 0;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 32px 0 7px 0;
+}
+
+p {
+    margin: 7px 0 23px 0;
+}
+
+.color {
+    background: #f4f4f4;
+    padding: 1px 0 64px 0;
+    margin: 64px 0 0 0;
+}
+
+ul {
+    list-style: none;
+}
+
+h3 {
+    font-weight: 700;
+    margin: 30px 0 20px 0;
+}
+
+.system {
+    display: flex;
+}
+
+li {
+    width: 300px;
+    height: 195px;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 124px 0 0 40px;
+    box-sizing: border-box; /*넓이와 높이 유지*/
+}
+
+.teal {
+    background: #003A5F;
+}
+
+.blue {
+    background: #71C5E8;
+    margin: 0 20px 0 0;
+}
+
+.green {
+    background: #71DBD4;
+    margin: 0 20px 0 0;
+}
+
+.yellow { 
+    background: #F8E08E;
+}
+
+ul {
+    display: flex;
+}
+
+.pri {
+    margin: 0 40px 0 0;
+}
