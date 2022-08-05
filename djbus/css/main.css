@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR); /*항상 맨 위에 위치*/
 
-body, section, p, div, ul, li, h1, h2, h3, h4, h5, h6, nav { /*body,section 등의 모든 태그에 동일한 스타일 적용(여백 제거)*/
+body, section, p, div, ul, li, h1, h2, h3, h4, h5, h6, nav, button, header, footer { /*body,section 등의 모든 태그에 동일한 스타일 적용(여백 제거)*/
     padding: 0;
     margin: 0;
 }
@@ -31,6 +31,8 @@ button {
 .clearfix{display:block;}
 
 body {
+    min-width: 1280px; 
+    /* wrapper에서 준 넓이를 body에서 최소 넓이로 부여 */
     color: #3d3d3d; 
     line-height: 1.5;
     font-family: 'Noto Sans KR', sans-serif;
@@ -255,6 +257,8 @@ header nav ul li a {
 }
 
 footer {
+    overflow: hidden;
+    /* footer하단에 생선된 의도하지 않은 여백 삭제를 위해 -가로스크롤을 해도 배경이 정상적으로 나오게 처리  */
     margin-top: 81px;
     background-color: #0a0a0a;
     color: rgba(255,255,255,0.8);
@@ -265,8 +269,39 @@ footer .inner {
     padding: 54px 0 66px 0;
 }
 
+footer .fnav li {
+    float: left;
+}
+footer .fnav li a {
+    display: block;
+    padding: 0 12px;
+}
+
+footer .fnav li.privacy a {
+    /* li중에서 privacy라는 클래스명을 갖은 li의 내부에 있는 a */
+    padding-left: 0;
+    font-weight: 700;
+}
+
+footer .info {
+    margin: 22px 0 0 22px;
+}
+
 footer button {
+    /* button tag에 넓이와 높이를 주면 글자가 좌우와 위아래 가운데 정렬 */
     float: right;
     width:  160px;
+    height: 37px;
+    margin: 61px 0 0 0;
+    padding-left: 10px;
     border: 1px solid rgba(255,255,255,0.8);
+}     
+
+footer button strong {
+    float: left;
+    font-weight: 400;
+}
+
+footer button span {
+    float: right;
 }
