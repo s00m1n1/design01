@@ -1,0 +1,96 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR); /*항상 맨 위에 위치*/
+
+body, section, p, div, h1, h2 { 
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    min-width: 1280px; 
+    color: #3d3d3d; 
+    line-height: 1.5;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    letter-spacing: -0.05em;
+    font-weight: 400;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.wrapper {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.download h1 {
+    padding: 61px 0 0 0;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.download h2 {
+    margin: 20px 0 0 0;
+    color: #07B53B;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.download p {
+    margin: 10px 0 0 0;
+}
+
+.download a.detail {
+    display: inline-block;
+    margin: 0px 5px 0 0;
+    padding: 9px 43px 9px 43px;
+    border: 1px solid #666666;
+}
+
+.download a.downbt {
+    display: inline-block;
+    margin: 20px 0 0 0;
+    padding: 9px 43px;
+    border: 1px solid #07B53B;
+    color: #07B53B;
+}
+
+.download img {
+    margin: 35px 0 65px 0;
+}
+
+.store {
+    background-image: url(../images/bg02.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 598px;
+}
+
+.store h1 {
+    padding: 60px 0 0 0;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.store p {
+    margin: 20px 0 0 0;
+    color: #ffffff;
+    text-align: center;
+}
+
+.store a.gostore {
+    display: inline-block;
+    margin: 24px 0 0 549px;
+    padding: 9px 42px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+.store img {
+    margin: 37px 0 66px 0;
+}
