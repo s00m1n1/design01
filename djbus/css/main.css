@@ -284,7 +284,15 @@ footer .fnav li.privacy a {
 }
 
 footer .info {
-    margin: 22px 0 0 22px;
+    margin: 22px 0 5px 0;
+}
+
+footer .info address {
+    display: inline;
+}
+footer .info span {
+    display: inline-block;
+    margin: 0 0 0 24px;
 }
 
 footer button {
