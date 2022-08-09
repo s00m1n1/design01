@@ -66,9 +66,9 @@ header nav .market {
 .visual strong {
     display: block;
     padding: 250px 0 0 0;
-   font-size: 20px;
-   font-weight: 400;
-   line-height: 3;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 3;
 }
 .visual h2 {
     font-size: 50px;
@@ -100,20 +100,292 @@ header nav .market {
     line-height: 1.2;
 }
 
-.category ul li{
+.category ul li {
     float: left;
     width: 240px;
+    margin: 0 20px 0 0;
 }
 
-.category ul li a{
+/* li중에서 마지막 li를 선택 */
+.category ul li:last-child {
+    margin-right: 0;
+}
+
+.category ul li a {
     display: block;
-    margin: 0 19px 0 0;
 }
 
-.category ul li a strong{
+.category ul li a img {
+    width: 100%;
+    border: 1px solid #EDEDED;
+    box-sizing: border-box; /*border와 width를 내가 넣은 만큼 넣을 수 있음*/
+}
+
+.category ul li a  strong{
+    display: block;
+    font-weight: 400;
+}
+
+.network {
+    height: 700px;
+    margin: 120px 0 0 0;
+    background-image: url(../images/network_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFFFFF;
+}
+
+.network h2 {
+    padding: 204px 0 0 0;
+    line-height: 1.2;
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.network p {
+    margin: 38px 0 33px 0;
+    font-size: 20px;
+}
+
+.network a {
+    display: block;
+    float: left; /*a사이의 백 없이 나란히 배치*/
+    padding: 8px 17px;
+    margin: 0 5PX 0 0;
+    border: 1px solid rgba(255,255,255,1);
+    border-radius: 4px;
+}
+
+.community .tit{
+    color: #1D1D1D;
+}
+
+.community .tit strong {
+    display: block;
+    margin: 121px 0 0 0;
+    font-weight: 700;
+}
+
+.community .tit h2 {
+    margin: 0 0 97px 0;
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.community .list .colgroup1 {
+    float: left;
+    width: 630px;
+    margin: 0 20px 0 0;
+}
+
+.community .list .colgroup2 {
+    float: left;
+    width: 630px;
+}
+
+.community .list ul li {
+    float: left;
+}
+
+
+
+.community .list ul li a {
+    display: block;
+    width: 305px;
+    height: 212px;
+    padding: 30px 30px 0 30px ;
+    background-color: #F4F4F4;
+}
+
+.community .list ul li a em {
     display: block;
 }
 
-.category ul a.last {
-    margin: 0;
+.community .list ul li a strong {
+    display: block;
+    margin: 10px 0 36px 0;
+    font-size: 20px;
+    font-weight: 700;
+    /*제목을 두줄로 고정(제한)하는 스타일*/
+    line-height: 1.5;
+    height: 3em; /*행간X줄수 - 단위는 꼭 em*/
+    overflow: hidden;
 }
+
+.community .list ul li a .date {
+    display: block; 
+    color: #3D3D3D;
+}
+
+.community .list ul li a .date .write {
+    position: relative;
+    padding: 0 18px 0 0;
+}
+
+.community .list ul li a .date .write::after {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    width: 1px;
+    height: 11px;
+    background-color: #999999;
+    content: "";
+}
+
+.community .list ul li.green a {
+    margin: 0 20px 0 0;
+    background-color: #13A94F;
+    color: #FFFFFF;
+}
+
+.community .list ul li.blue a {
+    margin: 0 20px 0 0;
+    background-color: #005BAE;
+    color: #FFFFFF;
+}
+
+.community .list ul li.img01 a {
+    width: 630px;
+    height: 366px;
+    margin: 20px 0 0 0;
+    background-image: url(../images/community01.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFFFFF;
+}
+
+.community .list ul li.img02 a {
+    width: 630px;
+    height: 366px;
+    margin: 0 0 20px 0;
+    background-image: url(../images/community02.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFFFFF;
+}
+
+.community .list ul li.date_w a .date {
+    color: rgba(255,255,255,0.8);
+}
+
+.community .list ul li.date_w a .date .write::after {
+    background-color: rgba(255,255,255,0.8);
+}
+
+.community .list ul li.img01 a em,
+.community .list ul li.img02 a em  {
+    margin: 185px 0 0 0; 
+}
+
+
+
+.community .list ul li.img01 a strong,
+.community .list ul li.img02 a strong {
+    margin: 11px 0 35px 0;
+    height: auto; /*높이고정해지*/
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+footer {
+    margin: 133px 0 0 0;
+    color: rgba(255,255,255,1);
+}
+
+footer .f_head {
+    height: 70px;
+    background-color: #1A1A1A;    
+}
+
+footer .f_head ul {
+    float: left;
+}
+
+footer .f_head ul li {
+    float: left;
+    margin: 15px 0 0 0;
+}
+
+footer .f_head ul li.privacy {
+    font-weight: 700;
+}
+
+footer .f_head ul li a {
+    display: block;
+    position: relative; /*after에 준 absolute의 정렬 기준*/
+    padding: 10px;
+}
+
+footer .f_head ul li a::after {
+    display: block;
+    /* after를 감싸는 요소 a에 position 속성이 있기 때문에 a를 기준으로 rught 오른쪽 top 상단으로 정렬 */
+    position: absolute;
+    right: -2px;
+    top: 17px;
+    width: 1px;
+    height: 10px;
+    background-color: rgba(255,255,255,0.3);
+    content: "";
+}
+
+footer .f_head ul li:first-child a {
+    padding-left: 0;
+}
+
+footer .f_head ul li:last-child a::after {
+    display: none;
+}
+
+footer .f_head .qeust {
+    float: right;
+    display: block;
+    padding: 8px 14px;
+    margin: 15px 0 0 0;
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 4px;
+}
+
+footer .f_body {
+    background-color: #0A0A0A;
+}
+
+footer .f_body .info {
+    padding: 30px 0 26px 0;
+}
+
+footer .f_body .info ul {
+    margin: 0 0 5px 0 ;
+}
+
+footer .f_body .info ul li {
+    position: relative;
+    float: left;
+    margin: 0 30px 0 0;
+}
+
+footer .f_body .info ul li::after {
+    display: block;
+    position: absolute;
+    right: -16px;
+    top: 6px;
+    width: 1px;
+    height: 10px;
+    background-color: rgba(255,255,255,0.3);
+    content: "";
+}
+
+/* li:last-child::after li중에 마지막 li의 after 가상요소 */
+footer .f_body .info ul li:last-child::after {
+    display: none;
+}
+
+footer .f_body .copyright {
+    padding: 0 0 37px 0;
+    color: rgba(255,255,255,0.5);
+}
+

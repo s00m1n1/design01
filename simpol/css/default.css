@@ -5,6 +5,7 @@
 body, header, footer, div, nav, section, h1, h2, h3, h4, h5, h6, button, a, ul, li, address, strong, span, em, p {
     padding: 0;
     margin: 0;
+    box-sizing: border-box; /*넓이와 높이,padding이 결합되면 사이즈가 늘어남 > 이걸 막는 스타일 : padding을 줘도 넓이와 높이가*/
 }
 
 /* a태그에 브라우저가 주는 기본 속성 초기화(inherit:상속받게해주는태그) */
