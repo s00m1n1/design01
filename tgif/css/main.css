@@ -1,0 +1,271 @@
+@import url(default.css);
+header {
+    height: 100px;
+}
+header h1 {
+    float: left;
+    margin: 33px 0 0 0; /*브라우저를 캡쳐떠서 시안과 비교하여 몇 픽셀떨어졌는지 세기*/
+}
+header nav {
+    float: right;
+    margin: 23px 0 0 0; /*브라우저를 캡쳐떠서 시안과 비교하여 몇 픽셀떨어졌는지 세기*/
+}
+/* 
+li가 block태그라서 한줄한줄 떨어져서 내려감-좌우로 들어가게 할수 있는 것은 float-left 왼쪽정렬
+즉, abcd   ----------float-left-------->   abcdefghijkl
+    efgh
+    ijkl 
+*/
+header nav ul li {
+    float: left;
+}
+header nav ul li a {
+/* a태그는 링크가 달려서 블럭태그와 패딩으로 공간을 정해줘야함 */
+    display: block;
+    padding: 18px;
+    color: #1D1D1D;
+    line-height: 1; /*디자인할 때 행간 거의 맞춰서 설정하기*/
+    font-weight: 700; 
+    font-size: 22px;/*디자인할 때 글자크기 대표적으로 몇개 설정해서 맞추기*/
+}
+.visual {
+    height: 764px;
+    background-image: url(../images/visual_bg.png);
+    background-position: center bottom;
+    /*background-position: 좌우 상하 */
+    background-repeat: no-repeat;
+}
+.visual h2 {
+    margin: 102px 0 0 0;
+    float: right;
+    line-height: 1.05;
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+.visual h2 span {
+    color: #FFFFFF;
+    
+}
+
+.food h2 {
+    display: none;
+}
+.food .rowgroup1 {
+    margin: 177px 0 76px 0;
+}
+.food .rowgroup1 img {
+    float: left;
+}
+.food .rowgroup1 .menu {
+    float: left;
+    margin: 109px 0 0 40px;
+}
+.food .rowgroup2 {
+    position: relative;
+}
+.food .rowgroup2 .food_img01{
+    position: absolute;
+    left: 0;
+    top: 136px;
+}
+.food .rowgroup2 .food_img02 {
+    float: right;
+}
+.food .rowgroup2 .menu {
+    /* menu를 감싸고 있는 rowgroup2가 psition 속성을 가지고 있기 때문에 roegroup2를 기준으로 left 왼쪽 top 위쪽 위치를 계산 */
+    position: absolute;
+    left: 529px;
+    top: 131px;
+}
+.food .menu h3 {
+    margin: 0 0 25px 0;
+    font-size: 40PX;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.food .rowgroup2 .menu h3{
+    letter-spacing: 0.04em;
+} 
+.food .menu p {
+    letter-spacing: -0.05em;
+}
+.food .menu span {
+    color: #FFFFFF;
+}
+.drink {
+    height: 654px;
+    margin: 154px 0 0 0;
+    background-image: url(../images/drink_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.drink h2 {
+    display: none;
+}
+.drink ul {
+    padding: 60px 0 0 0;
+}
+.drink ul li {
+    float: left;
+    margin: 0 40px 0 0;
+}
+.drink ul li:first-child {
+    margin-top: 48px;
+}
+.drink ul li:last-child {
+    margin-top: 48px;
+    margin-right: 0;
+}
+.drink ul li a {
+    display: block;
+    width: 400px;
+    height: 486px;
+    padding: 310px 40px 0 40px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    color: #FFFFFF;
+}
+.drink ul li.drink01 a {
+    background-image: url(../images/drink01.png);
+}
+.drink ul li.drink02 a {
+    background-image: url(../images/drink02.png);
+}
+.drink ul li.drink03 a {
+    background-image: url(../images/drink03.png);
+}
+.drink ul li a em {
+    display: block;
+}
+.drink ul li a strong {
+    display: block;
+    margin: 4px 0 18px 0;
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 700;
+}
+.drink ul li a span {
+    display: block;
+}
+.sns{
+    margin: 150px 0 0 0;
+ }
+.sns .wrapper {
+    position: relative;
+}
+.sns .tit {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.sns .tit h2 {
+    margin: 0 0 13px 0;
+    line-height: 1.125; 
+    font-size: 40px;
+    font-weight: 700;
+}
+.sns .tit ul {
+    margin: 10px 0 70px 0;
+}
+.sns .tit ul li {
+    float: left;
+    margin: 0 10px 0 0;
+}
+.sns .tit ul li a {
+    display: block;
+    width: 53px;
+    height: 53px;
+    border: 1px solid #999999;
+    border-radius: 27px;
+    font-size: 0; /*글자없애기*/
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.sns .tit ul li.kakao a {
+    background-image: url(../images/sns_kakao.png);
+}
+.sns .tit ul li.twitter a {
+    background-image: url(../images/sns_twitter.png);
+}
+.sns .tit ul li.facebook a {
+    background-image: url(../images/sns_facebook.png);
+}
+.sns .list li {
+    float: left;
+    margin: 0 20px 20px 0; 
+}
+.sns .list li:first-child {
+    margin-left: 520px;
+}
+.sns .list li:nth-child(3) {
+    margin-right: 0;
+}
+.sns .list li:nth-child(4) {
+    clear: left;
+}
+.sns .list li:last-child {
+    margin-right: 0;
+}
+.sns .list li a {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    /* img태그도 inline요소이기 때문에 행간이 적용되어 하단에 여백이 발생한다. 이를 없애기 위해서 글자크기와 행간을 모두 0으로 설정 */
+}
+footer {
+    margin: 130px 0 0 0;
+    border-top: 1px solid #666666;
+    text-align: center;
+}
+footer .flogo {
+    margin: 65px 0 20px 0;
+}
+footer .fnav li {
+    /* float: left; */
+    /* li가 가운데 정렬 해야하는데 float가 들어간 요소는 가운데 정렬이 안됨 display:inline-block;으로 인라인 요소로 변경해서 li를 좌우로 배치하고 가운데 정렬이 적용됨 -  여백을 정확하게 맞춰야하는 경우가 아니면 이런 방법을 사용함 */
+    display: inline-block; 
+    position: relative;
+}
+footer .fnav li::after {
+    position: absolute;
+    right: -2px;
+    top: 6px;
+    width: 1px;
+    height: 11px;
+    background-color: #CCCCCC;
+    content: "";
+}
+footer .fnav li:last-child::after {
+    display: none;
+}
+footer .fnav li a {
+    display: block;
+    padding: 0 12px;
+}
+footer .finfo {
+    margin: 18px 0;
+}
+footer .finfo li {
+    display: inline-block;
+    position: relative;
+    margin: 0 12px;
+}
+footer .finfo li::after {
+    position: absolute;
+    right: -14px;
+    top: 6px;
+    width: 1px;
+    height: 11px;
+    background-color: #CCCCCC;
+    content: "";
+}
+footer .finfo li:last-child::after {
+    display: none;
+}
+footer .copyright {
+    margin: 0 0 65px 0;
+}
