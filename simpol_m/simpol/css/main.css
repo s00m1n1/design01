@@ -1,0 +1,131 @@
+@import url(default.css);
+
+.category .tit{
+    color: #1D1D1D;
+}
+
+.category .tit strong {
+    display: block;
+    margin: 121px 0 0 0;
+    font-weight: 700;
+}
+
+.category .tit h2 {
+    margin: 0 0 30px 0;
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.category ul li {
+    float: left;
+    width: 240px;
+    margin: 0 20px 0 0;
+}
+
+/* li중에서 마지막 li를 선택 */
+.category ul li:last-child {
+    margin-right: 0;
+}
+
+.category ul li a {
+    display: block;
+}
+
+.category ul li a img {
+    width: 100%;
+    border: 1px solid #EDEDED;
+    box-sizing: border-box; /*border와 width를 내가 넣은 만큼 넣을 수 있음*/
+}
+
+.category ul li a  strong{
+    display: block;
+    font-weight: 400;
+}
+
+@media screen and (max-width:450px){
+    .category .tit strong {
+        margin: 60px 0 0 0;
+        font-weight: 700;
+    }
+    
+    .category .tit h2 {
+        margin: 0 0 3px 0;
+        font-size: 30px;
+        font-weight: 300;
+    }
+    
+    .category ul li {
+        width: 48%;
+        margin: 0 4% 0 0;
+    }
+    
+    .category ul li:nth-child(2), .category ul li:nth-child(4) {
+        margin-right: 0;
+    }
+
+    .category ul li:last-child {
+        display: none;
+    }
+
+    .category ul li a img {
+        width: 100%;       
+    }
+    
+    .category ul li a  strong{
+        margin: 10px 0 15px 0;
+    }    
+}
+
+.network {
+    height: 700px;
+    margin: 120px 0 0 0;
+    background-image: url(../images/network_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFFFFF;
+}
+
+.network h2 {
+    padding: 204px 0 0 0;
+    line-height: 1.2;
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.network p {
+    margin: 38px 0 33px 0;
+    font-size: 20px;
+}
+
+.network a {
+    display: block;
+    float: left; /*a사이의 백 없이 나란히 배치*/
+    padding: 8px 17px;
+    margin: 0 5PX 0 0;
+    border: 1px solid rgba(255,255,255,1);
+    border-radius: 4px;
+}
+
+@media screen and (max-width:450px){
+    .network {
+        height: auto;
+        padding: 0 0 90px 0;
+        margin: 30px 0 0 0;
+    }
+    
+    .network h2 {
+        padding: 90px 0 0 0;
+        font-size: 30px;
+    }
+    
+    .network p {
+        margin: 10px 0 30px 0;
+        font-size: 15px;
+    }
+    
+    .network a {
+        padding: 7px 15px;
+    }
+}
