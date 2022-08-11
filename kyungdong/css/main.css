@@ -1,0 +1,78 @@
+@import url(default.css);
+.BUSINESS h2 {
+    margin: 80px 0 20px 0;
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center;
+}
+.BUSINESS ul li {
+    float: left;
+    width: 290px;
+    margin: 0 40px 0 0;
+}
+.BUSINESS ul li:last-child {
+    margin-right: 0;
+}
+.BUSINESS ul li a {
+    display: block;
+    margin: 0 0 79px 0;
+    line-height: 0;
+}
+.BUSINESS ul li a strong{
+    display: block;
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+.BUSINESS ul li a p {
+    line-height: 1.5;
+}
+.INNOVATION {
+    height: 762px;
+    background-color: #f4f4f4;
+}
+.INNOVATION h2 {
+    padding: 80px 313px 0 313px;
+    font-size: 45px;
+    font-weight: 700;
+}
+.INNOVATION ul li {
+    float: left;
+    margin: 21px 40px 0 0;
+    padding: 196px 164px 0 164px;
+    width: 620px;
+    height: 514px;
+    color: #FFFFFF;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.INNOVATION ul li strong {
+    font-size: 35px;
+    font-weight: 700;
+}
+.INNOVATION ul li p {
+    text-align: center;
+}
+.INNOVATION ul li:last-child {
+    margin-right: 0;
+}
+.INNOVATION ul li.newtech {
+    background-image: url(../images/bg01.png);
+}
+.INNOVATION ul li.system {
+    background-image: url(../images/bg02.png);
+}
+.INNOVATION ul li.newtech strong {
+    margin: 0 42px 0 47px;
+}
+.INNOVATION ul li.newtech p {
+    margin: 10px 0 0 0;
+}
+.INNOVATION ul li.system strong {
+    margin: 0 42px 0 36px;
+}
+.INNOVATION ul li.system p {
+    margin: 10px 0 0 0;
+}
