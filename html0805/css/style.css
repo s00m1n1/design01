@@ -40,7 +40,7 @@ a {
 }
 
 .download p {
-    margin: 10px 0 0 0;
+    margin: 10px 0 20px 0;
 }
 
 .download a.detail {
@@ -52,7 +52,6 @@ a {
 
 .download a.downbt {
     display: inline-block;
-    margin: 20px 0 0 0;
     padding: 9px 43px;
     border: 1px solid #07B53B;
     color: #07B53B;
@@ -67,6 +66,7 @@ a {
     background-position: center top;
     background-repeat: no-repeat;
     height: 598px;
+    text-align: center; /*a태그는 작은 요소이므로 a를 감싸는 큰 요소에 가운데로 준다.*/
 }
 
 .store h1 {
@@ -74,18 +74,16 @@ a {
     color: #ffffff;
     font-size: 30px;
     font-weight: 700;
-    text-align: center;
 }
 
 .store p {
     margin: 20px 0 0 0;
     color: #ffffff;
-    text-align: center;
 }
 
 .store a.gostore {
     display: inline-block;
-    margin: 24px 0 0 549px;
+    margin: 24px 0 0 0px;
     padding: 9px 42px;
     border: 1px solid #ffffff;
     color: #ffffff;
