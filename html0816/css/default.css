@@ -16,7 +16,7 @@ ul, li {
     list-style: none;
 }
 html, body {
-    min-width: 1280px; 
+    min-width: 1280px;
     color: #3D3D3D;
     line-height: 1.5;
     font-family: 'Noto Sans KR', sans-serif;
@@ -28,6 +28,16 @@ html, body {
 .wrapper {
     width: 1280px;
     margin: 0 auto;
-} 
+}
+@media screen and (max-width:640px){
+    html, body {
+        min-width: auto;
+        font-size: 13px;
+    }
+    .wrapper {
+        width: auto;
+        margin: 0 20px;
+    }
+}
 .clearfix::after{display:block;clear:both;content:".";visibility:hidden;height:0;}
 .clearfix{display:block;}
