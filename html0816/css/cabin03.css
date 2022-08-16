@@ -1,13 +1,16 @@
 @import url(default.css);
+
 .service .tit {
     text-align: center;
 }
+
 .service .tit h2 {
     margin: 100px 0 20px 0;
     font-size: 50px;
     line-height: 1.2;
     font-weight: 400;
 }
+
 .service .tit strong {
     display: block;
     margin: 0 0 10px 0;
@@ -15,15 +18,22 @@
     line-height: 1.2;
     font-weight: 400;
 }
+
 .service .tit p {
     margin: 0 0 93px 0;
 }
+
 .service .tit p span {
     /* p태그 안에서 임의로 줄바꿈을 주기 위해서 <span>태그로 묶고 block으로 저장 (p태그에 블럭을 줄 수 없음) */
     display: block;
 }
+
 .service ul li {
-    padding-top: 60px;
+    position: relative;
+    float: left;
+    width: 290px;
+    padding-top: 70px;
+    margin: 0 40px 77px 0;
 }
 .service ul li:nth-child(4),
 .service ul li:nth-child(8) {
@@ -99,11 +109,25 @@
     }
 }
 @media screen and (max-width:640px){
+    .service .tit {
+        text-align: left;
+    }
+    .service .tit h2 {
+        margin: 40px 0 18px 0;
+        font-size: 30px;
+    }
+    .service .tit strong {
+        margin: 0 0 5px 0;
+        font-size: 15px;
+    }
+    .service .tit p {
+        margin: 0 0 60px 0;
+    }
+    .service .tit p span {
+        display: inline; /* 모바일에서는 다시 줄바꿈 주지 않음 */
+    }
     .service ul li {
-        /* float: none;
-        width: auto; */
-        padding-top: 56px;
-        margin: 0 0 38px 0;
+        padding-top: 60px;
     }
     .service ul li::before {
         width: 35px;
@@ -117,7 +141,7 @@
         font-size: 13px;
     }
 }
-@media screen and (max-width:480px){
+@media screen and (max-width:460px){
     .service ul li {
     float: none;
     width: auto;
