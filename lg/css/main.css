@@ -1,0 +1,19 @@
+@import url(default.css);
+.visual {
+    position: relative;
+    height: 800px;
+    background-image: url(../images/visual_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFFFFF;
+}
+.visual::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: rgba(0,0,0,0.3);
+    content: "";
+}
