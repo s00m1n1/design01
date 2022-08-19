@@ -1,6 +1,100 @@
 @import url(default.css);
+
+header { /*body를 기준으로 정렬*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    /*z-index숫자가 높은 요소가 위에 배치
+    하단에 다른 요소가 z-index를 갖을 수 있기
+    떄문에 header를 무조건 상단에 두기 위해 
+    안전하게 100 즉, content 영역에 요소는 
+    z-index를 줘도 100미만의 값을 줘야함*/
+    width: 100%;
+    /*absolute를 주면 해당 요소는 inline태그처럼 작동
+    width가 내부 요소가 존재하는 만큼 들어감*/
+    height: 100px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+header h1 {
+    float: left;
+    margin: 25px 334px 0 0;
+}
+header .gnb {
+    float: left;
+    margin: 14px 0 0 0;
+}
+header .gnb button {
+    display: none;/*모바일 메뉴 열기 버튼*/
+}
+header .gnb ul {
+    margin: 10px 0 0 0;
+}
+header .gnb ul li {
+    float: left;
+}
+header .gnb ul li a {
+    display: block;
+    padding: 13px;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+header .tnb {
+    float: right;
+    margin: 35px 0 0 0;
+}
+header .tnb button {
+    margin: 0 0 0 24px;
+}
+header .tnb button i {
+    color: #FFFFFF;
+    font-size: 30px;
+}
+header .tnb button span {
+    display: none;
+}
+
+@media screen and (max-width:640px) {
+    header { /*body를 기준으로 정렬*/
+        height: 45px;
+    }
+    header h1 {/*로고가 글자없이 이미지만 존재함 그래도 글자크기와 행간 때문에 여백이 발생함 이여백을 없애고*/
+        float: left;
+        margin: 11px 0 0 0;
+        font-size: 0;
+        line-height: 0;
+    }
+    header h1 a {
+        display: block;
+    }
+    header h1 a img {
+        width: 45px; /*모바일에서 로고 사이즈 변경*/
+    }
+    header .gnb {
+        float: right;
+        margin: 14px 0 0 0;
+    }
+    header .gnb button {
+        display: block;
+    }
+    header .gnb button i {
+        margin: 0 20px 0 0;
+        color: #FFFFFF;
+        font-size: 18px;
+    }
+    header .gnb button span {
+        display: none;
+    }
+    header .gnb ul {
+        display: none;
+    }
+    header .tnb {
+        display: none;
+    }
+}/*media종료*/
+
 .visual {
-    position: relative;
+    position: relative; /*before의 기준점*/
     height: 800px;
     background-image: url(../images/visual_bg.png);
     background-position: center center;
@@ -14,6 +108,69 @@
     top: 0;
     width: 100%;
     height: 100%;
-    color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     content: "";
+}
+.visual .inner {
+    /* before 검은색보다 글자를 위에 배치하기 위해서 */
+    position: relative;
+    z-index: 1; 
+}
+.visual h2 {
+    padding: 312px 0 20px 0;
+    font-size: 30px;
+    font-weight: 700;
+}
+.visual h2 span {
+    display: block;
+}
+
+@media screen and (max-width:640px) {
+    .visual {
+        height: auto; 
+        /*모바일에서는 높이를 묶어줄 수 없음
+        글자의 줄 수가 자꾸 바뀌기 떄문에 - auto 입력*/
+        background-position: center center;
+        background-size: cover;
+    }
+    .visual h2 {
+        padding: 180px 0 130px 0;
+        font-size: 15px;
+        text-align: center;
+    }
+    .visual h2 span {
+        display: inline; /*pc에서만 줄바꿈*/
+    }
+    .visual p {
+        display: none; /*모바일에서 안보임*/
+    }
+}/*media 종료*/
+
+.biz .f_left img {
+    float: left;
+}
+.biz .f_left .inner {
+    float: right;
+}
+.biz .f_right img {
+    float: right;
+}
+.biz .f_right .inner {
+    float: left;
+}
+.biz .inner {
+    width: 549px;
+}
+.biz h2 {
+    margin: 100px 0 10px 0;
+    font-size: 30px;
+    font-weight: 700;
+}
+.biz p {
+    margin-bottom: 34px;
+}
+.biz .inner .link ul li {
+    margin: 0 10px 10px 0;
+    padding: 0 20px;
+    border: solid;
 }
