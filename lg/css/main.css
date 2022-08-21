@@ -19,6 +19,11 @@ header { /*body를 기준으로 정렬*/
 header h1 {
     float: left;
     margin: 25px 334px 0 0;
+    font-size: 0;
+    list-style: 0;
+}
+header h1 a {
+    display: block;
 }
 header .gnb {
     float: left;
@@ -49,9 +54,20 @@ header .tnb button {
 header .tnb button i {
     color: #FFFFFF;
     font-size: 30px;
+    font-weight: 300;
 }
 header .tnb button span {
     display: none;
+}
+header.fixed { /* header가 고정됐을때 jquery가 class를 추가 */
+    position: fixed;
+    background-color: #FFF;
+}
+header.fixed .gnb ul li a {
+    color: #1d1d1d;
+}
+header.fixed .tnb button i {
+    color: #1d1d1d;
 }
 
 @media screen and (max-width:640px) {
@@ -59,13 +75,7 @@ header .tnb button span {
         height: 45px;
     }
     header h1 {/*로고가 글자없이 이미지만 존재함 그래도 글자크기와 행간 때문에 여백이 발생함 이여백을 없애고*/
-        float: left;
-        margin: 11px 0 0 0;
-        font-size: 0;
-        line-height: 0;
-    }
-    header h1 a {
-        display: block;
+        margin: 15px 0 0 0;
     }
     header h1 a img {
         width: 45px; /*모바일에서 로고 사이즈 변경*/
@@ -78,9 +88,9 @@ header .tnb button span {
         display: block;
     }
     header .gnb button i {
-        margin: 0 20px 0 0;
         color: #FFFFFF;
         font-size: 18px;
+        font-weight: 300;
     }
     header .gnb button span {
         display: none;
@@ -146,31 +156,209 @@ header .tnb button span {
     }
 }/*media 종료*/
 
+.biz .rowgroup1 {
+    margin: 109px 0 69px 0;
+}
+.biz .rowgroup2 {
+    margin: 0 0 69px 0;
+}
 .biz .f_left img {
     float: left;
 }
 .biz .f_left .inner {
     float: right;
+    margin: 0 40px 0 0;
 }
 .biz .f_right img {
     float: right;
 }
 .biz .f_right .inner {
     float: left;
+    margin: 0 0 0 40px;
 }
 .biz .inner {
-    width: 549px;
+    width: 510px;
 }
 .biz h2 {
-    margin: 100px 0 10px 0;
-    font-size: 30px;
+    margin: 32px 0 8px 0;
+    font-size: 40px;
     font-weight: 700;
 }
-.biz p {
-    margin-bottom: 34px;
+.biz strong {
+    display: block;
+    margin: 0 0 14px 0;
+    font-size: 20px;
+    font-weight: 400;
 }
-.biz .inner .link ul li {
+.biz .link {
+    margin: 36px 0 0 0;
+}
+.biz .link ul li {
+    float: left;
+    width: 150px;
     margin: 0 10px 10px 0;
-    padding: 0 20px;
-    border: solid;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+.biz .link ul li a {
+    display: block;
+    line-height: 39px;
+    white-space: nowrap;
+    text-align: center;
+}
+@media screen and (max-width:640px){
+    .biz .rowgroup1 {
+        margin: 59px 0 32px 0;
+    }
+    .biz .rowgroup2 {
+        margin: 0 0 32px 0;
+    }
+    .biz .f_left img {
+        float: none;
+    }
+    .biz .f_left .inner {
+        float: none;
+        margin: 0;
+    }
+    .biz .f_right img {
+        float: none;
+    }
+    .biz .f_right .inner {
+        float: none;
+        margin: 0;
+    }
+    .biz .inner {
+        width: auto;
+    }
+    .biz img {
+        width: 100%; /* img태그는 넓이나 높이 하나만 주면 비율에 맞게 줄어듬 */
+    }
+    .biz h2 {
+        margin: 17px 0 8px 0;
+        font-size: 25px;
+    }
+    .biz strong {
+        margin: 0 0 9px 0;
+        font-size: 15px;
+    }
+    .biz .link {
+        margin: 24px 0 0 0;
+    }
+    .biz .link ul li {
+        width: auto;
+        margin: 0 5px 0 0;
+    }
+    .biz .link ul li a {
+        padding: 0 20px;
+        line-height: 34px;
+        text-align: center;
+    }
+
+    /* 
+        link의 ul li를 좌우로 배치하고 슬라이드 되도록 하기 위함 
+        1. ul은 모든 li의 넓이의 합을 넓이로 가지고 있어야함
+        2. ul은 position: absolute 이어야함 
+        3. ul을 감싸고 있는 요소는 좌우스크롤을 허용해야함
+        3. ul을 감싸고 있는 요소는 높이를 줘야함 (내부 콘텐츠 만큼의)
+    */
+    .biz .link {
+        position: relative;
+        left: -10px;
+        overflow: auto;
+        width: calc(100% + 30px); /* %단위와 px단위를 동시에 계산해야 할때 사용 */
+        height: 54px;
+    }
+    .biz .link ul {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+    .biz .rowgroup1 .link ul {
+        width: 557px;
+    }
+    .biz .rowgroup2 .link ul {
+        width: 370px;
+    }
+    .biz .rowgroup3 .link ul {
+        width: 420px;
+    }
+
+}/* media 종료 */
+
+.purpose {
+    position: relative;
+    height: 357px;
+    margin: 140px 0 0 0;
+    background: url(../images/purp_bg.png) no-repeat center center / cover;
+    color: #FFF;
+    text-align: center;
+}
+.purpose::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+    content: "";
+}
+.purpose .inner {
+    position: relative;
+    z-index: 1;
+}
+.purpose h2 {
+    padding: 93px 0 43px 0;
+    font-size: 35px;
+    line-height: 1.28;
+}
+.purpose h2 strong {
+    position: relative;
+}
+.purpose h2 strong::before {
+    left: -83px;
+    top: -20px;
+    background: url(../images/prop_quot_left.png) no-repeat center center;
+    content: "";
+}
+.purpose h2 strong::after {
+    right: -70px;
+    bottom: -10px;
+    background: url(../images/prop_quot_right.png) no-repeat center center;
+    content: "";
+}
+.purpose h2 strong::before, .purpose h2 strong::after {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    color: rgba(255,255,255,0.5);
+    font-size: 130px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+@media screen and (max-width:640px){
+    .purpose {
+        height: auto;
+        padding: 0 0 40px 0;
+        margin: 59px 0 0 0;
+    }
+    .purpose::before {
+        background-color: rgba(0,0,0,0.3);
+    }
+    .purpose h2 {
+        padding: 78px 0 74px 0;
+        font-size: 25px;
+    }
+    .purpose h2 strong::before {
+        left: -29px;
+        top: -51px;
+        background-size: 35px auto; /* 넓이를 35px 높이는 비율에 맞게 알아서 */
+    }
+    .purpose h2 strong::after {
+        right: 59%;
+        bottom: -49px;
+        background-size: 35px auto;
+    }
+    .purpose h2 span {
+        display: block; /*줄바꿈*/
+    }
+}/* media 종료 */
