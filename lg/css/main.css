@@ -497,3 +497,21 @@ footer .fnav li:first-child a{
 footer .finfo {
     margin: 20px 0 6px 0;
 }
+@media screen and (max-width:640px) {
+    footer {
+        padding: 30px 0 57px 0;
+    }
+    footer .family {
+        float: none;
+        margin: 0 0 20px 0;
+    }
+    footer .family button {
+        width: 114px;
+        height: 25px;
+        padding: 2px 5px 0 10px;
+    }
+    footer .family button span {
+        float: none;
+        margin: 0;
+    }
+}/*media종료*/
