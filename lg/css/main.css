@@ -24,6 +24,9 @@ header h1 {
 }
 header h1 a {
     display: block;
+    width: 95px;
+    height: 50px;
+    background: url(../images/logo.svg) no-repeat center center / 100%;
 }
 header .gnb {
     float: left;
@@ -63,6 +66,9 @@ header.fixed { /* header가 고정됐을때 jquery가 class를 추가 */
     position: fixed;
     background-color: #FFF;
 }
+header.fixed h1 a {
+    background-image: url(../images/logo_gray.svg);
+}
 header.fixed .gnb ul li a {
     color: #1d1d1d;
 }
@@ -75,10 +81,11 @@ header.fixed .tnb button i {
         height: 45px;
     }
     header h1 {/*로고가 글자없이 이미지만 존재함 그래도 글자크기와 행간 때문에 여백이 발생함 이여백을 없애고*/
-        margin: 15px 0 0 0;
+        margin: 10px 0 0 0;
     }
-    header h1 a img {
-        width: 45px; /*모바일에서 로고 사이즈 변경*/
+    header h1 a {
+        width: 45px;
+        height: 25px;
     }
     header .gnb {
         float: right;
@@ -91,6 +98,9 @@ header.fixed .tnb button i {
         color: #FFFFFF;
         font-size: 18px;
         font-weight: 300;
+    }
+    header.fixed .gnb button i {
+        color: #1d1d1d;
     }
     header .gnb button span {
         display: none;
@@ -288,7 +298,7 @@ header.fixed .tnb button i {
     position: relative;
     height: 357px;
     margin: 140px 0 0 0;
-    background: url(../images/purp_bg.png) no-repeat center center / cover;
+    background: url(../images/banner.png) no-repeat center center / cover;
     color: #FFF;
     text-align: center;
 }
@@ -362,3 +372,128 @@ header.fixed .tnb button i {
         display: block; /*줄바꿈*/
     }
 }/* media 종료 */
+
+.news {
+    margin: 150px 0 150px 0;
+}
+.news h2 {
+    display: none;
+    /* 웹표준 상 section은 반드시 heading태그를 포함해야 하기 때문에 h2를 주고 슴김처리함 */
+}
+.news ul li {
+    overflow: hidden;
+    float: left;
+    width: 290px;
+    margin: 0 40px 0 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+.news ul li:last-child {
+    margin-right: 0;
+}
+.news ul li a {
+    display: block;
+}
+.news ul li a img {
+    width: 100%;
+}
+.news ul li a .con {
+    margin: 0 20px 0 20px;
+}
+.news ul li a .cate {
+    display: block;
+    margin: 20px 0 3px 0;
+}
+.news ul li a .tit{
+    display: block;
+    /*2줄 고정설정 line-height, height=행간x줄수em, overflow:hidden*/
+    line-height: 1.5;
+    height: 3em;
+    overflow: hidden;
+}
+.news ul li a .date{
+    display: block;
+    margin: 21px 0 83px 0;
+}
+@media screen and (max-width:640px) {
+    .news {
+        margin: 40px 0 40px 0;
+    }
+    .news ul li {
+        display: none;
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+    .news ul li:first-child {
+        display: block;
+        /* 한 개의 li만 나오도록 하기 위해서 모든 li를 숨기고 첫번째 li만 남도록 입력 */
+    }
+    .news ul li a .cate {
+        margin: 15px 0 5px 0;
+    }
+    .news ul li a .tit{
+        font-size: 15px;
+        height: auto; /*두줄고정해제*/
+        overflow: visible;
+    }
+    .news ul li a .date{
+        margin: 20px 0 20px 0;
+    }
+}/*media 종료*/
+
+footer {
+    padding: 25px 0 53px 0;
+    background-color: #EDEDED;
+    color: #666666;
+}
+footer .family {
+    float: right;
+}
+footer .family button {
+    width: 171px;
+    height: 26px;
+    padding: 0 9px 0 17px;
+    background-color: #D9D9D9;
+    /*button태그는 높이를 주면 글자가 위아래 가우네 세로정렬을 함
+    a였다면 padding이나 line-height로 세로 정렬값을 별도로 줘야함*/
+}
+footer .family button span {
+    float: left;
+    margin: 2px 0 0 0;
+}
+footer .family button i {
+    float: right;
+}
+footer .inner {
+    float: left;
+}
+footer .fnav li {
+    position: relative;
+    float: left;
+}
+footer .fnav li:first-child {
+    font-weight: 700;
+}
+footer .fnav li::after {
+    position: absolute;
+    right: 0;
+    top: 6px;
+    width: 1px;
+    height: 11px;
+    background-color: #CCCCCC;
+    content: "";
+}
+footer .fnav li:last-child::after {
+    display: none;
+    /*li 중에 마지막 li의 after을 숨김*/
+}
+footer .fnav li a {
+    display: block;
+    padding: 0 14px;
+}
+footer .fnav li:first-child a{
+    padding-left: 0;
+}
+footer .finfo {
+    margin: 20px 0 6px 0;
+}
