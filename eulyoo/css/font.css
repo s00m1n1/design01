@@ -1,0 +1,19 @@
+/* 웹폰트 정의 */
+@font-face {
+    font-family: 'EY'; /*body에서 font-family로 서체를 부를 이름-마음대로지어도됨*/
+    font-style: normal;
+    font-weight: 400;/*폰트별 두께 수치*/
+    src: url(../font/Eulyoo1945-Regular.eot);
+    src: url(../font/Eulyoo1945-Regular.eot?#iefix) format('embeded-opentype'),
+         url(../font/Eulyoo1945-Regular.woff2) format('woff2'),
+         url(../font/Eulyoo1945-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'EY';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../font/Eulyoo1945-SemiBold.eot);
+    src: url(../font/Eulyoo1945-SemiBold.eot?#iefix) format('embeded-opentype'),
+         url(../font/Eulyoo1945-SemiBold.woff2) format('woff2'),
+         url(../font/Eulyoo1945-SemiBold.woff) format('woff');
+}
