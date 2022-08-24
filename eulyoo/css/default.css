@@ -26,14 +26,21 @@ button {
     cursor: pointer; /*마우스 오버 시 손바닥 모양*/
 }
 html, body {
-    min-width: 1280px;
+
     color: #3D3D3D;
-    font-family: 'EY', sans-serif;
+    font-family: 'EY', 'Noto Sans KR', 'NanumGothic', 'Malgun Gothic', 'Apple SD Gothic', 'Apple SD Gothic Neo', 'Dotum', sans-serif;
+    /* 폰트 적용 우선순위
+    을유 웹폰트 우선적용 - 만약에 웹폰트가 지원되지 않으면 그 다음에 선언된 폰트가 적용됨
+    apple sd gothic - 아이폰에서 지원하는 폰트 */
     font-size: 15px;
     font-weight: 400;
     letter-spacing: -0.05em;
     line-height: 1.5;
     word-break: keep-all;
+}
+#wrap {
+    overflow-x: hidden;
+    min-width: 1280px;
 }
 .wrapper {
     width: 1280px;
@@ -41,8 +48,10 @@ html, body {
 }
 @media screen and (max-width:640px) { 
     html, body {
-        min-width: auto;
         font-size: 13px;
+    }
+    #wrap {
+        min-width: auto;
     }
     .wrapper {
         width: auto;

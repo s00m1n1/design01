@@ -10,7 +10,7 @@
     <title>을유문화사</title>
 </head>
 <body>
-    <div class="wrap"><!-- 홈페이지 전체를 감싸는 요소 -->
+    <div id="wrap"><!-- 홈페이지 전체를 감싸는 요소 -->
         <header>
             <div class="wrapper">
                 <h1><a href="#">을유문화사 로고</a></h1>
@@ -33,15 +33,15 @@
                 </nav>
                 <div class="tnb">
                     <ul>
-                        <li>
+                        <li class="mypage">
                             <button>
-                                <span>마이페이지</span>
+                                <span>회원서비스 열기</span>
                                 <i class="material-symbols-rounded">person</i>
                             </button>
                         </li>
-                        <li>
+                        <li class="search">
                             <button>
-                                <span>검색</span>
+                                <span>검색 열기</span>
                                 <i class="material-symbols-rounded">search</i>
                             </button>
                         </li>
@@ -58,13 +58,71 @@
                 <p class="txt_mobile">한국 현대사와 궤를 같이하며<br /> 한국 출판의 기틀을 다져 왔습니다</p>
             </div>
         </section>
-        <section class="book">
+        <section class="book clearfix">
             <div class="wrapper">
-
+                <div class="tit">
+                    <h2>책</h2>
+                    <p>을유문화사에서 <br />
+                        발간한 도서목록입니다.</p>
+                    <div class="btn">
+                        <button>
+                            <span>이전 책 보기</span>
+                            <i class="material-symbols-rounded">chevron_left</i>
+                        </button>
+                        <button>
+                            <span>다음 책보기</span>
+                            <i class="material-symbols-rounded">chevron_right</i>
+                        </button>
+                    </div>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="images/book01.png" alt="미래에서 온 외계인 보고서 표지" />
+                                <strong class="subject">미래에서 온 외계인 보고서</strong>
+                                <span class="writer">박상준</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/book02.png" alt="빛의 얼굴들 표지" />
+                                <strong class="subject">빛의 얼굴들</strong>
+                                <span class="writer">조수민</span>
+                            </a>
+                        </li><li>
+                            <a href="#">
+                                <img src="images/book03.png" alt="엄마, 나는 페미니스트가 되고 싶어 표지" />
+                                <strong class="subject">엄마, 나는 페미니스트가 되고 싶어</strong>
+                                <span class="writer">카르멘 G. 데 라 쿠에바 ,최이슬기</span>
+                            </a>
+                        </li><li>
+                            <a href="#">
+                                <img src="images/book04.png" alt="살며 사랑하며 기르며 표지" />
+                                <strong class="subject">살며 사랑하며 기르며</strong>
+                                <span class="writer">재키 콜리스 하비 ,김미정</span>
+                            </a>
+                        </li><li>
+                            <a href="#">
+                                <img src="images/book05.png" alt="그림 속 소녀의웃음이 내 마음에 표지" />
+                                <strong class="subject">그림 속 소녀의 웃음이 내 마음에</strong>
+                                <span class="writer">선동기</span>
+                            </a>
+                        </li><li>
+                            <a href="#">
+                                <img src="images/book06.png" alt="별별 생물들의 희한한 사생활 표지" />
+                                <strong class="subject">별별 생물들의 희한한 사생활</strong>
+                                <span class="writer">권오길</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
         <section class="interview">
-            <div class="wrapper"></div>
+            <div class="wrapper">
+                <h2>을유인터뷰</h2>
+            </div>
         </section>
         <sectionn class="news">
             <div class="wrapper">
