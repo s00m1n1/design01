@@ -141,7 +141,7 @@ header .tnb ul li button i {
 .book .tit h2 {
     margin: 0 0 12px 0;
     font-size: 45px;
-    font-weight: 700;
+    font-weight: 400;
 }
 .book .tit .btn {
     margin: 73px 0 0 0;
@@ -282,4 +282,109 @@ hegiht:행간*줄수em;
     .book .list ul li a .writer {
         display: none;
     }
+}/*media종료*/
+
+.interview h2 {
+    margin: 0 0 33px 0;
+    font-size: 45px;
+    font-weight: 400;
+}
+.interview .colgruop {
+    position: relative; /*pic_box 정렬의 기준*/
+}
+.interview .pic_box {
+    position: absolute;
+    left: 0;
+    top: 24px;
+}
+.interview .cnt_box {
+    height: 387px;
+    margin: 0 0 0 144px;
+    background-color: #8C887C;
+    color: #FFF;
+}
+.interview .cnt_box .inner {
+    padding: 62px 75px 0 459px;
+
+}
+.interview .cnt_box .inner h3 {
+    font-size: 30px;
+    font-weight: 400;
+}
+.interview .cnt_box .inner p {
+    margin: 23px 0 45px 0;
+}
+.interview .cnt_box .inner a {
+    display: block;
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    /*버튼디자인에서 글자를 높이의 위아래 가운데 배치하기 위해서 제일 쉬운 방법인 행간을 높이값과 동일하게 주는 것이다*/
+    white-space: nowrap;
+    border: 1px solid #fff;
+}
+.interview .cnt_box .inner a span {
+    float: left;
+    padding: 0 0 0 12px;
+}
+.interview .cnt_box .inner a i {
+    float: right;
+    padding: 6px 6px 0 0;
+}
+@media screen and (max-width:640px) {
+    .interview h2 {
+        margin: 0 0 18px 0;
+        font-size: 30px;
+    }
+    .interview .pic_box {
+        position: relative; /*position-absolute의 해지*/
+        left: auto;/*해지시 auto*/
+        top: auto;/*해지시 auto*/
+    }
+    .interview .pic_box img {
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    .interview .pic_box::after {
+        position: absolute;
+        left: -20px;
+        bottom: -1px;
+        width: calc(100% + 40px);
+        height: 50%;
+        background-color: #8C887C;
+        content: "";
+    }
+    .interview .cnt_box {
+        width: calc(100% + 40px);
+        height: auto;
+        margin: 0 0 0 -20px;
+        /* box-shadow: none;해지시 */
+    }
+    .interview .cnt_box .inner {
+        padding: 20px 20px;
+    }
+    .interview .cnt_box .inner h3 {
+        margin:0 0 8px 0;
+        font-size: 15px;
+    }
+    .interview .cnt_box .inner p {
+        margin: 0 0 35px 0;
+    }
+    .interview .cnt_box .inner a {
+        width: 130px;
+        height: 30px;
+        line-height: 30px;
+        /*버튼디자인에서 글자를 높이의 위아래 가운데 배치하기 위해서 제일 쉬운 방법인 행간을 높이값과 동일하게 주는 것이다*/
+       white-space: nowrap;
+        border: 1px solid #fff;
+    }
+    .interview .cnt_box .inner a i {
+        padding: 3px 6px 0 0;
+    }
+}/*media종료*/
+.news h2 {
+    margin: 187px 0 0 0;
+    font-size: 45px;
+    font-weight: 400;
 }
