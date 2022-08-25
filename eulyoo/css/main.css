@@ -8,6 +8,7 @@ header {
     height: 100px;
     /*border-bottom : 1px solid rgba(255,255,255,0.2) >> 헤더 밑 한 줄 옅은 한 줄 그을 때 설정*/
     color: #FFF;
+    transition: background-color 0.5s;
 }
 header h1 {
     float: left;
@@ -56,13 +57,25 @@ header .tnb ul li button span {
 header .tnb ul li button i {
     font-size: 24px /*아이콘의 넓이와 높이*/;
 }
+
+/* header에 fixed클래스가 추가되었을 떄의 디자인 */
+header.fixed {
+    position: fixed; /*스크롤 내려도 위치 고정*/
+    z-index: 100;
+    color: #ffffff;
+    background-color: rgba(140,136,124,0.95);
+}
+header.fixed h1 a {
+    background: url(../images/logo_white.svg) no-repeat center center / 100% ;
+}
+
 @media screen and (max-width:640px) {
     header {
         height: 45px;
         min-width: auto;
     }
     header h1 {
-        margin: 18px 0 0 0;
+        margin: 13px 0 0 0;
     }
     header h1 a {
         width: 138px;
@@ -70,7 +83,7 @@ header .tnb ul li button i {
     }
     header .gnb {
         float: right;
-        margin: 10px 0 0 0px;
+        margin: 6px 0 0 0px;
     } 
     /* h1/gnb/tnb 코딩순서가 이럴 때 모든 요소에 float-right를 줄때 입력되는 순서는 tnb/gnb/h1이다.
     >>float-right를 먼저 선언한 요소가 오른쪽 자리 선점 */
@@ -85,7 +98,7 @@ header .tnb ul li button i {
         display: none;
     }
     header .tnb {
-        margin: 10px 0 0 0;
+        margin: 4px 0 0 0;
     }
     header .tnb ul li.mypage {
         display: none;
