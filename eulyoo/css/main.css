@@ -188,7 +188,7 @@ header .tnb ul li button i {
     display: block;
 }
 .book .list ul li a img {
-    box-shadow:0 0 5px rgba(0,0,0,0.2)
+    box-shadow:0 0 5px rgba(0,0,0,0.1)
 }
 .book .list ul li a .subject {
     margin: 20px 0 10px 0;
@@ -301,7 +301,7 @@ hegiht:행간*줄수em;
     height: 387px;
     margin: 0 0 0 144px;
     background-color: #8C887C;
-    color: #FFF;
+    color: rgba(225,215,215,0.8);
 }
 .interview .cnt_box .inner {
     padding: 62px 75px 0 459px;
@@ -362,7 +362,7 @@ hegiht:행간*줄수em;
         /* box-shadow: none;해지시 */
     }
     .interview .cnt_box .inner {
-        padding: 20px 20px;
+        padding: 20px 20px 55px 20px;
     }
     .interview .cnt_box .inner h3 {
         margin:0 0 8px 0;
@@ -383,8 +383,178 @@ hegiht:행간*줄수em;
         padding: 3px 6px 0 0;
     }
 }/*media종료*/
-.news h2 {
-    margin: 187px 0 0 0;
+
+.news .tit {
+    margin: 187px 0 0 0
+}
+.news .tit h2 {
+    float: left;
     font-size: 45px;
     font-weight: 400;
+}
+.news .tit .btn {
+    float: right; /*높이를 인지못함 그래서 밑에 것이 올라와소 끼임 그 때 clearfix*/
+    margin: 14px 0 0 0;
+}
+.news .tit .btn button {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    border: 1px solid #666;
+}
+.news .tit .btn button span {
+    display: none;
+}
+.news .tit .btn button i {
+    margin: 5px 0 0 0;
+    font-size: 24px;
+}
+.news .list {
+    padding: 57px 0 0 0;
+}
+.news .list ul {
+    /*li 넓이(290)*여백(40) = x값(330)*8 = 2640*/
+    width: 2640px;
+    margin: 0 0 220px -330px; /*padding은 마이너스픽셀안되고 패디만가능*/
+}
+.news .list ul li {
+    float: left;
+    width: 290px;
+    margin: 0 40px 0 0;
+}
+.news .list ul li a {
+    display: block;
+}
+.news .list ul li a img {
+    width: 100%;
+    box-shadow:0 0 5px rgba(0,0,0,0.1)
+}
+.news .list ul li a span {
+    display: block;
+    margin: 10px 0 0 0;
+}
+@media screen and (max-width:640px) {
+    .news .tit {
+        margin: 70px 0 0 0
+    }
+    .news .tit h2 {
+        font-size: 30px;
+    }
+    .news .tit .btn {
+        margin: 14px 0 0 0;
+    }
+    .news .tit .btn button {
+        width: 20px;
+        height: 20px;
+    }
+    .news .tit .btn button i {
+        margin: 0;
+        font-size: 18px;
+    }
+    .news .list {
+        overflow-y: hidden;
+        overflow-x: auto;
+        width: calc(100% + 20p);
+        padding: 10px 0 10px 0;
+        margin: 0 0 0 -20px;
+    }
+    .news .list ul {
+        /*li 넓이*여백 = x값*8 = */
+        width: 1384px;
+        margin: 0; /*padding은 마이너스픽셀안되고 패디만가능*/
+    }
+    .news .list ul li {
+        width: 152px;
+        margin: 0 0 0 20px;
+    }
+    .news .list ul li a span {
+        margin: 7px 0 0 0;
+    }
+}/*media*/
+
+footer {
+    padding: 55px 0 70px 0;
+    background-color: #8C887C;
+    color: rgba(225,215,215,0.8);
+}
+footer .flogo {
+    float: left;
+}
+footer .flogo img {
+    width: 180px;
+    opacity: 0.8;
+}
+footer .fnav {
+    float: left;
+    margin: 0 40px 0 73px;
+}
+footer .fnav ul li a {
+    display: block;
+    line-height: 25px;
+}
+footer .sns {
+    float: right;
+}
+footer .sns a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    /* 글자없애기 */
+    font-size: 0;
+    line-height: 0;
+}
+footer .sns a.insta {
+    background: url(../images/sns_insta.svg) no-repeat center center;
+}
+footer .sns a.facebook {
+    background: url(../images/sns_facebook.svg) no-repeat center center;
+}
+footer .sns a.naver {
+    background: url(../images/sns_naver.svg) no-repeat center center;
+}
+footer .copyright {
+    float: left;
+    line-height: 25px;
+}
+
+@media screen and (max-width:640px) {
+    footer {
+        padding: 55px 0 35px 0;
+        margin: 120px 0 0 0;
+        text-align: center;
+    }
+    footer .flogo {
+        float: none;
+    }
+    footer .flogo img {
+        width: 140px;
+    }
+    footer .fnav {
+        float: none;
+        margin: 16px 0 13px 0;
+    }
+    footer .fnav ul li a {
+        line-height: 20px;
+    }
+    footer .sns {
+        float: none;
+    }
+    footer .sns a {
+        width: 25px;
+        height: 25px;
+    }
+    footer .sns a.insta {
+        background-size: 22px auto;
+    }
+    footer .sns a.facebook {
+        background-size: 10px auto;
+    }
+    footer .sns a.naver {
+        background-size: 20px auto;
+    }
+    footer .copyright {
+        margin: 25px 0 0 0;
+        float: none;
+        line-height: 20px;
+    }
 }
