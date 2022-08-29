@@ -1,2 +1,564 @@
 @import url(default.css);
 
+header {
+    position: absolute; /*배경 위에 떠 있는 존재이기 때문에*/
+    left: 0;
+    top: 0;
+    width: 100%; /* absolute는 넓이가 없어서 꽉 차야할 때 100% 부여 */
+    height: 100px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: #FFF;
+}
+
+header h1 {
+    float: left;
+    margin: 36px 0 0 0;
+}
+
+header h1 a {
+    display: block;
+    width: 120px;
+    height: 30px;
+    background: url(../images/logo_white.svg) no-repeat left top / 100% auto/*높이*/;
+    /* 영역에 맞춰서 들어가는 로고는 짤리면 안됨 -> size:100% 넓이에 꽉 차게, auto:높이 비율에 맞게 알아서*/
+    font-size: 0;
+    line-height: 0;
+    /*font-sizw: 0; -> line-height: 0; 짝꿍, 안보이게 할 때 필수*/
+}
+
+header nav {
+    float: right;
+}
+
+header nav .gnb_open {
+    display: none;
+}
+
+header nav .gnb_close {
+    display: none;
+}
+
+/*  <nav>
+        <ul>
+            <li>
+                <a href="#">1차 메뉴</a>
+                <ul>
+                    <li><a href="#">2차 메뉴</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav> 
+    이엃게 동일한 태그가 반복되는 경우 (메뉴) 사용하는 게 자식 선택자
+    1. 자식선택의 시작이 반복되는 태그x, nav처럼 한번 나오는 태그만 가능
+    2. 자식선택으로 선택 시 중간에 감싸는 태그를 누락할 수 없음
+    nav>ul>ul==>선택불가
+    그래서 1차메뉴의 a를 선택하는 선택자는 nav>ul>li>a
+    2차메뉴의 a를 선택하는 선택자는 nav>ul>li>ul>li>a* (띄어써도됨 개취) */
+header nav>ul>li { /*1차메뉴*/
+    float: left;
+    width: 240px;
+    text-align: center;
+}
+
+header nav>ul>li>a {
+    display: block;
+    padding: 20px 0 20px 0;
+    margin: 20px 0 0 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+header nav>ul>li>ul { /*2차메뉴*/
+    display: none;
+ }
+
+ @media screen and (max-width:640px) {
+    header {
+        height: 45px;
+    }
+    
+    header h1 {
+        margin: 16px 0 0 0;
+    }
+    
+    header h1 a {
+        width: 60px;
+        height: 15px;
+    }
+    
+    header nav {
+        margin: 0;
+    }
+    
+    header nav ul {
+        display: none;
+    }
+
+    header nav .gnb_open {
+        display: block;
+        padding: 0 0 0 10px;
+        height: 45px;
+    }
+
+    header nav .gnb_open span {
+        display: none;
+    }
+
+    header nav .gnb_open i {
+        padding: 7px 0 0 0;
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    header nav>ul> {
+        display: none;
+    }
+ }/*mobile-header-end*/
+
+
+.visual {
+    height: 900px;
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    /* background 한번에 입력 순서 : 1. 이미지경로 2. 반복 3. 위치 4. / + 크기 (슬래시 꼭 써야함) - 다 띄어쓰기 해야함  */
+    color: #FFF;
+}
+
+.visual h2 {
+    padding: 405px 0 10px 0; 
+    /* margin-top: header 무시하고 백그라운드이미지 제일 위에서 h2 태그까지 여백 */
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.visual p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+@media screen and (max-width:640px) {
+    .visual {
+        height: auto; /*글자가 길어지면 길어지는 대로 같이 길어짐*/
+    }
+
+    .visual h2 {
+        padding: 209px 0 156px 0; 
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    .visual span {
+        display: block;
+    }
+
+    .visual p {
+        display: none;
+    }
+}/*mobile-visual-end*/
+
+.product {
+    margin: 130px 0 0 0;
+}
+
+.product h2 {
+    position: sticky;
+    top: 0;
+    left: 0;
+    float: left;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.product h2 span {
+    display: block;
+}
+
+.product .list {
+    margin-left: 440px;
+}
+
+.product .list ul li {
+    width: 400px;
+    margin: 0 0 100px 0;
+}
+
+
+.product .list ul li:nth-child(1),
+.product .list ul li:nth-child(3),
+.product .list ul li:nth-child(5) {
+    float: left;
+}
+
+.product .list ul li:nth-child(2),
+.product .list ul li:nth-child(4) {
+    float: right;
+}
+
+.product .list ul li:nth-child(2) {
+    margin-top: 225px;
+}
+
+.product .list ul li a {
+    display: block;
+}
+
+.product .list ul li a strong {
+    display: block;
+    margin: 8px 0 10px 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+    height: 2.4em;
+    overflow: hidden;
+}
+
+.product .list ul li a span {
+    display: block;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    height: 4.8em;
+    overflow: hidden;
+}
+
+
+.product .list ul li a i {
+    font-size: 20px;
+}
+
+@media screen and (max-width:640px) {
+    .product {
+        margin: 44px 0 0 0;
+    }
+    
+    .product h2 {
+        position: relative;
+        top: auto;
+        left: auto;
+        float: none;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    
+    .product h2 span {
+        display: inline;
+    }
+    
+    .product .list {
+        overflow-y: hidden;
+        overflow-x: auto;
+        width: calc(100% + 20px);
+        margin-left: 0;
+    }
+    
+    .product .list ul { /*(208+16)x5=1120*/
+        width: 1120px;
+        padding: 15px 0px; /*스크롤바가 콘텐츠 바로 아래 생성되는 것을 막기 위해*/
+    } 
+
+    .product .list ul li {
+        width: 208px;
+        margin: 0 16px 0 0;
+    }
+    
+    .product .list ul li:nth-child(2),
+    .product .list ul li:nth-child(4) {
+        float: left;
+    }
+    
+    .product .list ul li:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .product .list ul li a img {
+        width: 100%;
+    }
+    
+    .product .list ul li a strong {
+        margin: 10px 0 10px 0;
+        font-size: 15px;
+    }
+    
+    .product .list ul li a span {
+        margin: 0 0 20px 0;
+    }
+    
+    .product .list ul li a i {
+        font-size: 15px;
+    }
+}/*mobile-product-end*/
+
+.brand {
+    padding: 0 0 114px 0;
+    margin: 17px 0 0 0;
+    background-color: #EDEDED;
+    text-align: center;
+}
+.brand h2 {
+    padding: 120px 0 100px  0;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.brand h2 strong {
+    display: block;
+    margin: 0 0 30px 0;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.brand ul li {
+    position: relative;
+    float: left;
+    width: 290px;
+    margin: 0 40px 0 0;
+}
+
+.brand ul li:last-child {
+    margin-right: 0;
+}
+
+.brand ul li::after {
+    position: absolute;
+    right: -20px;
+    top: 50px;
+    width: 1px;
+    height: 50px;
+    background-color: #CCC;
+    content: "";
+}
+
+.brand ul li:last-child::after {
+    display: none;
+}
+
+.brand ul li i {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.brand ul li h3 {
+    padding: 30px 0 6px 0;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+@media screen and (max-width:640px) {
+    .brand {
+        padding: 0 0 35px 0;
+        margin: 45px 0 0 0;
+    }
+    .brand h2 {
+        padding: 35px 0;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    
+    .brand h2 strong {
+        display: none;
+    }
+    
+    .brand h2 span {
+        display: block;
+    }
+
+    .brand ul li {
+        width: 50%;
+        padding: 15px 0 20px 0;
+        margin: 0;
+    }
+    
+    .brand ul li:nth-child(3):before,
+    .brand ul li:nth-child(4):before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #CCC;
+        content: "";
+    }
+
+    .brand ul li::after {
+        right: 0px;
+        top: 0px;
+        height: 100%;
+    }
+
+    .brand ul li:nth-child(2)::after {
+        display: none;
+    }
+    
+    .brand ul li i {
+        font-size: 20px;
+    }
+    
+    .brand ul li h3 {
+        padding: 20px 0 5px 0;
+        font-size: 15px;
+        white-space: nowrap;
+    }
+}/*mobile-brand-end*/
+
+.service ul li {
+    float: left;
+    width: 33.33%;
+    /* 10/3=33.333333333333... 
+    > 반올림 > 33.34% 입력시 3개가 나오지 xxx
+        33.33*3=100이하이여야 함 */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #FFF;
+}
+
+.service ul li.how {
+   background-image: url(../images/service01.png);
+}
+
+.service ul li.store {
+    background-image: url(../images/service02.png);
+}
+
+.service ul li.color {
+    background-image: url(../images/service03.png);
+}
+
+.service ul li a {
+    display: block;
+    height: 350px;
+    padding: 59px 0 0 60px;
+}
+
+.service ul li span {
+    display: block;
+    font-size: 20px;
+}
+
+.service ul li strong {
+    display: block;
+    margin: 12px 0 20px 0;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+@media screen and (max-width:640px) {
+    .service ul li {
+        float: none;
+        width: auto;
+    }
+    
+    .service ul li a {
+        height: 147px;
+        padding: 35px 0 0 20px;
+    }
+    
+    .service ul li span {
+        font-size: 13px;
+    }
+    
+    .service ul li strong {
+        margin: 5px 0 20px 0;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .service ul li i {
+        font-size: 16px;
+    }
+}/*mobile-servie-end*/
+
+aside {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+}
+
+aside button {
+    width: 45px;
+    height: 45px;
+    border-radius: 23px;
+    background-color: #303030;
+    color: #FFF;
+    text-align: center;
+    line-height: 0.3;
+    padding:  0 0 12px 0;
+}
+
+aside button i {
+    font-size: 20px;
+}
+
+aside button span {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+@media screen and (max-width:640px) {
+    aside {
+        position: fixed;
+        bottom: 60px;
+        right: 20px;
+    }
+    
+    aside button {
+        width: 45px;
+        height: 45px;
+        border-radius: 23px;
+        background-color: #303030;
+        color: #FFF;
+        text-align: center;
+        line-height: 0.3;
+        padding:  0 0 12px 0;
+    }
+    
+    aside button i {
+        font-size: 20px;
+    }
+    
+    aside button span {
+        font-size: 15px;
+        font-weight: 700;
+    }
+}
+
+footer {
+
+}
+
+footer .sns {
+
+}
+
+footer .sns ul li {
+
+}
+
+footer .sns ul li a {
+
+}
+
+footer .flogo {
+
+}
+
+footer .flogo img {
+
+}
+
+footer .finfo {
+
+}
+
+footer .finfo span {
+
+}
+
+footer .finfo span.brd::after {
+
+}
+
+footer .copyrigt {
+
+}
+

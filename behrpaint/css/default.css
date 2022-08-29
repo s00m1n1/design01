@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&display=swap');
 body, header, footer, div, nav, section, h1, h2, h3, h4, h5, h6, button, a, ul, li, address, strong, span, em, p, i {
     padding: 0;
     margin: 0;
@@ -35,11 +35,19 @@ html, body {
     font-size: 15px;
     font-weight: 400;
     letter-spacing: -0.05em;
+    /* 1em - 글자1개의크기/브라우저가 정의하는 글자크기 
+        ex) body 1em: 16px
+        header 2em: 32px (감싸는 태그에 부여해준 px이 1em이 됨)
+        header nav 0.5em: 16px*/
+    /* rem - 절대크기
+        body {font-size:20px} - 1rem
+        header {2rem} - 40px
+        header {0.5rem} - 10px */
     line-height: 1.2;
     word-break: keep-all;
 }
 #wrap {
-    overflow: hidden;
+    /* overflow: hidden; */
     min-width: 1280px;
 }
 .wrapper {
