@@ -110,7 +110,7 @@ header nav>ul>li>ul { /*2차메뉴*/
         font-weight: 300;
     }
 
-    header nav>ul> {
+    header nav>ul {
         display: none;
     }
  }/*mobile-header-end*/
