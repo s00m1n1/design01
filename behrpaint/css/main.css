@@ -240,7 +240,7 @@ header nav>ul>li>ul>li>a:hover {
 
 .product h2 {
     position: sticky;
-    top: 0;
+    top: 300px;
     left: 0;
     float: left;
     font-size: 50px;
