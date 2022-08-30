@@ -340,7 +340,7 @@ header nav>ul>li>ul { /*2차메뉴*/
 .brand ul li h3 {
     padding: 30px 0 6px 0;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 700;
 }
 
 @media screen and (max-width:640px) {
@@ -494,71 +494,154 @@ aside button span {
     font-weight: 700;
 }
 
-@media screen and (max-width:640px) {
+@media screen and (max-width:1400px) {
     aside {
-        position: fixed;
-        bottom: 60px;
-        right: 20px;
-    }
-    
-    aside button {
-        width: 45px;
-        height: 45px;
-        border-radius: 23px;
-        background-color: #303030;
-        color: #FFF;
-        text-align: center;
-        line-height: 0.3;
-        padding:  0 0 12px 0;
-    }
-    
-    aside button i {
-        font-size: 20px;
-    }
-    
-    aside button span {
-        font-size: 15px;
-        font-weight: 700;
+        display: none;
     }
 }
 
 footer {
+    padding: 0 0 50px 0;
+    background-color: #484848;
+    color: rgba(255,255,255,0.7);
+}
 
+footer .inner {
+    position: relative; /*flogo의 정렬 기준*/
 }
 
 footer .sns {
+    height: 74px;
+    border-bottom: 1px solid rgba(255,255,255,0.7);
+}
 
+footer .sns ul {
+    float: right;
+    margin: 17px 0 0 0;
 }
 
 footer .sns ul li {
-
+    float: left;
+    margin-left: 8px;
+    /*왼쪽에 들어가는 콘텐츠가 없기 때문에 margine-left로 값을 주거나
+    margine-right로 값을 주고 last-child의 값만 0으로 준다.*/
 }
 
 footer .sns ul li a {
+    display: block;
+    width: 38px;
+    height: 38px;
+    border-radius: 19px;
+    background-color: rgba(255,255,255,0.7);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 25px auto;
+    font-size: 0;
+    line-height: 0;
+}
 
+footer .sns ul li.fecebook a {
+    background-image: url(../images/sns_facebook.svg);
+}
+
+footer .sns ul li.naver a {
+    background-image: url(../images/sns_naver.svg);
+}
+
+footer .sns ul li.insta a {
+    background-image: url(../images/sns_insta.svg);
+}
+
+footer .sns ul li.youtube a {
+    background-image: url(../images/sns_youtube.svg);
 }
 
 footer .flogo {
-
+    position: absolute;
+    left: 0;
+    top:23px;
 }
 
 footer .flogo img {
-
+    width: 107px;
+    opacity: 0.7;
 }
 
 footer .finfo {
-
+    margin: 45px 0 22px 0;
+    line-height: 1.5;
 }
 
 footer .finfo span {
+    display: inline-block;
+}
 
+footer .finfo span.brd {
+    position: relative;
+    margin: 0 27px 0 0;
 }
 
 footer .finfo span.brd::after {
-
+    position: absolute;
+    right: -17px; /*무조건 left top이 아니라 나타나야하는 것이 어느쪽인지 확인하고 주기 이 아이는 brd 오른쪽에서 보여야 하기 때문에 right가 맞음*/
+    top: 5px;
+    width: 1px;
+    height: 10px;
+    background-color: #CCC;
+    content: "";
 }
 
-footer .copyrigt {
+@media screen and (max-width:640px) {
+    footer {
+        padding: 0 0 23px 0;
+    }
+    
+    footer .sns {
+        height: 44px;
+        text-align: center;
+    }
+    
+    footer .sns ul {
+        display: inline-block;
+        float: none;
+        padding: 9px 0 0 0;
+        margin: 0;
+    }
+    
+    footer .sns ul li {
+        margin: 0 6px 0 0;
+    }
+    
+    footer .sns ul li a {
+        width: 26px;
+        height: 26px;
+        border-radius: 13px;
+        background-size: 18px auto;
+    }
+    
+    footer .flogo {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin: 16px 0 0 0;
+    }
+    
+    footer .flogo img {
+        width: 58px;
+        opacity: 0.7;
+    }
+    
+    footer .finfo {
+        margin: 10px 0 30px 0;
+    }
 
-}
-
+    footer .finfo span.brd {
+        position: relative;
+        margin: 0 15px 0 0;
+    }
+    
+    footer .finfo span.brd::after {
+        right: -11px;
+        height: 8px;
+    }
+}/*mobile-footer-end*/
