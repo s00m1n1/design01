@@ -400,6 +400,10 @@ header nav>ul>li>ul { /*2차메뉴*/
     }
 }/*mobile-brand-end*/
 
+.service h2 {
+    display: none;
+}
+
 .service ul li {
     float: left;
     width: 33.33%;
