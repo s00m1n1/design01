@@ -70,28 +70,27 @@ header nav .gnb_close {
     nav>ul>ul==>선택불가
     그래서 1차메뉴의 a를 선택하는 선택자는 nav>ul>li>a
     2차메뉴의 a를 선택하는 선택자는 nav>ul>li>ul>li>a* (띄어써도됨 개취) */
-header nav>ul>li { /*1차메뉴*/
+header nav > ul > li { /*1차메뉴*/
     float: left;
     width: 240px;
     text-align: center;
 }
 
-header nav>ul>li>a {
+header nav > ul > li > a {
     display: block;
-    position: relative;
     padding: 20px 0;
     font-size: 21px;
 }
 
-header nav>ul>li:hover>a {
+header nav > ul > li:hover > a {
     font-weight: 700;
 }
 
-header nav>ul>li>a>span {
+header nav > ul > li > a > span {
     position: relative;
 }
 
-header nav>ul>li:hover>a span::before {
+header nav > ul > li:hover > a span::before {
     position: absolute;
     left: 0px;
     top: 0px;
@@ -102,7 +101,7 @@ header nav>ul>li:hover>a span::before {
     content: "";
 }
 
-header nav>ul>li>ul { /*2차메뉴*/
+header nav > ul > li > ul { /*2차메뉴*/
     display: none;
     padding: 30px 0 0 0;
     /* 1차메뉴와 2차메뉴 사이에는 여백이 존재하면 안됨
@@ -111,6 +110,18 @@ header nav>ul>li>ul { /*2차메뉴*/
     메뉴가 아웃되어버림 */
 }
 
+
+header nav > ul > li > ul > li > a {
+    display: block;
+    color: #666;
+    font-size: 17px;
+    line-height: 40px;
+}
+
+header nav > ul > li > ul > li > a:hover {
+    color: #1d1d1d;
+    font-weight: 700;
+}
 
 /* header가 고정되거나(fixed), 메뉴에 마우스를 오버했을 때(open) */
 header.fixed {
@@ -132,21 +143,8 @@ header.open::after {
     display: block;
 }
 
-header.open nav>ul>li>ul {
+header.open nav > ul > li > ul {
     display: block;
-}
-
-header nav>ul>li>ul>li>a {
-    display: block;
-    color: #666;
-    font-size: 17px;
-    line-height: 40px;
-}
-
-header nav>ul>li>ul>li>a:hover {
-    color: #1d1d1d;
-    font-weight: 700;
-    text-decoration: underline;
 }
 
  @media screen and (max-width:640px) {
@@ -166,10 +164,6 @@ header nav>ul>li>ul>li>a:hover {
     header nav {
         margin: 0;
     }
-    
-    header nav ul {
-        display: none;
-    }
 
     header nav .gnb_open {
         display: block;
@@ -184,10 +178,9 @@ header nav>ul>li>ul>li>a:hover {
     header nav .gnb_open i {
         padding: 7px 0 0 0;
         font-size: 18px;
-        font-weight: 300;
     }
 
-    header nav>ul {
+    header nav > ul {
         display: none;
     }
  }/*mobile-header-end*/
@@ -209,20 +202,19 @@ header nav>ul>li>ul>li>a:hover {
 
 .visual p {
     font-size: 20px;
-    font-weight: 400;
     line-height: 1.4;
 }
 
 @media screen and (max-width:640px) {
     .visual {
         height: auto; /*글자가 길어지면 길어지는 대로 같이 길어짐*/
+        text-align: center;
     }
 
     .visual h2 {
         padding: 209px 0 156px 0; 
         font-size: 20px;
         line-height: 1.5;
-        text-align: center;
     }
 
     .visual span {
