@@ -12,7 +12,7 @@ a {
 em, address {
     font-style: normal;
 }
-ul, li {
+ul, ol,li {
     list-style: none;
 }
 button {
@@ -28,7 +28,7 @@ button {
 html, body {
 
     color: #3D3D3D;
-    font-family: 'Noto Sans KR', 'NanumGothic', 'Malgun Gothic', 'Apple SD Gothic', 'Apple SD Gothic Neo', 'Dotum', sans-serif;
+    font-family: 'Poppins', 'Noto Sans KR', 'NanumGothic', 'Malgun Gothic', 'Apple SD Gothic', 'Apple SD Gothic Neo', 'Dotum', sans-serif;
     /* 폰트 적용 우선순위
     을유 웹폰트 우선적용 - 만약에 웹폰트가 지원되지 않으면 그 다음에 선언된 폰트가 적용됨
     apple sd gothic - 아이폰에서 지원하는 폰트 */
@@ -43,15 +43,15 @@ html, body {
         body {font-size:20px} - 1rem
         header {2rem} - 40px
         header {0.5rem} - 10px */
-    line-height: 1.5;
+    line-height: 1.2;
     word-break: keep-all;
 }
 #wrap {
     overflow: hidden;
-    min-width: 1400px;
+    min-width: 1280px;
 }
 .wrapper {
-    width: 1400px;
+    width: 1280px;
     margin: 0 auto;
 }
 @media screen and (max-width:640px) { 
