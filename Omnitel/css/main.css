@@ -1,0 +1,215 @@
+@import url(default.css);
+h1 {
+    display: none;
+}
+.visual {
+    height: 850px;
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    color: #FFF;
+}
+.visual h2 {
+    padding: 298px 0 0 0;
+    font-size: 75px;
+    font-weight: 400;
+}
+.visual h2 span {
+    font-weight: 700;
+}
+@media screen and (max-width:640px) {
+    .visual {
+        height: auto;
+    }
+    .visual h2 {
+        padding: 107px 0 138px 0;
+        font-size: 35px;
+    }
+}
+.works {
+    background-color: #F39800;
+}
+.works .tit {
+    padding: 52px 0 67px 0;
+    color: #FFF;
+    text-align: center;
+    line-height: 1.2;
+}
+.works .tit h2 {
+    margin: 0 0 10px 0;
+    font-size: 50px;
+    font-weight: 700;
+}
+.works .tit span {
+    display: block;
+}
+.works ul li {
+    float: left;
+    width: 33.33%;
+}
+.works ul li.works01 {
+    background: url(../images/works01.png) no-repeat center center / cover;
+}
+.works ul li.works02 {
+    background: url(../images/works02.png) no-repeat center center / cover;
+}
+.works ul li.works03 {
+    background: url(../images/works03.png) no-repeat center center / cover;
+}
+.works ul li a {
+    display: block;
+    height: 300px;
+    text-align: center;
+}
+.works ul li a i {
+    margin: 82px 0 18px 0;
+    font-size: 50px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.8);
+}
+.works ul li a h3 {
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #FFF;
+}
+@media screen and (max-width:640px) {
+    .works {
+        padding-bottom: 20px;
+    }
+    .works .tit {
+        padding: 36px 0 25px 0;
+    }
+    .works .tit h2 {
+        margin: 0 0 13px 0;
+        font-size: 25px;
+    }
+    .works .tit span {
+        display: inline;
+    }
+    .works ul li {
+        margin: 0 20px;
+        float: none;
+        width: auto;
+    }
+    .works ul li a {
+        height: 150px;
+    }
+    .works ul li a i {
+        margin: 29px 0 6px 0;
+        font-size: 30px;
+    }
+    .works ul li a h3 {
+        font-size: 20px;
+    }
+}
+.news h2{
+    margin: 52px 0 50px 0;
+    font-size: 50px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-align: center;
+}
+.news ul {
+    margin: 0 0 97px 0;
+}
+.news ul li {
+    float: left;
+    width: 400px;
+    margin: 0 40px 0 0;
+}
+.news ul li:last-child {
+    margin-right: 0;
+}
+.news ul li strong {
+    display: block;
+}
+.news ul li span {
+    display: block;
+}
+.news ul li strong.n_tit {
+    line-height: 1.2;
+    height: 2.4em;
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: 700;
+}
+.news ul li span.n_date {
+    margin: 10px 0;
+    color: #666;
+    line-height: 1.2;
+}
+.news ul li span.n_cnt {
+    line-height: 1.2;
+    height: 8.4em;
+    overflow: hidden;
+}
+@media screen and (max-width:640px) {
+    .news h2{
+        margin: 39px 0 9px 0;
+        font-size: 25px;
+    }
+    .news ul {
+        margin: 0 0 55px 0;
+    }
+    .news ul li {
+        float: none;
+        width: auto;
+        margin: 0;
+        padding: 20px 0 20px 0;
+        border-bottom: 1px solid #CCC;
+    }
+    .news ul li:last-child {
+        border-bottom: 0;
+    }
+    .news ul li strong.n_tit {
+        font-size: 17px;
+    }
+    .news ul li span.n_cnt {
+        height: 4.8em;
+    }
+}
+footer {
+    background-color: #3d3d3d;
+    color: rgba(255,255,255,0.8);
+}
+footer ul {
+    padding: 64px 0 20px 0;
+}
+footer ul li {
+    position: relative;
+    float: left;
+    margin: 0 31px 0 0;
+}
+footer ul li::after{
+    position: absolute;
+    right: -15px;
+    top: 3px;
+    width: 1px;
+    height: 10px;
+    background-color: rgba(255,255,255,0.2);
+    content: "";
+}
+footer ul li:last-child::after{
+    display: none;
+}
+footer .copyright {
+    padding: 17px 0 90px 0;
+}
+@media screen and (max-width:640px) {
+    footer {
+        line-height: 1.8;
+    }
+    footer ul {
+        padding: 44px 0 0 0;
+    }
+    footer ul li {
+        margin: 0 15px 0 0;
+    }
+    footer ul li::after{
+        right: -8px;
+        top: 7px;
+        height: 8px;
+    }
+    footer .copyright {
+        padding: 17px 0 47px 0;
+    }
+}
