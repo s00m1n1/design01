@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+/* default.css - 모든 스타일 초기화 */
+body, header, footer, div, nav, section, h1, h2, h3, h4, h5, h6, button, a, ul, ol, li, address, strong, span, em, p, i, dl, dt, dd {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+}
+a {
+    color: inherit; 
+    text-decoration: none;
+}
+em, address {
+    font-style: normal;
+}
+ul, ol, li {
+    list-style: none;
+}
+button {
+    background-color: transparent; 
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    cursor: pointer; 
+}
