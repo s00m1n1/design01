@@ -18,5 +18,17 @@ $(document).ready(function(){
         console.log('window의 높이' + winH);
     });
 
-
+    /*
+        .biz .list ul li - mouseenter 
+        -> .biz .list ul - over addClass
+        -> activer addClass
+    */
+    $('.biz .list ul li').on('mouseenter',function(){
+        $('.biz .list ul').addClass('over')
+        $(this).addClass('active')    
+    });
+    $('.biz .list ul li').on('mouseleave',function(){
+        $('.biz .list ul').removeClass('over')
+        $(this).removeClass('active')    
+    });
 });//document.ready 종료

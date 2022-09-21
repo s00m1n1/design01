@@ -87,4 +87,13 @@ $(document).ready(function(){
             $(this).toggleClass('sub_open');
             }
         });
+
+        /*.footer .family .btn_open - click - .footer .family - 'open' addClass*/
+        /*.footer .family .btn_close - click - .footer .family - 'open' removeClass*/
+        $('.footer .family .btn_open').on('click',function(){
+            $('.footer .family').addClass('open')
+        })
+        $('.footer .family .btn_close').on('click',function(){
+            $('.footer .family').removeClass('open')
+        })
 });

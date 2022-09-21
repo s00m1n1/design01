@@ -109,7 +109,7 @@
         <section class="visual">
             <div class="wrapper">
                 <div class="cnt_h"> <!--visual의 높이-->
-                    <div class="txt"> 
+                    <div class="inner"> 
                         <!--위아래 가운데 정렬 (visual의 높이)
                             감싸는 요소(기준이 되는 요소)의 높이가 visual과 동일해야함-->
                         <h2>Global standard in <br />
@@ -121,16 +121,170 @@
             </div>
         </section>
         <section class="biz">
-            
+            <div class="tit clearfix">
+                <div class="wrapper">
+                    <h2>Area of Business</h2>
+                    <a href="contents/businessSrch.html">
+                        <span>사업실적보기</span>
+                        <i class="material-symbols-rounded">arrow_forward</i>
+                    </a>
+                    <!-- 사업실적더보기 : 사업분야의 더보기가 아니라 관련 링크이기 때문에 ul li 하단에 있지 않아도 됨 -->
+                </div>
+            </div>
+            <!-- 하나의 li에 마우스를 오버하면 사이즈가 커짐/나머지들은 배경 어두워지고, 글자 투명, 넓이 줄어듦 
+                1. 전체를 감싸는 ul에 over라는 클래스 추가
+                2. 마우스를 오버한 li에 active 클래스 추가
+                3. 오버하지 않은 나머지 li의 스타일 - not 선택자-->
+            <div class="list">
+                <!-- ul class="over" -->
+                <ul>
+                    <!--li class = "active"-->
+                    <li class="arch">
+                        <a href="contents/architecture.html">
+                            <strong>Architecture</strong>
+                            <span>빌딩 개발에서 도시개발로 이어지는<br />
+                                금호건설의 건축사업</span>
+                        </a>
+                    </li>
+                    <li class="civil">
+                        <a href="contents/civil.html">
+                            <strong>Civil</strong>
+                            <span>도시와 국토를 잇는 공간 예술,<br />
+                                금호건설의 토목사업</span>
+                        </a>
+                    </li>
+                    <li class="house">
+                        <a href="contents/housing.html">
+                            <strong>Housing</strong>
+                            <span>전국 곳곳에서 신주거단지 조성으로<br />
+                                고객의 높은 신뢰를 얻어온 금호</span>
+                        </a>
+                    </li>
+                    <li class="plant">
+                        <a href="contents/plant.html">
+                            <strong>Plant Enviroment</strong>
+                            <span>산업발전의 기틀을 다지는 환경경영을<br />
+                                실천하는 환경/플랜트산업</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </section>
         <section class="news">
-
+            <div class="wrapper">
+                <div class="inner">
+                    <h2>KUMHO E&C News</h2>
+                    <ul>
+                        <li>
+                            <a href="contents/reportList.html">
+                                <strong class="subject">금호건설, 제5회 어울림 음악회 개최…"취약계층 아동 지원 취지"</strong>
+                                <span class="cnt">어울림 음악회는 문화 취약계층 아동들의 문화생활을 지원하기 위해 기획된 음악공연으로 금호건설이 3년간 진행해 온 후원사업이다. 지난2020년 11월 경기도 용인 강남학교에서 개최한 제1회 어울림 음악회</span>
+                                <span class="date">2022.07.20</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contents/reportList.html">
+                                <strong class="subject">금호건설 '화성~광주고속도로' 개통…연 960억원 물류비 절감</strong>
+                                <span class="cnt">22일 금호건설에 따르면 '화성~광주고속도로'는 경기 화성시 방교동에서 광주시 도척면 진우리를 연결하는 총 31.2km의 왕복 4차로 민자고속도로다. 총 사업비 1조4975억원이 투입됐다.</span>
+                                <span class="date">2022.03.22</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contents/reportList.html">
+                                <strong class="subject">[2021 아주경제 건설대상 아파트] 금호건설 '강서 금호어울림 퍼스티어'</strong>
+                                <span class="cnt">금호건설의 '강서 금호어울림 퍼스티어'가 26일 열린 '2021 아주경제 건설대상'에서 아파트부문 대상을 받았다. 단지는 민간 건설사 브랜드를 적용한 첫 신혼희망타운 아파트다. </span>
+                                <span class="date">2021-10-26</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contents/reportList.html">
+                                <strong class="subject">금호건설, 제주 애월에 '제주더힐테라스' 짓는다</strong>
+                                <span class="cnt">금호건설은 '제주시애월지역주택조합 및 광령조합'과 '제주더힐테라스 공동주택 신축공사' 도급계약을 체결했다고 5일 밝혔다.
+                                    금호건설이 제주에 공급하는 첫 프리미엄 주거단지다.</span>
+                                <span class="date">2021.10.05</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="more"><!--모바일에서 가운데 정렬이기때문-->
+                        <a href="contents/reportList.html">
+                            <span>더보기</span>
+                            <i class="material-symbols-rounded">arrow_forward</i>
+                        </a>
+                    </div>
+                </div>        
+            </div>
         </section>
         <section class="link">
-
+            <div class="wrapper">
+                <h2>세계 속의 한국, 한국 속의 세계 건설하기 위해 
+                    <span>새 천년의 초일류기업으로 거듭 태어나겠습니다.</span></h2>
+                <ul>
+                    <li> 
+                        <a href="contents/manage.html">
+                            <i class="material-symbols-rounded">potted_plant</i>
+                            <div class="inner">
+                                <h3>Sustainable management</h3>
+                                <p>지속가능경영 <span>바로가기</span></p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contents/invest.html">
+                            <i class="material-symbols-rounded">attach_money</i>
+                            <div class="inner">
+                                <h3>KUMHO Investor Relations</h3>
+                                <p>투자정보 <span>바로가기</span></p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://webzine.kumhoenc.com" target="_blank" title="새창">
+                        <!-- 도메인이 다른 사이트로 연결할때는 새창으로 연결  -->
+                            <i class="material-symbols-rounded">library_books</i>
+                            <div class="inner">
+                                <h3>KUMHO E&C Webzine</h3>
+                                <p>웹진 <span>바로가기</span></p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </section>
         <footer class="footer">
-
+            <!-- wrapper와 동일한 넓이을 갖은 position:relative->cnt_wrap 클래스추가-->
+            <div class="wrapper cnt_wrap">
+                <div class="family"><!--family "open" class addClass-->
+                    <div class="inner">
+                        <button class="btn_open" title="그룹사 바로가기 열기">
+                            <span>그룹사 바로가기</span>
+                            <i class="material-symbols-rounded">expand_more</i>
+                        </button>
+                        <ul>
+                            <li><a href="#n" target="_blank" title="새창으로 열림">금호고속</a></li>
+                            <li><a href="#n" target="_blank" title="새창으로 열림">금호터미널</a></li>
+                            <li><a href="#n" target="_blank" title="새창으로 열림">금호문화재단</a></li>
+                            <li><a href="#n" target="_blank" title="새창으로 열림">아시아나항공</a></li>
+                            <li><a href="#n" target="_blank" title="새창으로 열림">아시아나IDT</a></li>
+                            <li><a href="#n" target="_blank" title="새창으로 열림">에어부산</a></li>
+                            <li><a href="#n" target="_blank" title="새창으로 열림">아시아나에어포트</a></li>
+                            <li><a href="#n" target="_blank" title="새창으로 열림">아시아나세이버</a></li>
+                            <li><a href="#n" target="_blank" title="새창으로 열림">에어서울</a></li>
+                        </ul>
+                        <button class="btn_close" title="그룹사 바로가기 닫기">
+                            <span>그룹사 바로가기</span>
+                            <i class="material-symbols-rounded">expand_less</i>
+                        </button>
+                    </div>
+                </div>
+                <ul class="fnav">
+                    <li><a href="#n">제보실</a></li>
+                    <li><a href="#n">고객센터</a></li>
+                    <li><a href="#n">OB사랑방</a></li>
+                    <li><a href="#n">Contact us</a></li>
+                    <li><a href="#n">개인정보처리방침</a></li>
+                </ul>
+                <div class="copyright">copyrightⓒ KUMHO E&C ALL RIGHTS RESERVED</div>
+            </div>
         </footer>
     </div>
 </body>
