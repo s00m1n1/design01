@@ -2,3 +2,107 @@
 @import url('common.css');
 
 /* main style */
+
+.visual {
+    position: relative;
+    height: 100vh; /*브라우저 높이의 100%*/
+    background: url(../images/main/visual_bg.png) no-repeat center center / cover;
+    color: #FFFFFF;
+}
+.visual .visual_wrap {
+    position: absolute;
+    left: calc(50% - 700px);
+    top: 50%;
+    transform: translate(0, -50%);
+    /* 해당요소에 넓이와 높이를 계산해서 그 값의 50%를 왼쪽 오른쪽으로 이동
+       top: 50% -> 위아래 가운데에서 시작해서 아래로 콘테츠가 배치
+       콘텐츠의 위아래 여백을 동일하ㅔ 주려면 (콘텐츠가 자기 높이의 절반이 위로 이동)
+       trenasform: translate(좌우이동값, 위아래이동값;-50%)을 주면 됨.*/
+}
+.visual h2 {
+    margin: 0 0 43px 0;
+    font-size: 50px;
+    font-weight: 200;
+    line-height: 1.2;
+}
+.visual h2 strong {
+    display: block;
+    font-weight: 400;
+}
+.visual .search {
+    width: 555px;
+    height: 70px;
+    border: 1px solid #FFF;
+    border-radius: 35px;
+}
+.visual .search label {
+    display: none; /*웹 접근성*/
+}
+.visual .search input[type="text"] /*<input type="text"/>라고 되어있는 태그만 지칭*/{
+    float: left;
+    width: 430px;
+    height: 68px;
+    margin: 0 0 0 33px;
+    border: 0;
+    outline: 0; /*포커스 시 테두리 생성 없애기*/
+    background-color: transparent;
+    font-size: 22px;
+}
+.visual .search input[type="text"]::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+.visual .search .btn {
+    float: left; /*키워드입력란 버튼 사이 여백 삭제*/
+    width: 80px;
+    height: 68px;
+}
+.visual .search input.btn {
+    border: 0;
+    background-color: transparent;
+    background-image: url(../images/main/search_ico.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-size: 0;
+    cursor: pointer; /*마우스 오버시 손바닥 모양*/
+}
+.visual .search button.btn span {
+    display: none;
+}
+.visual .search button.btn i {
+    margin: 3px 0 0 0;
+    font-size: 30px;
+    color: rgba(255,255,255,0.7);
+}
+@media screen and (max-width:640px) {
+    .visual {
+        height: 400px;
+    }
+    .visual .visual_wrap {
+        left: 20px;
+    }
+    .visual h2 {
+        margin: 0 0 16px 0;
+        font-size: 25px;
+    }
+    .visual .search {
+        width: 264px;
+        height: 33px;
+        border-radius: 17px;
+    }
+    .visual .search input[type="text"] /*<input type="text"/>라고 되어있는 태그만 지칭*/{
+        width: 196px;
+        height: 31px;
+        margin: 0 0 0 19px;
+        font-size: 17px;
+    }
+    .visual .search .btn {
+        width: 36px;
+        height: 31px;
+    }
+    .visual .search input.btn {
+        background-size: 20px; /*사이즈를 하나만 입력하면 넓이가 조정됨 -  높이는 비율에 맞게 알아서 조절*/
+    }
+    .visual .search button.btn i {
+        font-size: 20px;
+    }
+}
