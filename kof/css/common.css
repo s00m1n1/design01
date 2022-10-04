@@ -401,9 +401,8 @@ aside.top button i {
         justify-content: center;
     }
     .footer .sns ul li a {
-        display: block;
-        width: 40px;
-        height: 40px;
+        width: 28px;
+        height: 28px;
         /* img를 a영역에  위아래/좌우 가운데 배치하기 위해서 */
         display: flex;
         align-items: center;
