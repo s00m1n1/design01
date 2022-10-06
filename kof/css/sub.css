@@ -1,0 +1,279 @@
+@import url('default.css');
+@import url('common.css');
+@import url('contents.css');
+/* 서브레이아웃 스타일 */
+.sub_visual {
+    height: 380px;
+    background-image: url(../images/sub/sub_visual01.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+}
+.sub_visual.sub_bg1 {
+    background-image: url(../images/sub/sub_visual01.png);
+}
+.sub_visual.sub_bg2 {
+    background-image: url(../images/sub/sub_visual02.png);
+}
+.sub_visual.sub_bg3 {
+    background-image: url(../images/sub/sub_visual03.png);
+}
+.sub_visual.sub_bg4 {
+    background-image: url(../images/sub/sub_visual04.png);
+}
+.sub_visual.sub_bg5 {
+    background-image: url(../images/sub/sub_visual05.png);
+}
+.sub_visual strong {
+    display: block;
+    padding: 196px 0 0 0;
+    font-size: 50px;
+    font-weight: 400;
+}
+@media screen and (max-width:640px) {
+    .sub_visual {
+        height: 200px;
+    }
+    .sub_visual strong {
+        padding: 130px 0 0 0;
+        font-size: 20px;
+    }
+}/*sub_visual1 반응형 종료*/
+
+.lnb {
+    position: relative;
+    z-index: 200;
+    height: 75px;
+    background-color: #fff;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    color: #3D3D3D;
+}
+.lnb .menu {
+    float: left;
+}
+.lnb .menu .home {
+    float: left;
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    border-width: 0 1px 0 1px;
+    border-style: solid;
+    border-color: #CCC;
+    text-align: center;
+}
+.lnb .menu .home i {
+    margin: 22px 0 0 0;
+    color: #014098;
+    font-size: 30px;
+}
+.lnb .menu .depth {
+    position: relative;
+    float: left;
+    width: 261px;
+    border-width: 0 1px 0 0;
+    border-style: solid;
+    border-color: #CCC;
+}
+.lnb .menu .depth .btn {
+    display: flex;
+    width: 100%; /*플렉스는 인라인요소일 때 하위콘텐츠가 존재하는 만큼 넓이를 가짐*/
+    height: 75px;
+    padding: 0 24px;
+    align-items: center;
+    justify-content: space-between;
+}
+.lnb .menu .depth .btn span {
+    font-size: 20px;
+}
+.lnb .menu .depth .btn i {
+    font-size: 20px;
+    transition: 0.3s; /*애니메이션 준비값*/
+}
+.lnb .menu .depth ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 75px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    background-color: #fff;
+    width: 100%;
+    padding: 10px 0;
+}
+.lnb .menu .depth ul li a {
+    display: block;
+    padding: 0 0 0 24px;
+    font-size: 18px;
+    line-height: 50px;
+}
+.lnb .menu .depth ul li.now a,
+.lnb .menu .depth ul li a:hover {
+    color: #014098;
+    font-weight: 700;
+}
+.lnb .menu .depth.open ul {
+    /* display: block; */
+    /* jquery에서 보이게 할 예정 */
+}
+.lnb .menu .depth.open .btn i {
+    transform: rotate(180deg);
+}
+.lnb .print {
+    float: right;
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    border-width: 0 1px 0 1px;
+    border-style: solid;
+    border-color: #CCC;
+    text-align: center;
+}
+.lnb .print i {
+    margin: 22px 0 0 0;
+    color: #014098;
+    font-size: 30px;
+}
+@media screen and (max-width:640px) {
+    .lnb {
+        height: 55px;
+    }
+    .lnb .wrapper {
+        margin: 0; /*lnb는 모바일에서 컨텐츠 영역의 여백이 필요없음*/
+    }
+    .lnb .menu {
+        float: none;
+    }
+    .lnb .menu .home {
+        display: none;
+    }
+    .lnb .menu .depth {
+        width: 50%;
+    }
+    .lnb .menu .depth:last-child {
+        border-right: 0;
+    }
+    .lnb .menu .depth .btn {
+        height: 55px;
+        padding: 0 21px;
+    }
+    .lnb .menu .depth .btn span {
+        font-size: 15px;
+    }
+    .lnb .menu .depth .btn i {
+        font-size: 10px;
+    }
+    .lnb .menu .depth ul {
+        top: 55px;
+        background-color: #fff;
+    }
+    .lnb .menu .depth ul li a {
+        font-size: 13px;
+        line-height: 32.5px;
+    }
+    .lnb .print {
+        display: none;
+    }
+}/*lnb 반응형 종료*/
+
+.container {
+    min-height: 300px;
+}
+.container .sub_tit {
+    margin: 141px 0 55px 0;
+}
+.container .sub_tit h2 {
+    font-size: 50px;
+    line-height: 75px;
+    font-weight: 400;
+    color: #1D1D1D;
+}
+@media screen and (max-width:640px) {
+    .container .sub_tit {
+        margin: 69px 0 32px 0;
+    }
+    .container .sub_tit h2 {
+        font-size: 25px;
+        line-height: 37.5px;
+    }
+}/*container 반응형 종료*/
+
+.contents .table_wrap table {
+    width: 100%;
+    border-collapse: collapse; /*th/td에 준 선을 겹쳐서 표현*/
+    border-top: 3px solid #CCC; 
+}
+.contents .table_wrap table th,
+.contents .table_wrap table td {
+    border: 1px solid #CCC;
+}
+.contents .table_wrap table th:first-child,
+.contents .table_wrap table td:first-child {
+    border-left: 0;
+}
+.contents .table_wrap table th:last-child,
+.contents .table_wrap table td:last-child {
+    border-right: 0;
+}
+.contents .table_wrap table thead th,
+.contents .table_wrap table thead td {
+    padding: 24px 0;
+    background-color: #EDEDED;
+    font-size: 17px;
+    text-align: center;
+}
+.contents .table_wrap table tbody th {
+    font-weight: 400;
+    text-align: center;
+} 
+.contents .table_wrap table tbody th,
+.contents .table_wrap table tbody td {
+    padding: 8px;
+    text-align: center;
+}
+.contents .table_wrap table tbody td ul {
+    padding: 0 0 0 225px;
+}
+.contents .table_wrap table tbody td ul li {
+    position: relative;
+    text-align: left;
+}
+.contents .table_wrap table tbody td ul li::before {
+    position: absolute;
+    left: -10px;
+    top: 9px;
+    width: 3px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #3D3D3D;
+    content: "";
+}
+@media screen and (max-width:640px) {
+    /* 모바일에서 테이블을 좌우로 스크롤해서 보기 위해서
+        감싸는 div에 overflow-x:scroll을 주고, table에는 최소 넓이값을 준다. */
+    .contents .table_wrap{
+        overflow-x: scroll;
+        padding-bottom: 10px;/*스크롤바 하단으로 내리기*/
+    }
+    .contents .table_wrap table {
+        min-width: 500px;
+    }
+    .contents .table_wrap table thead th,
+    .contents .table_wrap table thead td {
+        padding: 10px 0;
+        font-size: 15px;
+    }
+    .contents .table_wrap table tbody th,
+    .contents .table_wrap table tbody td {
+        padding: 4px;
+    }
+    .contents .table_wrap table tbody td ul {
+        padding: 0 0 0 20px;
+    }
+    .contents .table_wrap table tbody td ul li::before {
+        left: -10px;
+        top: 9px;
+        width: 2px;
+        height: 2px;
+        border-radius: 1px;
+    }
+}

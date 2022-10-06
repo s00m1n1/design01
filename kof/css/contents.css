@@ -1,0 +1,127 @@
+/* 모든 콘텐츠 페이지에 들어가는 스타일 */
+
+/* 소개의장 > 인사말 */
+.cnt_greeting {
+    margin: 0 0 90px 0;
+}
+.cnt_greeting .tit {
+    margin: 0 0 7px 0;
+    font-size: 17px;
+}
+.cnt_greeting .tit strong {
+    color: #1B3989;
+    font-weight: 700;
+}
+.cnt_greeting .bg {
+    position: relative;
+    width: calc(50% + 700px); /*콘텐츠 영역의 넓이 1400px의 절반 700px*/
+    left: calc(50% - 700px);
+    height: 280px;
+    background: url(../images/contents/greeting_img1.png) no-repeat center top 87% / cover;
+}
+.cnt_greeting .txt_wrap .colgroup1 {
+    float: left;
+    margin: 25px 0 0 0;
+    width: 660px;
+}
+.cnt_greeting .txt_wrap .colgroup2 {
+    float: right;
+    width: 660px;
+    margin: 25px 0 0 0;
+}
+.cnt_greeting .txt_wrap p {
+    text-align: justify;/*왼쪽정렬*/
+    word-break: normal;/*단어별로 키바꿈 해제 = word-brek:keep-all 유지하면 자간 늘어남*/
+}
+.cnt_greeting .txt_wrap .sign {
+    float: right;
+    margin: 52px  0 0 0;
+    font-size: 25px;
+}
+@media screen and (max-width:640px) {
+    .cnt_greeting {
+        margin: 0 0 82px 0;
+    }
+    .cnt_greeting .tit {
+        margin: 0 0 13px 0;
+        font-size: 15px;
+    }
+    .cnt_greeting .bg {
+        width: auto; 
+        left: auto;
+        height: 199px;
+    }
+    .cnt_greeting .txt_wrap .colgroup1 {
+        float: none;
+        margin: 18px 0 0 0;
+        width: auto;
+    }
+    .cnt_greeting .txt_wrap .colgroup2 {
+        float: none;
+        width: auto;
+        margin: 18px 0 0 0;
+    }
+    .cnt_greeting .txt_wrap p {
+        text-align: left;
+        word-break: keep-all;
+    }
+    .cnt_greeting .txt_wrap .sign {
+        margin: 32px  0 0 0;
+        font-size: 17px;
+    }
+}
+
+/* 소개의장 > 조직구성 */
+.cnt_org {
+    margin: 0 0 100px 0;
+}
+
+/* 해양학술정보DB센터 > 통합검색 */
+.cnt_search {
+    margin: 0 0 100px 0;
+}
+.cnt_search h3 {
+    color: #1B3989;
+    font-size: 20px;
+    font-weight: 700;
+}
+.cnt_search p  {
+    margin: 20px 0 35px 0;
+}
+.cnt_search p span {
+    display: block;
+    color: #666;
+}
+
+/* float 코딩*/
+/* .cnt_search ul li {
+    float: left;
+    width: 25%;
+    height: 283px;
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    border-color: #CCC;
+}
+.cnt_search ul li:last-child {
+    border-left-width: 1px;
+}
+.cnt_search ul li a {
+    padding: 78px 0 0 30px;
+} */
+/* table 코딩 */
+.cnt_search ul {
+    display: table; /*좌우로 배치될 요소를 감싸는 코드에 table을 주고*/
+    width: 100%;
+    border-collapse: collapse;
+}
+.cnt_search ul li {
+    display: table-cell; /*좌우로 배치되는 요소에tabl-cell : td변화*/
+    width: 25%;
+    height: 283px;
+    border: 1px solid #CCC;
+    vertical-align: middle; /*위아래 가운데 정렬*/
+}
+.cnt_search ul li a {
+    display: block;
+    padding: 0 0 0 30px;
+}
