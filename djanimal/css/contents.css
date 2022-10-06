@@ -1,0 +1,109 @@
+/* 동물보호센터 소개 > 주요업무 */
+.cnt_work {
+    margin: 0 0 202px 0;
+}
+.cnt_work .bg {
+    position: relative;
+    width: calc(50% + 700px); 
+    left: calc(50% - 700px);
+    height: 280px;
+    background-image: url(../images/contents/work_bg.png);
+}
+.cnt_work .tit {
+    margin: 98px 0 134px 0;
+    font-size: 40px;
+    font-weight: 700;
+}
+.cnt_work .tit span {
+    display: block;
+}
+.cnt_work .inner_wrap .synop {
+    margin: 0 0 142px 0;
+}
+.cnt_work .inner_wrap .synop.synop_box5 {
+    margin: 0;
+}
+.cnt_work .inner_wrap .synop .txt_box {
+    width: 659px;
+    word-break: normal;
+}
+.cnt_work .inner_wrap .synop .txt_box strong {
+    display: block;
+    padding: 54px 0 35px 0;
+    font-size: 30px;
+    font-weight: 700;
+}
+.cnt_work .inner_wrap .synop .txt_box p {
+    font-size: 20px;
+}
+.cnt_work .inner_wrap .synop img {
+    border-radius: 30px;
+}
+.cnt_work .inner_wrap .synop.synop_box1 .txt_box,
+.cnt_work .inner_wrap .synop.synop_box3 .txt_box,
+.cnt_work .inner_wrap .synop.synop_box5 .txt_box {
+    float: left;
+}
+.cnt_work .inner_wrap .synop.synop_box2 .txt_box,
+.cnt_work .inner_wrap .synop.synop_box4 .txt_box {
+    float: right;
+}
+.cnt_work .inner_wrap .synop.synop_box1 img,
+.cnt_work .inner_wrap .synop.synop_box3 img,
+.cnt_work .inner_wrap .synop.synop_box5 img {
+    float: right;
+} 
+.cnt_work .inner_wrap .synop.synop_box2 img,
+.cnt_work .inner_wrap .synop.synop_box4 img {
+    float: left;
+}
+@media screen and (max-width:640px) {
+    .cnt_work {
+        margin: 0 0 64px 0;
+    }
+    .cnt_work .bg {
+        display: none;
+    }
+    .cnt_work .tit {
+        margin: 31px 0 41px 0;
+        font-size: 25px;
+        text-align: center;
+    }
+    .cnt_work .tit span {
+        display: inline;
+    }
+    .cnt_work .inner_wrap .synop {
+        margin: 0 0 59px 0;
+    }
+    .cnt_work .inner_wrap .synop .txt_box {
+        width: auto;
+    }
+    .cnt_work .inner_wrap .synop .txt_box strong {
+        padding: 19px 0;
+        font-size: 18px;
+    }
+    .cnt_work .inner_wrap .synop .txt_box p {
+        font-size: 13px;
+    }
+    .cnt_work .inner_wrap .synop img {
+        width: 100%;
+    }
+    .cnt_work .inner_wrap .synop.synop_box1 .txt_box,
+    .cnt_work .inner_wrap .synop.synop_box3 .txt_box,
+    .cnt_work .inner_wrap .synop.synop_box5 .txt_box {
+        float: none;
+    }
+    .cnt_work .inner_wrap .synop.synop_box2 .txt_box,
+    .cnt_work .inner_wrap .synop.synop_box4 .txt_box {
+        float: none;
+    }
+    .cnt_work .inner_wrap .synop.synop_box1 img,
+    .cnt_work .inner_wrap .synop.synop_box3 img,
+    .cnt_work .inner_wrap .synop.synop_box5 img {
+        float: none;
+    } 
+    .cnt_work .inner_wrap .synop.synop_box2 img,
+    .cnt_work .inner_wrap .synop.synop_box4 img {
+        float: none;
+    }
+}
