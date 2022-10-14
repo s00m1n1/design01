@@ -1,19 +1,14 @@
 @import url(default.css);
 @import url(common.css);
-
-h1 {
-    font-size: 4rem;
+.event {
+    margin: 4.4rem 0 0.333rem 0;
 }
-h1 span {
-    font-size: 2rem;
-}
-
 .event h2 {
     color: #1d1d1d;
-    font-size: 50px;
+    margin: 0 0 7.667rem 0;
+    font-size: 3.333rem;
     font-weight: 700;
     line-height: 1;
-    margin: 2em 0 2em;
 }
 .event ul li {
     float: left;
@@ -25,7 +20,7 @@ h1 span {
         100- (li하나의 넓이 * 2) = 100-(47*2) = 6 
         한줄에 들어가는 여백과 li의넓이가 합이 100% */
     width: 47%;
-    margin: 0 6% 0 0;
+    margin: 0 6% 7rem 0;
 
     /* 여백을 고정값으로 주는 경우 - %가 아니고 px 값을 줌
         li 넓이 계산법 - 100% / li의 갯수 = 50% 
@@ -39,16 +34,98 @@ h1 span {
 .event ul li:last-child {
     margin-right: 0;
 }
+.event ul li:nth-child(2), 
+.event ul li:nth-child(4) {
+    margin-top: -13.333rem;
+}
+.event ul li a {
+    display: block;
+}
+.event ul li a strong {
+    display: block;
+    margin: 0 0 1rem 0;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.event ul li a strong span {
+    display: block;
+    margin: 0 0 0.333rem 0;
+    font-size: 1rem;
+    font-weight: 400;
+}
 .event ul li a img {
-    width: 100%; 
+    width: 100%;
+    border-radius: 2rem;
 }
 
-@media screen and (max-width:640px){
+.event .more {
+    position: absolute;
+    left: 13.133rem;
+    top: 4.067rem;
+}
+
+@media screen and (max-width:1200px){
     .event h2 {
-        font-size: 30px;
+        font-size: 3rem;
+    }
+    .event ul li a strong {
+        font-size: 1.5rem;
+    }
+    .event .more {
+        left: 12rem;
+        top: 3.7rem;
+    }
+    .event .more img {
+        width: 80%;
     }
 }
-
+@media screen and (max-width:1050px) {
+    .event ul li {
+        margin-bottom: 4rem;
+    }
+}
+@media screen and (max-width:800px){
+    .event h2 {
+        margin-bottom: 3rem;
+        font-size: 2rem;
+    }
+    .event ul li:nth-child(2), 
+    .event ul li:nth-child(4) {
+        margin-top: -7rem;
+    }
+    .event ul li a strong {
+        font-size: 1.2rem;
+    }
+    .event .more {
+        left: 8.4rem;
+        top: 2.4rem;
+    }
+    .event .more img {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 650px) {
+    .event .more img {
+        width: 48%;
+    }
+}
+@media screen and (max-width:500px) {
+    .event {
+        margin: 4.4rem 0 2.333rem 0;
+    }
+    .event ul li {
+        float: none;
+        width: 100%;
+    }
+    .event ul li:nth-child(2), 
+    .event ul li:nth-child(4) {
+        margin-top: 0rem;
+    }
+    .event ul li {
+        margin-bottom: 2rem;
+    }
+}
 .product {
     padding: 5.133rem 0 6.133rem 0;
     background-color: #ffcc25;
@@ -71,12 +148,10 @@ h1 span {
     border-color: #3d3d3d;
     border-radius: 30px 0 30px 30px;
     background-color: #FFF;
-    background-position: right 17% bottom 8%;
+    background-position: right 17% bottom 5%;
     background-repeat: no-repeat;
-    background-size: 177px auto;
-    /* 배경이미지 사이즈를 고정px로 입력 */
-    /* background-size: 50% auto;  */
-    /* 가로는 background를 주는 영역의 넓이의 몇% 높이는 auto를 넓이맞춰서 비율에 맞게 조정 */
+    /* background-size: 50% auto; 가로는 background를 주는 영역의 넓이의 몇% 높이는 auto를 넓이맞춰서 비율에 맞게 조정 */
+    background-size: 177px auto; /* 배경이미지 사이즈를 고정 px로 입력 */
 }
 .product ul li:last-child {
     margin-right: 0;
@@ -86,14 +161,23 @@ h1 span {
 }
 .product ul li.pro2 {
     background-image: url(../images/main/product2.png);
-    /* background-size: 65% auto; */
-    background-size: 203px auto;
 }
 .product ul li.pro3 {
     background-image: url(../images/main/product3.png);
 }
 .product ul li.pro4 {
     background-image: url(../images/main/product4.png);
+}
+.product ul li:nth-child(2),
+.product ul li:nth-child(4) {
+    margin-top: 4.333rem;
+}
+.product ul li {
+    transition: 0.3s;
+}
+.product ul li:hover {
+    transform: translate(-0.667rem, -0.667rem);
+    box-shadow: 0.667rem 0.667rem 0.667rem rgba(0,0,0,0.1);
 }
 .product ul li a {
     display: block;
@@ -102,6 +186,7 @@ h1 span {
 .product ul li a h3 {
     margin: 0 0 0.733rem 0;
     font-size: 2.667rem;
+    font-weight: 700;
     line-height: 1.3;
     overflow: hidden;
     white-space: nowrap; /* 줄바꿈 금지 */
@@ -120,20 +205,17 @@ h1 span {
     height: 4.5em;
 }
 .product ul li a img {
-    /* width: 20%; a사이즈(100%)를 기준으로 a의 20% 사이즈*/ 
+    /* width: 20%;  a사이즈로 기준으로 그에 20%퍼센트 사이즈 */
 }
 @media screen and (max-width:1440px){
     .product ul li {
-        background-size: 120px auto;
-    }
-    .product ul li.pro2 {
-        background-size: 170px auto;
+        background-size: 140px auto;
     }
     .product ul li a h3 {
         font-size: 2.2rem;
     }
     .product ul li a img {
-        transform: scale(0.8,0.8);/*원래 이미지 크기에 비례해서 80%크기로 변환*/
+        transform: scale(0.8,0.8); /* 원래 이미지크기에 비례해서 80%퍼센트 크기로 변환 */
     }
 }
 @media screen and (max-width:1050px){
@@ -141,6 +223,7 @@ h1 span {
         /* 여백 80px / 3 =  */
         width: calc(33.33% - 27px);
         margin: 0 40px 0 0;
+        background-size: 120px auto;
     }
     .product ul li:nth-child(4) {
         display: none;
@@ -148,11 +231,18 @@ h1 span {
     .product ul li:nth-child(3) {
         margin-right: 0;
     }
+    .product ul li:nth-child(2),
+    .product ul li:nth-child(4) {
+        margin-top: 2rem;
+    }
     .product ul li a h3 {
         font-size: 2rem;
     }
+    .product ul li a p {
+        margin: 0 0 2rem 0;
+    }
     .product ul li a img {
-        transform: scale(0.6,0.6);/*원래 이미지 크기에 비례해서 80%크기로 변환*/
+        transform: scale(0.6,0.6); 
     }
 }
 @media screen and (max-width:768px){
@@ -160,6 +250,7 @@ h1 span {
         /* 여백 30px / 2 = 15 */
         width: calc(50% - 15px);
         margin: 0 30px 0 0;
+        background-size: 110px auto;
     }
     .product ul li:nth-child(3) {
         display: none;
@@ -167,20 +258,19 @@ h1 span {
     .product ul li:nth-child(2) {
         margin-right: 0;
     }
-    .product ul li a p {
-        margin: 0 0 3.533rem 0;
-    }
 }
-@media screen and (max-width:410px){
+@media screen and (max-width:500px){
     .product ul li {
         float: none;
         width: 100%;
         margin: 0;
+        background-size: 100px auto;
     }
     .product ul li:nth-child(2) {
         display: none;
     }
-    .product ul li a p {
-        margin: 0px 0 2.533rem 0;
+    .product ul li:nth-child(2),
+    .product ul li:nth-child(4) {
+        margin-top: 0;
     }
 }

@@ -1,0 +1,75 @@
+@import url(default.css);
+@import url(common.css);
+.popup ul li { position: relative; }
+.popup ul li .txt {
+    position: absolute;
+    left: 50%;
+    /* 가운데 정렬 : left: 50%; 
+       왼쪽 정렬 (1440px) : left: calc(50% - 700px); */
+    top: 50%;
+    color: #FFF;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    /* 가운데 정렬 : transform: translate(-50%, -50%); */
+}
+.popup ul li .txt span {
+    display: block;
+    font-size: 25px;
+}
+.popup ul li .txt strong {
+    display: block;
+    margin: 13px 0 0 0;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 55px;
+} 
+.visual1 .ctrl_prev,
+.visual1 .ctrl_next {
+    position: absolute; /*swiper=visual1에 position:relative; 들어가있음*/
+    top: calc(50% - 41px);
+    z-index: 10;
+    font-size: 0;
+    line-height: 0;
+}
+.visual1 .ctrl_prev {
+    left: 5%;
+}
+.visual1 .ctrl_next {
+    right: 5%;
+}
+.visual1 .ctrl_prev::before,
+.visual1 .ctrl_next::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.6;
+    width: 20px;
+    height: 41px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+}
+.visual1 .ctrl_prev::before {
+    background-image: url(../images/popup_arrow_left.svg);
+}
+.visual1 .ctrl_next::before {
+    background-image: url(../images/popup_arrow_right.svg);
+    left: auto;
+    right: 0;
+    /*만약에 화살표 하나로 방향을 반대로 바꾸어 사용할 때 -> transform: rotate(180deg);*/
+}
+.visual1 .ctrl_group {
+    position: absolute;
+    left: calc(50% - 104px);
+    bottom: 5%;
+    z-index: 10;
+    width: 209px;
+    height: 59px;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 30px;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
