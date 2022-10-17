@@ -63,6 +63,9 @@
     .popup {
         height: 300px;
     }
+    .popup .popup_round {
+        display: none;
+    }
     .popup ul li a .pc {
         display: none;
     }
