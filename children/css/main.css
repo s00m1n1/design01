@@ -2,17 +2,575 @@
 @import url(common.css);
 
 .visual h2 {
-    display: none;
+    position: absolute;
+    left: calc(50% - 700px);
+    top: 60%;
+    z-index: 12;
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #FFF;
+    transform: translate(0, -50%);
+    /* fullpage.js 플러그인에서 한 section에 글자 딱 하나만 존재할때 ]
+       해당 글자에 line-height이 들어가면 해당 section에서는 scroll이 
+       작동되지 않을 수 있음 */
 }
 .visual video {
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
+    z-index: 10;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.fp-watermark {
+.visual .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* top, bottom, left, right를 모두 0으로 주면 width:100%; height:100%;와 동일하게 적용됨 */
+    z-index: 11;
+    background-color: rgba(0,0,0,0.3);
+}
+
+@media screen and (max-width:1440px){
+    .visual h2 {
+        left: 20px;
+    }
+}
+@media screen and (max-width:1200px){
+    .visual h2 {
+        font-size: 50px;
+    }
+}
+@media screen and (max-width:1000px){
+    .visual h2 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width:640px){    
+    /* 만약 fullpage를 모바일에서 해제하고 높이를 제한해야한다.
+      section 클래스를 준 요소 말고 그 안에 있는 요소한테 
+      높이를 줘야함. */
+    .visual .inner {
+        height: 330px;
+    }
+    .visual h2 {
+        font-size: 25px;
+    }
+}
+
+.count {
+    padding: 70px 0 0 0; 
+    /* 컨텐츠가 header의 높이와 무관하게 위아래 가운데 배치되어
+       약간 상단여백이 부족해 보임 - 그래서 상단 여백을 추가로 줌 */
+    color: #3D3D3D;
+    background: url(../images/main/count_bg.png) no-repeat center center / cover;
+}
+.count .tit {
+    margin: 0 0 0 8.6%; /* 120/1400*100 = 1400px영역에서 여백의 비율 */
+}
+.count .tit h2 {
+    margin: 0 0 29px 0;
+    font-size: 40px;
+    line-height: 1.2;
+}
+.count .tit h2 strong {
+    font-weight: 700;
+}
+.count .tit p span {
+    display: block;
+}
+.count .rate {
+    position: absolute;
+    left: calc(50% + 140px);
+    top: calc(50% + 35px);
+    width: 50%;
+    transform: translate(0,-50%);
+}
+.count .rate li {
+    position: relative;
+    margin: 0 0 70px 0;
+}
+.count .rate li:last-child {
+    margin-bottom: 0;
+}
+.count .rate li::after {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    z-index: -1; /* 어쩔수없이 position:absolute이지만 다른 요소보다 아래 */
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0,0,0,0.6);
+    content: "";
+}
+.count .rate li .num strong {
+    display: inline-block;
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.count .rate li .num span {
+    display: inline-block;
+    position: relative;
+    padding: 0 10px 0 5px;
+    font-size: 30px;
+    font-weight: 700;
+}
+/* .count .rate li .num span::after {
+    position: absolute;
+    left: 140%;
+    top: 33px;
+    width: 10000%;
+    height: 1px;
+    background-color: rgba(255,255,255,0.6);
+    content: "";
+} */
+@media screen and (max-width:1200px){
+    .count .tit {
+        margin: 0 0 0 3%;
+    }
+    .count .tit h2 {
+        font-size: 30px;
+    }
+    .count .rate {
+        left: 55%;
+    }
+    .count .rate li::after {
+        top: 28px;
+    }
+    .count .rate li .num strong {
+        font-size: 50px;
+    }
+    .count .rate li .num span {
+        font-size: 25px;
+    }
+}
+@media screen and (max-width:800px){
+    .count {
+        padding: 45px 0 65px 0;
+    }
+    .count .tit {
+        margin: 0 0 70px 0;
+    }
+    .count .tit h2 {
+        margin: 0 0 11px 0;
+    }
+    .count .tit p span {
+        display: inline;
+    }
+    .count .rate {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: calc(100% + 20px);
+        transform: translate(0,0);
+    }
+    .count .rate li {
+        margin: 0 0 39px 0;
+    }
+    .count .rate li::after {
+        top: 24px;
+    }
+    .count .rate li .num span {
+        padding: 0 16px 0 8px;
+    }
+}
+
+@media screen and (max-width:640px){
+    .count .tit h2 {
+        font-size: 25px;
+    }
+    .count .rate li .num strong {
+        font-size: 40px;
+    }
+    .count .rate li .num span {
+        font-size: 20px;
+    }
+    .count .rate li::after {
+        top: 20px;
+    }
+}/* count 반응형 종료 */
+
+.biz {
+    background-color: #F9F6F2;
+}
+.biz .biz_wrap {
+    display: flex;
+    align-items: center;
+}
+.biz img {
+    width: calc(100% - 640px); /* wrapper 1440, 그안에 이미지가 760 = 760/1440*100 = 52.78% */
+}
+.biz .inner {
+    width: 390px; /* 390/1440*100 = 27% */
+    margin: 0 0 0 80px;
+}
+.biz a strong {
+    display: block;
+}
+.biz a h2 {
+    margin: 0 0 20px 0;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.biz a h2 span {
+    display: block;
+}
+.biz a .exp {
+    margin: 17px 0 43px 0;
+    color: #666;
+}
+.biz a .more {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #666666;
+    border-radius: 50%; /* 정사각형에 border-radius: 50%를 주면 사이즈에 상관없이 원이 됨 */
+    transition: 0.5s;
+}
+.biz a .more::before {
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    width: 50%;
+    height: 1px;
+    background-color: #666666;
+    content: "";
+}
+.biz a .more::after {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    width: 1px;
+    height: 50%;
+    background-color: #666666;
+    content: "";
+}
+.biz a:hover .more {
+    transform: rotate(270deg);
+}
+@media screen and (max-width:1200px){
+    .biz img {
+        width: calc(100% - 480px); /* wrapper 1440, 그안에 이미지가 760 = 760/1440*100 = 52.78% */
+    }
+    .biz .inner {
+        width: 400px; /* 390/1440*100 = 27% */
+        margin: 0 0 0 40px;
+    }
+    .biz a h2 {
+        font-size: 30px;
+    }
+}
+@media screen and (max-width:800px){
+    .biz img {
+        width: calc(100% - 430px); 
+    }
+    .biz .inner {
+        width: 350px; 
+        margin: 0 0 0 40px;
+    }
+    .biz a .more {
+        display: none;
+    }
+}
+@media screen and (max-width:640px){
+    .biz {
+        padding: 43px 0 51px 0;
+    }
+    .biz .biz_wrap {
+        display: block;
+        padding: 15px 0 0 0;
+    }
+    .biz img {
+        width: 100%;
+    }
+    .biz .inner {
+        width: auto;
+        margin: 10px 0 0 0;
+    }
+    .biz a strong {
+        display: none;
+    }
+    .biz a h2 {
+        margin: 0 0 5px 0;
+        font-size: 25px;
+    }
+    .biz a h2 span {
+        display: inline;
+    }
+    .biz a .exp {
+        display: none;
+    }
+    .biz a .more {
+        display: none;
+    }
+}
+
+.news {
+    background-color: #FBEEED;
+}
+.news h2 {
+    margin: 0 70px 50px 0;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+.news .list ul li a {
+    display: block;
+}
+.news .list ul li a span {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+}
+.news .list ul li a span img {
+    width: 100%;
+    transition: 0.5s;
+}
+.news .list ul li a:hover span img {
+    transform: scale3d(1.2,1.2,1);
+}
+.news .list ul li a strong {
+    display: block;
+    margin: 10px 0 0 0;
+    font-size: 20px;
+    /* 2줄고정 */
+    line-height: 1.3;
+    height: 2.6em;
+    overflow: hidden;
+}
+.news .list .btn_paging {
+    margin: 30px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+.news .list .btn_paging span {
+    display: block;
+    width: 11px;
+    height: 11px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #FFF;
+    opacity: 1;
+}
+.news .list .btn_paging span.swiper-pagination-bullet-active {
+    background-color: #ED1B2D;
+}
+.news a.more {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #666666;
+    border-radius: 50%; /* 정사각형에 border-radius: 50%를 주면 사이즈에 상관없이 원이 됨 */
+    transition: 0.5s;
+    font-size: 0;
+    line-height: 0;
+}
+.news a.more::before {
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    width: 50%;
+    height: 1px;
+    background-color: #666666;
+    content: "";
+}
+.news a.more::after {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    width: 1px;
+    height: 50%;
+    background-color: #666666;
+    content: "";
+}
+.news a:hover.more {
+    transform: rotate(270deg);
+}
+@media screen and (max-width:640px) {
+    .news {
+        padding: 62px 0 66px 0; 
+    }
+    .news h2 {
+        margin: 0 70px 30px 0; /*more버튼과 충돌방지 여백 미리 설정*/
+        font-size: 30px;
+        text-align: left;
+    }
+    .news .list ul li a strong {
+        font-size: 15px;
+    }
+    .news a.more {
+        width: 28px;
+        height: 28px;
+    }
+}/*news mobile end*/
+
+
+
+.support {
+    background-color:#F2F5FA;
+}
+.support .support_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.support .inner h2 {
+    margin: 0 0 38px 0;
+    font-size: 40px;
+    line-height: 1.2;
+}
+.support .inner h2 strong {
+    display: block;
+    font-weight: 700;
+}
+.support .inner h2 span {
+    display: block;
+}
+.support ul {
+    /*680px /1440px*100%=48.6%*/
+    width: 48.6%;
+}
+.support ul li {
+    float: left;
+    /* ul의 넓이가 680px - li 한개의 넓이 320px : 320/680*100 = 47.1% */
+    width: calc(50% - 20px); 
+    /*여백이고정일때 100%/li의 갯수 = 
+    50% - 한줄에 들어가야하는 모든 여백의 합(40px)/li의 갯수
+    (100/2)%-(40/2)px=calc(50% - 20px)*/
+    margin: 20px 40px 20px 0;/*오른쪽 여백 (100-(li하나의 넓이)*2)=5.8*/
+    background-color: #FFF;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.support ul li:nth-child(1),
+.support ul li:nth-child(3) {
+    transform: translate(0,-78px);
+}
+.support ul li:nth-child(2),
+.support ul li:nth-child(4) {
+    margin-right: 0;
+    transform: translate(0,78px);
+}
+.support ul li a {
+    display: block;
+    height: 209px;
+    padding: 48px 12.5% 0 12.5%;
+    /* a의 사이즈를 기준으로 %코딩 40/320*100 = 12.5
+       가로는 브라우저의 넓이에 따라서 사이즈의 변화가 심함. %로 여백을 주면 좋지만
+       높이 대부분 px로 줌. 위아래 여백 px로 주는게 더 좋음. */
+}
+.support ul li a span {
+    display: block;
+}
+.support ul li a strong {
+    display: block;
+    margin: 10px 0 0 0;
+    font-size: 40px;
+}
+
+.footer {
+
+}
+
+/* fullpage 공통사항 */
+
+
+/* 오른쪽 네비게이션 디자인 변경 
+   선택자가 #fp-nav ul li 인 것과 body #fp-nav ul li 인 것이 동시에 존재한다면
+   body 부터 선언한 요소가 먼저 적용됩니다. (단, 나머지 선택자는 동일)*/
+body #fp-nav ul li {
+    width: 12px;
+    height: 12px;
+    margin: 10px;
+}
+body #fp-nav ul li:last-child { /* footer 삭제 */
     display: none;
+}
+body #fp-nav ul li a span,
+body #fp-nav ul li:hover a span {
+    height: 100%;
+    width: 100%;
+    background: #FFF;
+    left: 0;
+    top: 0;
+    margin: 0;
+}
+body #fp-nav ul li a.active span, 
+body #fp-nav ul li:hover a.active span {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background: #1D1D1D;
+}
+body #fp-nav ul li .fp-tooltip {
+    overflow: visible;
+    top: -6px;
+    width: auto;
+    max-width: max-content; /* 콘텐츠 있는 만큼 다 */
+    padding: 2px 10px;
+    background-color: #1D1D1D;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Noto Sans KR', 'NanumGothic', 'Malgun Gothic', 'Apple SD Gothic', 'Apple SD Gothic Neo', 'Dotum', sans-serif;
+}
+body #fp-nav ul li .fp-tooltip::after {
+    position: absolute;
+    right: -4px;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: #1D1D1D;
+    transform: rotate(45deg);
+    content: "";
+}
+/* 어두운 툴팁 */
+body #fp-nav.black ul li a span,
+body #fp-nav.black ul li:hover a span {
+    background: #CCCCCC;
+}
+body #fp-nav.black ul li a.active span, 
+body #fp-nav.black ul li:hover a.active span {
+    background: #ED1B2D;
+}
+body #fp-nav.black ul li .fp-tooltip {
+    background-color: #ED1B2D;
+    color: #fff;
+}
+body #fp-nav.black ul li .fp-tooltip::after {
+    background-color: #ED1B2D;
+}
+
+.fp-watermark { /* fullpage copyright 삭제 */
+    display: none;
+}
+
+/* 모바일에서는 fullpage 적용 안하는데 발생하는 오류 수정 */
+body .section .fp-overflow {
+    overflow: visible;
+}
+@media screen and (max-width:640px){
+    .fp-responsive .fp-is-overflow.fp-section {
+        min-height: auto !important;
+        /* fullpage.js에서 640이하일때는 fullpage 적용하지 않도록 함.
+           근데 이때 min-height가 해제가 않되서 이전 fullpage 높이가 잡힘ㄴ
+           그래서 min-height:auto;를 줘야하는 상황
+            visual에 min-height: auto; 적용되지 않음 (css 적용 우선순위에 밀려서)
+            이때 절대 내가 적용하는 값을 먼저 적용하게 하는게 
+            min-height: auto !important; 
+
+            이렇게 플러그인을 써서 내가 주지않을 스타일을 고쳐서 쓸때 !important;
+        */
+    }
+    
 }

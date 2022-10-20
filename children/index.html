@@ -5,37 +5,167 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.11/fullpage.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-1.12.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.11/fullpage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/main.js"></script>
     <title>세이브더칠드런 보건영양</title>
 </head>
 <body>
     <div id="wrap">
-        <header class="header"></header>
+        <header class="header">
+            <h1 class="logo"><a href="index.html">세이브더칠드런</a></h1>
+            <nav class="gnb">
+                <button class="gnb_open"><span>메뉴열기</span><span></span><span></span></button>
+                <ul>
+                    <li><a href="#n">기관</a></li>
+                    <li><a href="#n">사업</a></li>
+                    <li><a href="#n">후원</a></li>
+                    <li><a href="#n">참여</a></li>
+                    <li><a href="#n">소식</a></li>
+                </ul>
+            </nav>
+        </header>
         <div id="fullpage"> 
         <!-- fullpage 효과를 줄 모든 태그를 감싸는 요소 (이름 변경 가능) -->
             <section class="section visual"> 
                 <!-- 클래스 section을 주면 해당 요소는 1page (이름 변경 불가) -->
-                <h2>비쥬얼 영역 - 동영상삽입</h2>
-                <!-- 비디오 파일이 사용자의 컴퓨터에 다운로드 완료된 이후에 재생 -->
-                <video loop muted data-autoplay playsinline>   <!-- 비디오 자동실행 무한반복 -->
-                    <source data-src="images/main/visual.mp4" type="video/mp4">  <!-- 비디오 경로 -->
-                </video>
+                <div class="inner">
+                    <h2>모든 아동은<br>
+                        건강하게 태어나 자랄<br>
+                        권리가 있습니다.</h2>
+                    <!-- 비디오 파일이 사용자의 컴퓨터에 다운로드가 완료된 이후에 재생
+                        즉, 용량이 엄청 작아야 함. -->
+                    <video loop muted data-autoplay playsinline>   <!-- 비디오 자동실행 무한반복 -->
+                        <source data-src="images/main/visual.mp4" type="video/mp4">  <!-- 비디오 경로 -->
+                    </video>
+                    <div class="bg"></div>
+                </div>
             </section>
             <section class="section count">
-                <h2>사망자수, 비율</h2>
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2><strong>매일 1만 4,200명</strong> 이상의<br>
+                            아동이 5살이 되기 전<br>
+                            목숨을 잃습니다.</h2>
+                        <p><span>세이브더칠드런은 예방 가능한 질병으로 사망하는 </span>
+                            <span>5세 미만 아동이 없도록 산모와 신생아 및 영유아를 위한</span>
+                            보건영양 사업을 진행합니다.</p>
+                    </div>
+                    <ul class="rate">
+                        <li>
+                            <div class="exp">매일 5세 미만 영유아 사망자수</div>
+                            <div class="num"><strong>14,200</strong><span>명</span></div>
+                        </li>
+                        <li>
+                            <div class="exp">매년 5세 미만 영유아 사망수</div>
+                            <div class="num"><strong>5,200,000</strong><span>명</span></div>
+                        </li>
+                        <li>
+                            <div class="exp">예방 가능한 질병으로 인한 사망 비율</div>
+                            <div class="num"><strong>45.54</strong><span>%</span></div>
+                        </li>
+                    </ul>
+                </div>
             </section>
             <section class="section biz">
-                <h2>세이브더칠드런 사업소개</h2>
+                <div class="wrapper">
+                    <div class="biz_wrap">
+                        <img src="images/main/biz.png" alt="공룡옷을 입은 아이 사진">
+                        <div class="inner">
+                            <a href="#n">
+                                <strong>보건영양 사업</strong>
+                                <h2><span>예방접종을 통한</span>
+                                    면역강화 사업</h2>
+                                <p>감벨라 지역주민 및 지역 내 난민캠프 주민 아동 대상으로
+                                    예방접종율을 제고하고, 의료 접근성 향상을 위해 보건 교육,
+                                    의료장비 및 의약품 지원, 예방접종 권장 홍보</p>
+                                <p class="exp">* 지원 국가 : 에티오피아</p>
+                                <div class="more"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section class="section news">
-                <h2>현장소식</h2>
+                <div class="wrapper cnt_wrap">
+                    <h2>현장소식과 이야기가 궁금하세요?</h2>
+                    <div class="list swiper">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <span><img src="images/main/news1.png" alt="어린이 사진"></span>
+                                    <strong>에티오피아 파견직원의 일기 '메마른 땅에도 싹트는 희망'</strong>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <span><img src="images/main/news2.png" alt="엄마와 어린이 사진"></span>
+                                    <strong>라오스 파견 직원의 출장가방 들여다보기</strong>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <span><img src="images/main/news3.png" alt="어린이 남매 사진"></span>
+                                    <strong>숫자? 데이터? 진짜 성과는 이런 것이죠 - 해외 아동보호 담당 인터뷰</strong>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <span><img src="images/main/news4.png" alt="어린이 사진"></span>
+                                    <strong>1000일 가정방문 봉사활동으로 라오스 아이들이 건강하게 자라가요!</strong>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="btn_paging"></div>
+                    </div>
+                    <a href="#n" class="more">뉴스 더보기</a>
+                </div>
             </section>
             <section class="section support">
-                <h2>지원 및 후원</h2>
+                <div class="wrapper">
+                    <div class="support_wrap"> <!--안에 개체들에게 flex를 주기 위해서 div로 묶어줘야함-->
+                        <div class="inner">
+                            <h2><strong>월 3만 원이면,</strong>
+                                <span>연간 10명의 아동에게</span>
+                                <span>학용품을 지원하고</span>
+                                <span>명의 산모에게 출산물품을</span>
+                                지원할 수 있습니다.</h2>
+                            <p>매월 정기후원을 통해, 더 많은 아이들에게 장기적인 도움을 주실 수 있습니다.</p>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="#n">
+                                    <span>아동을 살리는 가게 "WE SAVE"</span>
+                                    <strong>가입문의</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <span>아동학대 정책개선 캠페인</span>
+                                    <strong>서명하기</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <span>매월 3만원 정기후원</span>
+                                    <strong>후원하기</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <span>아동을 구하는 골든타임세이버</span>
+                                    <strong>신청하기</strong>
+                                </a>
+                            </li>
+                        </ul> 
+                    </div>
+                </div>
             </section>
             <footer class="section footer fp-auto-height"> 
                 <!-- section과 fp-auto-height를 동시에 선언하면 footer처럼 높이가 낮은 컨텐츠를 배치할 수 있음 -->
