@@ -1,3 +1,12 @@
+$basic_color: #3D3D3D; /*기본글자색*/
+$tit_color: #1D1D1D; /*제목글자색*/
+$gray_color: #666666; /*기본회색*/
+$gray_light_color: #F4F4F4; /*밝은회색*/
+$w_basic_color: rgba(255, 255, 255, 0.8); /*어두운배경-흰글자색*/
+$w_tit_color: #FFFFFF; /*어두운배경-흰제목글자색*/
+$w_dark_light_color: rgba(255, 255, 255, 0.6);
+$w_light_color: rgba(255, 255, 255, 0.1);
+
 @mixin font_serif {
     font-family: 'Noto Serif KR', serif;
 }
