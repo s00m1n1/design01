@@ -40,8 +40,6 @@ html, body {
         font-size: 13px;
     }
 }/* media 종료 */
-.clearfix::after{display:block;clear:both;content:".";visibility:hidden;height:0;}
-.clearfix{display:block;}
 
 /* wrapper와 동일한 사이즈를 갖은 position:relative를 요소는
    cnt_wrap 클래스 줌 */

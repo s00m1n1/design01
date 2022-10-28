@@ -6,7 +6,18 @@ $w_basic_color: rgba(255, 255, 255, 0.8); /*어두운배경-흰글자색*/
 $w_tit_color: #FFFFFF; /*어두운배경-흰제목글자색*/
 $w_dark_light_color: rgba(255, 255, 255, 0.6);
 $w_light_color: rgba(255, 255, 255, 0.1);
+$point_color: #9D856D;
 
 @mixin font_serif {
     font-family: 'Noto Serif KR', serif;
+}
+@mixin  clearfix {
+    display:block;
+    &::after {
+        display:block;
+        clear:both;
+        content:".";
+        visibility:hidden;
+        height:0;
+    }
 }

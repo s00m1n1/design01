@@ -111,18 +111,6 @@ html, body {
     font-size: 13px;
   }
 } /* media 종료 */
-.clearfix::after {
-  display: block;
-  clear: both;
-  content: ".";
-  visibility: hidden;
-  height: 0;
-}
-
-.clearfix {
-  display: block;
-}
-
 /* wrapper와 동일한 사이즈를 갖은 position:relative를 요소는
    cnt_wrap 클래스 줌 */
 .cnt_wrap {
@@ -406,11 +394,12 @@ html, body {
 .fabric {
   position: relative;
   background-color: #483D33;
+  padding: 0 0 213px 0;
 }
 .fabric .inner {
   position: relative; /* position: relative; 있어야 z-index 들어감*/
   z-index: 2;
-  padding: 197px 0 296px 0;
+  padding: 197px 0 0 0;
   color: rgba(255, 255, 255, 0.8);
 }
 .fabric .inner h2 {
@@ -429,6 +418,13 @@ html, body {
 .fabric .inner .cnt {
   width: 725px;
 }
+.fabric .inner .tag {
+  color: #9D856D;
+}
+.fabric .inner .tag span {
+  display: inline-block;
+  margin: 60px 15px 0 0;
+}
 .fabric .bg {
   position: absolute;
   /*abolute는 높이를 인지하지못함 그래서 사진 하단이 짤림
@@ -443,13 +439,227 @@ html, body {
 }
 .fabric .bg img {
   display: block;
-  width: 120%;
-  height: 120%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: 0.5s;
 }
 
+@media screen and (max-width: 1000px) {
+  .fabric {
+    padding: 0 0 251px 0;
+  }
+}
+@media screen and (max-width: 858px) {
+  .fabric {
+    padding: 0 0 194px 0;
+  }
+  .fabric .inner .tit .m_no {
+    display: none;
+  }
+  .fabric .bg {
+    left: 0;
+  }
+  .fabric .bg img {
+    filter: grayscale(100%);
+  }
+}
+@media screen and (max-width: 751px) {
+  .fabric {
+    padding: 0 0 137px 0;
+  }
+  .fabric .inner .cnt {
+    width: auto;
+  }
+}
+@media screen and (max-width: 640px) {
+  .fabric {
+    padding: 0px 0 39px 0;
+  }
+  .fabric .inner {
+    padding: 64px 0 0 0;
+  }
+  .fabric .inner h2 {
+    font-size: 20px;
+  }
+  .fabric .inner .tit {
+    margin: 10px 0;
+    font-size: 25px;
+    line-height: 1.5;
+  }
+  .fabric .inner .cnt {
+    display: none;
+  }
+  .fabric .inner .tag {
+    margin: 23px 0 15px 0;
+  }
+  .fabric .inner .tag span {
+    margin: 0 11px 0 0;
+  }
+  .fabric .bg {
+    position: relative;
+    overflow: hidden;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: 165px;
+  }
+  .fabric .bg img {
+    display: block;
+    transform: translateY(0) !important;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
 .product {
-  height: 1000px;
+  background-color: #483D33;
+  color: rgba(255, 255, 255, 0.8);
+}
+.product h2 {
+  font-family: "Noto Serif KR", serif;
+  padding: 112px 0 99px 0;
+  color: #FFFFFF;
+  font-size: 60px;
+  font-weight: 700;
+  text-align: center;
+}
+.product .list {
+  display: block;
+  position: relative;
+}
+.product .list::after {
+  display: block;
+  clear: both;
+  content: ".";
+  visibility: hidden;
+  height: 0;
+}
+.product .list .tit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #FFFFFF;
+  font-size: 30px;
+  line-height: 1.3;
+}
+.product .list ul {
+  float: right;
+}
+.product .list ul li {
+  position: relative;
+  width: 440px;
+  margin-bottom: 98px;
+}
+.product .list ul li a {
+  display: block;
+}
+.product .list ul li a .pic {
+  overflow: hidden;
+  height: 394px;
+}
+.product .list ul li a .pic img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.product .list ul li a h3 {
+  margin-top: -30px;
+  color: #FFFFFF;
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+.product .list ul li a strong {
+  display: block;
+  margin-left: 11px;
+}
+.product .list ul li a p {
+  margin: 10px 0 0 0;
+}
+.product .list ul.rowgroup2 {
+  margin: 283px 0 0 80px;
+}
+
+@media screen and (max-width: 1440px) {
+  .product h2 {
+    padding: 112px 0 30px 0;
+  }
+  .product .list {
+    margin-left: -40px;
+  }
+  .product .list .tit {
+    position: relative;
+    left: auto;
+    top: auto;
+    padding: 0 0 50px 0;
+    text-align: center;
+  }
+  .product .list .tit .m_no {
+    display: none;
+  }
+  .product .list ul {
+    width: calc(50% - 40px);
+  }
+  .product .list ul li {
+    width: 100%;
+  }
+  .product .list ul.rowgroup2 {
+    margin: 283px 0 0 40px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .product h2 {
+    padding: 47px 0 29px 0;
+    font-size: 30px;
+  }
+  .product .list {
+    margin-left: 0;
+  }
+  .product .list .tit {
+    margin: 0;
+    font-size: 13px;
+  }
+  .product .list .tit .m_no {
+    display: none;
+  }
+  .product .list ul {
+    float: none;
+    width: auto;
+  }
+  .product .list ul li {
+    width: auto;
+    margin-bottom: 40px;
+  }
+  .product .list ul li a {
+    display: block;
+  }
+  .product .list ul li a .pic {
+    overflow: hidden;
+    height: 394px;
+  }
+  .product .list ul li a .pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .product .list ul li a h3 {
+    margin-top: -12px;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .product .list ul li a h3 strong {
+    margin-left: 5px;
+  }
+  .product .list ul li a p {
+    margin: 10px 0 0 0;
+  }
+  .product .list ul.rowgroup2 {
+    margin: 0;
+  }
 }
