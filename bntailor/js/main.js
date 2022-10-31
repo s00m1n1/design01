@@ -107,6 +107,75 @@ $(document).ready(function(){
             
     //     }
     // });
-    
+    /* 
+        .product .list .tit 고정 
+        -- 스크롤을 내리다가 화면에 product 콘텐츠가 보일때는 .tit에 fixed 클래스를 추가
+        product 콘텐츠가 화면에 보이는 구간 1942 ~ 3964
+        .product .list 페이지 상단에 도달했을때 : 콘텐츠 보일 시작점
+        offset().top == 해당콘텐츠가 브라우저 상단 위쪽에 닿을 정도의 스크롤값
+
+        -- 처음에 tit이 나타나기전 영역(다른 콘텐츠와 같이 스크롤 되어 따라올라옴)
+        tit 고정되는 영역(고정되어 옆에 콘텐츠만 스크롤됨)- fixed클래스추가
+        tit 고정된 이후 영역(다른콘텐츠를 따라서 싱행)- end 클래스 추가
+    */
+    let fixObj = $('.product .list .tit'); //고정요소
+    let fixArea = $('.product .list'); //고정요소를 감싸는 영역
+    let fixTop = 130; //css에서 fixed에 준 top값
+    let fixBtm = 100; //css에서 end에 준 bottom값
+    let fixStart;
+    let fixEnd;
+    // console.log(fixStart, 'fixStart');
+    // console.log(fixEnd, 'fixEnd');
+
+    objFixed();
+
+    $(window).scroll(function(){
+        objFixed();
+    });
+
+    $(window).resize(function(){
+        objFixed();
+    });
+
+    function objFixed(){
+        // console.log(scrolling);
+        fixStart = fixArea.offset().top - fixTop;
+        fixEnd = fixArea.offset().top + fixArea.height() - fixObj.height() - fixBtm - fixTop;
+
+        if(scrolling < fixStart){ // 위에서 부터 tit이 고정되기 전
+            fixObj.removeClass('fixed');
+            fixObj.removeClass('end');
+        }else if((scrolling >= fixStart)&&(scrolling < fixEnd)){ //tit이 고정될때
+            fixObj.addClass('fixed');
+            fixObj.removeClass('end');
+        }else{ //고정된 이후
+            fixObj.removeClass('fixed');
+            fixObj.addClass('end');
+        }
+    }     
+
+    const swiperInsta = new Swiper('.insta .list', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+	breakpoints: {
+		860: {    /* 860px 이상일때 적용 */
+            slidesPerView: 3,
+			spaceBetween: 30,
+		},
+        1200: {    /* 1200px 이상일때 적용 */
+            slidesPerView: 4,
+			spaceBetween: 40,
+		},
+        1440: {    /* 1440px 이상일때 적용 */
+            slidesPerView: 5,
+			spaceBetween: 40,
+		},
+        1670: {    /* 1670px 이상일때 적용 */
+            slidesPerView: 6,
+			spaceBetween: 40,
+		},
+	},
+
+});
 
 });//document.ready

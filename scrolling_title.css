@@ -1,0 +1,19 @@
+/* 
+만약 index가
+<section class="product">
+    <h2>~스크롤 될 내용~</h2>
+</section>
+*/
+.product {
+    position: relative;
+}
+.product h2.fixed {
+    position: absolute;
+    left: calc(); /*계산해서 원하는 위치*/
+    top: ; /*계산해서 원하는 위치에 넣고 js에서 fixTop에 같은 값 입력*/
+}
+.product h2.end {
+    position: absolute;
+    top: auto;
+    bottom: ; /*원하는 위치에 넣고 js에서 fixBtm에 값은 값 입력*/
+}

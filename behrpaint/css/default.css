@@ -47,7 +47,7 @@ html, body {
     word-break: keep-all;
 }
 #wrap {
-    /* overflow: hidden; */
+    overflow: hidden;
     min-width: 1280px;
 }
 .wrapper {
