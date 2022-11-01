@@ -25,4 +25,28 @@ $(document).ready(function(){
             $('.header').removeClass('fixed');
         }
     }
+    /*
+    모바일 메뉴 열기
+    .header .gnb .gnb_open을 클릭
+    1. 자기 자신한테 mobile_open 클래스 추가/삭제
+    2. .header .gnb .gnb_open strong의 글자 메뉴열기 -> 메뉴닫기 변경
+
+    메뉴 open 상태인지 close 상태인지 구분
+    close 시 > mobile_open addClass, "메뉴닫기" (문구변경)
+    open 시 > mobile_open removeClass, "메뉴열기" (문구변경)
+
+    mobile_open class > X > close 상태
+    mobile_open class > O > open 상태
+    */
+   let gnbStu // 메뉴 열림 닫힘 저장 변수
+   $('.header .gnb .gnb_open').on('click',function(){
+        gnbStu = $('.header .gnb').hasClass('mobile_open');
+        if(gnbStu == true){
+            $('.header .gnb').removeClass('mobile_open')
+            $('.header .gnb .gnb_open strong').text("메뉴열기");
+        }else{
+            $('.header .gnb').addClass('mobile_open')
+            $('.header .gnb .gnb_open strong').text("메뉴닫기");
+        }
+   });
 });

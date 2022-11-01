@@ -34,11 +34,23 @@
     }
     .popup { /* .visual .popup */
         height: 100vh;
-        ul li img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        ul {
+            li {
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transform: scale3d(1.1,1.1,1);
+                    transition: 2s;
+                }
+                &.swiper-slide-active {
+                    // 현재 나타나는 팝업에 swiper가 주는 class명
+                    img {
+                        transform: scale3d(1,1,1);
+                    }
+                }
+            }
         }
         .btn_wrap {
             display: flex;
