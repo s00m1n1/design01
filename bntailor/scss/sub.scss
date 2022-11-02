@@ -1,13 +1,178 @@
 @import "_var.scss";
-@import "_common.scss";
 @import "_default.scss";
+@import "_common.scss";
+
 
 // 서브 공통 레이아웃 
 
-.container {
-    svg {
-        path {
-            fill: #edaedf;
+.sub_visual {
+    position: relative;
+    height:600px;
+    // html에서 입력한 svg slip path에 지정된id값을 url로 연결하면 해당요소의 path겂이 적용됨
+    // 배경이 표시될 영역으로 활ㄹ용됨 path로 직접경로를 사용했는데 안되는 경우,svg path의 크기를
+    // 변경해야 하는 경우 이런방식으로 사용함.
+    .sub_visual_bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 720px;
+        background-image: url(/design01/bntailor/images/sub/sub_bg1.png);
+        background-repeat: no-repeat;
+        background-position: center top -25px;
+        background-size: cover;
+        clip-path: url(#sub_visual_path);
+    }
+    &.sub_bg1 .sub_visual_bg {
+        background-image: url(/design01/bntailor/images/sub/sub_bg1.png);
+    }
+    &.sub_bg2 .sub_visual_bg {
+        background-image: url(/design01/bntailor/images/sub/sub_bg2.png);
+    }
+    &.sub_bg3 .sub_visual_bg {
+        background-image: url(/design01/bntailor/images/sub/sub_bg3.png);
+    }
+    &.sub_bg4 .sub_visual_bg {
+        background-image: url(/design01/bntailor/images/sub/sub_bg4.png);
+    }
+    &.sub_bg5 .sub_visual_bg {
+        background-image: url(/design01/bntailor/images/sub/sub_bg5.png);
+    }
+    &.sub_bg6 .sub_visual_bg {
+        background-image: url(/design01/bntailor/images/sub/sub_bg6.png);
+    }
+    &.sub_bg7 .sub_visual_bg {
+        background-image: url(/design01/bntailor/images/sub/sub_bg7.png);
+    }
+    .sub_visual_path {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        svg {
+            width: 1px;
+            height: 1px;
+        }
+    }
+    .location {
+        display: flex;
+        @include font_serif;
+        padding: 357px 0 0 15px;
+        color: $w_tit_color;
+        span {
+            position: relative;
+            margin-right: 25px;
+            &::after {
+                position: absolute;
+                right: -15px;
+                top: 8px;
+                width: 6px;
+                height: 10px;
+                background-color: rgba(255,255,255,0.7);
+                clip-path: polygon(22% 0%, 50% 0%, 85% 51.8%, 50.5% 99.5%, 22% 100%, 57.5% 50.3%);
+                /* 이미지로 하는것이 아니라 svg를 이용해서 아이콘을 그리는데, 여러번 반복해서 들어가는 경우
+                   css에서 원하는 도형의 크기와 넓이를 주고, 배경색으로 아이콘의 색상을 주고
+                   clip-path: 로 path 값을 줌..
+                   장점은 css로 여러요소를 선택해서 도형을 그릴 수 있다는 장점
+                   단점은 사이즈 수정이 불가함(단, %로 path를 그릴 것은 가능) 
+                   작은 것은 적용이 안됨 / 브라우저 호환성이 떨어짐
+                   path를 그리는 방법은 많지만 일부는 적용이 안됨 (html에서 되도 css는 안됨)*/
+                content: "";
+            }
+            &:last-child::after {
+                display: none;
+            }
+        }
+    }
+    .tit {
+        @include font_serif;
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: $w_tit_color;
+    }
+}
+// |||||||||||||||||||||||||||||||||||||||반응형 시작||||||||||||||||||||||||||||||||||||||||||||||||||
+@media screen and (max-width:670px) {
+    .sub_visual {
+        height:300px;
+        .sub_visual_bg {
+            height: 100%;
+            clip-path: none;
+        }
+        .location {
+            display: flex;
+            justify-content: center;
+            padding: 145px 0 0 0;
+            span {
+                position: relative;
+                margin-right: 25px;
+                &::after {
+                    right: -15px;
+                    top: px;
+                    width: 5px;
+                    height: 9px;
+                }
+                &:last-child {
+                    margin-right: 0;
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .tit {
+            font-size: 40px;
+        }
+    }
+    
+}
+.lnb {
+    margin: 54px 0 0 0;
+    height: 80px;
+    .lnb_wrap {
+        ul {
+            li {
+                float: left;
+                a {
+                    display: block;
+                    padding: 0 34px;
+                    color: #999999;
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+                &:first-child {
+                    a {
+                        padding-left: 0;
+                    }
+                }
+                &.active {
+                    a {
+                        position: relative;
+                        color: #1D1D1D;
+                        &::before {
+                            position: absolute;
+                            left: 4px;
+                            top: -4px;
+                            width: 4px;
+                            height: 4px;
+                            border-radius: 3px;
+                            background-color: #3d3d3d;
+                            content: "";;
+                        }
+                        &::after {
+                            position: absolute;
+                            left: 15px;
+                            top: -4px;
+                            width: 4px;
+                            height: 4px;
+                            border-radius: 3px;
+                            background-color: #3d3d3d;
+                            content: "";;
+                        }
+                    }
+                }
+            }
         }
     }
 }

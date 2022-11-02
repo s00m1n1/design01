@@ -56,36 +56,55 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="600.001" viewBox="0 0 1920 600.001">
                 <path id="빼기_1" data-name="빼기 1" d="M-10045.173-2037h0L-10293-2134.877V-2637l1914.308.34h5.643l.049,512.14Z" transform="translate(10293.002 2637)"/>
             </svg>
+            img tag가 아닌 svg tag로 삽입하는 방법 
+            1. svg 파일을 코딩프로그램에서 열면 코드생성
+            2. <svg></svg> 소스 복사 > html에 삽입
+            3. css에서 svg 불러서 스타일 조절 (넓이만 조절하면 높이는 비율에 맞게)
+            장점 : svg파일이 없어도 코드로 아이콘 표현 / 크기와 색상 변경 마음대로
+            단점 : 모든 브라우저에서 지원되지는 않음 
         -->
             <div class="wrapper">
                 <div class="location">
                     <span>Home</span>
                     <span>About Us</span>
                     <span>Chairman</span>
-                </div>
+                </div>                  
                 <div class="tit">About Us</div>
             </div>
+            <div class="sub_visual_bg"></div>
+            <div class="sub_visual_path">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <clipPath id="sub_visual_path" clipPathUnits="objectBoundingBox" transform="scale(0.00078125,0.0013888888888889)">
+                        <path d="M-10045.173-2037h0L-10293-2134.877V-2637l1914.308.34h5.643l.049,512.14Z" transform="translate(10293.002 2637)"/>
+                    </clipPath>    
+                </svg>
+            </div>
+            <!-- 
+                svg에 clipPath를 추가하면 svg는 화면에 출력되지 않습니다.
+                 css에서 clip-path로 사용하기 위해서 변환한 것 
+                 svg가 눈에 안보이는 것 뿐 공간은 차지함..
+                 display:none으로 숨기면 효과 사라짐
+                 absolute로 한쪽에 치워두고 svg 선책해서 1px작게 수정
+            -->
         </div>
         <nav class="lnb"><!--local navigation bar-->
             <div class="wrapper">
-                <ul><!--active class add at this page-->
-                    <li class="active"><a href="#n">Chairman</a></li>
-                    <li><a href="#n">Family</a></li>
-                    <li><a href="#n">Our Business</a></li>
-                </ul>
+                <div class="lnb_wrap">
+                    <ul><!--active class add at this page-->
+                        <li class="active"><a href="#n">Chairman</a></li>
+                        <li><a href="#n">Family</a></li>
+                        <li><a href="#n">Our Business</a></li>
+                        <li><a href="#n">Our Business</a></li>
+                        <li><a href="#n">Our Business</a></li>
+                        <li><a href="#n">Our Business</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
+        <div class="container">  
         <!-- 
             || container ||
         -->
-        <div class="container">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="600.001" viewBox="0 0 1920 600.001">
-                <path id="빼기_1" data-name="빼기 1" d="M-10045.173-2037h0L-10293-2134.877V-2637l1914.308.34h5.643l.049,512.14Z" transform="translate(10293.002 2637)"/>
-            </svg>
-              
-            <div class="wrapper">
-                <h2 class="sub_tit">Chairman</h2><!--2차 메뉴 제목-->
-            </div>
         </div>
         <footer class="footer">
             <div class="wrapper">

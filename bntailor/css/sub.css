@@ -5,9 +5,71 @@
 /*밝은회색*/
 /*어두운배경-흰글자색*/
 /*어두운배경-흰제목글자색*/
-/* 모든 페이지에 공통 들어가는 스타일 (header/footer) */
+/* 모든 태그의 스타일 초기화 */
+/* 모든 태그에 브라우저에서 주는 여백을 삭제 */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap"); /* 본명조 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap");
+body, header, footer, div, nav, section, h1, h2, h3, h4, h5, h6, button, a, ul, ol, li, address, strong, span, em, p, i, dl, dt, dd, form, fieldset, legend, input, textarea, select, table, caption, colgroup, col, thead, tbody, tfoot, tr, th, td {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* width/height와 padding결합되면 사이즈가 늘어남. 이걸 막는 스타일
+     padding을 줘도 width/height가 유지가 됨 */
+}
+
+/* a태그에 브라우저가 주는 기본 속성 초기화 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 브라우저에서 기울임을 주는 것을 초기화 */
+em, address {
+  font-style: normal;
+}
+
+/* 항목 앞에 동그라미 삭제 */
+ul, ol, li {
+  list-style: none;
+}
+
+/* form태그가 문자 스타일을 상속받지 않아서 상속받게 하기 */
+form, input, select, textarea, button {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  /* 서체 상속 - button은 body에서 적용한 서체를 
+     자동으로 상속 받지 않음 - form관련 태그는 다 그럼 */
+}
+
+fieldset {
+  border: 0;
+}
+
+legend {
+  display: none; /* form 태그의 legend은 타이틀로 숨김처리 */
+}
+
+button {
+  background-color: transparent; /* 투명 */
+  border: 0;
+  cursor: pointer; /* 마우스 오버 시 손바닥 모양 */
+}
+
+table caption {
+  display: none;
+}
+
+/* 글자를 두껍게 하는 태그는 모두 일반 두께로 변형 */
+h1, h2, h3, h4, h5, h6, strong, th {
+  font-weight: 400;
+}
+
+/* 모든 페이지에 공통 들어가는 스타일 (header/footer) */
+/* 본명조 */
 html, body {
   color: #3D3D3D;
   line-height: 1.5;
@@ -388,67 +450,165 @@ html, body {
     margin: 0 15px 5px 0;
   }
 }
-/* 모든 태그의 스타일 초기화 */
-/* 모든 태그에 브라우저에서 주는 여백을 삭제 */
-body, header, footer, div, nav, section, h1, h2, h3, h4, h5, h6, button, a, ul, ol, li, address, strong, span, em, p, i, dl, dt, dd, form, fieldset, legend, input, textarea, select, table, caption, colgroup, col, thead, tbody, tfoot, tr, th, td {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  /* width/height와 padding결합되면 사이즈가 늘어남. 이걸 막는 스타일
-     padding을 줘도 width/height가 유지가 됨 */
+.sub_visual {
+  position: relative;
+  height: 600px;
 }
-
-/* a태그에 브라우저가 주는 기본 속성 초기화 */
-a {
-  color: inherit;
-  text-decoration: none;
+.sub_visual .sub_visual_bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 720px;
+  background-image: url(/design01/bntailor/images/sub/sub_bg1.png);
+  background-repeat: no-repeat;
+  background-position: center top -25px;
+  background-size: cover;
+  -webkit-clip-path: url(#sub_visual_path);
+          clip-path: url(#sub_visual_path);
 }
-
-/* 브라우저에서 기울임을 주는 것을 초기화 */
-em, address {
-  font-style: normal;
+.sub_visual.sub_bg1 .sub_visual_bg {
+  background-image: url(/design01/bntailor/images/sub/sub_bg1.png);
 }
-
-/* 항목 앞에 동그라미 삭제 */
-ul, ol, li {
-  list-style: none;
+.sub_visual.sub_bg2 .sub_visual_bg {
+  background-image: url(/design01/bntailor/images/sub/sub_bg2.png);
 }
-
-/* form태그가 문자 스타일을 상속받지 않아서 상속받게 하기 */
-form, input, select, textarea, button {
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  letter-spacing: inherit;
-  /* 서체 상속 - button은 body에서 적용한 서체를 
-     자동으로 상속 받지 않음 - form관련 태그는 다 그럼 */
+.sub_visual.sub_bg3 .sub_visual_bg {
+  background-image: url(/design01/bntailor/images/sub/sub_bg3.png);
 }
-
-fieldset {
-  border: 0;
+.sub_visual.sub_bg4 .sub_visual_bg {
+  background-image: url(/design01/bntailor/images/sub/sub_bg4.png);
 }
-
-legend {
-  display: none; /* form 태그의 legend은 타이틀로 숨김처리 */
+.sub_visual.sub_bg5 .sub_visual_bg {
+  background-image: url(/design01/bntailor/images/sub/sub_bg5.png);
 }
-
-button {
-  background-color: transparent; /* 투명 */
-  border: 0;
-  cursor: pointer; /* 마우스 오버 시 손바닥 모양 */
+.sub_visual.sub_bg6 .sub_visual_bg {
+  background-image: url(/design01/bntailor/images/sub/sub_bg6.png);
 }
-
-table caption {
+.sub_visual.sub_bg7 .sub_visual_bg {
+  background-image: url(/design01/bntailor/images/sub/sub_bg7.png);
+}
+.sub_visual .sub_visual_path {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.sub_visual .sub_visual_path svg {
+  width: 1px;
+  height: 1px;
+}
+.sub_visual .location {
+  display: flex;
+  font-family: "Noto Serif KR", serif;
+  padding: 357px 0 0 15px;
+  color: #FFFFFF;
+}
+.sub_visual .location span {
+  position: relative;
+  margin-right: 25px;
+}
+.sub_visual .location span::after {
+  position: absolute;
+  right: -15px;
+  top: 8px;
+  width: 6px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-clip-path: polygon(22% 0%, 50% 0%, 85% 51.8%, 50.5% 99.5%, 22% 100%, 57.5% 50.3%);
+          clip-path: polygon(22% 0%, 50% 0%, 85% 51.8%, 50.5% 99.5%, 22% 100%, 57.5% 50.3%);
+  /* 이미지로 하는것이 아니라 svg를 이용해서 아이콘을 그리는데, 여러번 반복해서 들어가는 경우
+     css에서 원하는 도형의 크기와 넓이를 주고, 배경색으로 아이콘의 색상을 주고
+     clip-path: 로 path 값을 줌..
+     장점은 css로 여러요소를 선택해서 도형을 그릴 수 있다는 장점
+     단점은 사이즈 수정이 불가함(단, %로 path를 그릴 것은 가능) 
+     작은 것은 적용이 안됨 / 브라우저 호환성이 떨어짐
+     path를 그리는 방법은 많지만 일부는 적용이 안됨 (html에서 되도 css는 안됨)*/
+  content: "";
+}
+.sub_visual .location span:last-child::after {
   display: none;
 }
-
-/* 글자를 두껍게 하는 태그는 모두 일반 두께로 변형 */
-h1, h2, h3, h4, h5, h6, strong, th {
-  font-weight: 400;
+.sub_visual .tit {
+  font-family: "Noto Serif KR", serif;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #FFFFFF;
 }
 
-.container svg path {
-  fill: #edaedf;
+@media screen and (max-width: 670px) {
+  .sub_visual {
+    height: 300px;
+  }
+  .sub_visual .sub_visual_bg {
+    height: 100%;
+    -webkit-clip-path: none;
+            clip-path: none;
+  }
+  .sub_visual .location {
+    display: flex;
+    justify-content: center;
+    padding: 145px 0 0 0;
+  }
+  .sub_visual .location span {
+    position: relative;
+    margin-right: 25px;
+  }
+  .sub_visual .location span::after {
+    right: -15px;
+    top: px;
+    width: 5px;
+    height: 9px;
+  }
+  .sub_visual .location span:last-child {
+    margin-right: 0;
+  }
+  .sub_visual .location span:last-child::after {
+    display: none;
+  }
+  .sub_visual .tit {
+    font-size: 40px;
+  }
+}
+.lnb {
+  margin: 54px 0 0 0;
+  height: 80px;
+}
+.lnb .lnb_wrap ul li {
+  float: left;
+}
+.lnb .lnb_wrap ul li a {
+  display: block;
+  padding: 0 34px;
+  color: #999999;
+  font-size: 20px;
+  font-weight: 700;
+}
+.lnb .lnb_wrap ul li:first-child a {
+  padding-left: 0;
+}
+.lnb .lnb_wrap ul li.active a {
+  position: relative;
+  color: #1D1D1D;
+}
+.lnb .lnb_wrap ul li.active a::before {
+  position: absolute;
+  left: 4px;
+  top: -4px;
+  width: 4px;
+  height: 4px;
+  border-radius: 3px;
+  background-color: #3d3d3d;
+  content: "";
+}
+.lnb .lnb_wrap ul li.active a::after {
+  position: absolute;
+  left: 15px;
+  top: -4px;
+  width: 4px;
+  height: 4px;
+  border-radius: 3px;
+  background-color: #3d3d3d;
+  content: "";
 }
