@@ -92,38 +92,23 @@ $(document).ready(function(){
         }
     }
 
-
-    // let titTop = $('.product2 .list .tit').offset().top;
-    // let titH = $('.product2 .list .tit').height();
-    // let titPo;
-    // console.log(titTop, 'titOff');
-    // $(window).scroll(function(){
-    //     scrolling = $(window).scrollTop();
-    //     if((scrolling > titTop) && (scrolling <= titTop+titH)){
-    //         console.log('지금');
-    //         $('.product2 .list .tit strong').css('position', 'fixed');
-    //     }else if(scrolling > titTop+titH){
-    //         console.log('끝');
-            
-    //     }
-    // });
     /* 
         .product .list .tit 고정 
         -- 스크롤을 내리다가 화면에 product 콘텐츠가 보일때는 .tit에 fixed 클래스를 추가
-        product 콘텐츠가 화면에 보이는 구간 1942 ~ 3964
+        product 콘텐츠가 화면에 보이는 구간 2094 ~ 3964
         .product .list 페이지 상단에 도달했을때 : 콘텐츠 보일 시작점
         offset().top == 해당콘텐츠가 브라우저 상단 위쪽에 닿을 정도의 스크롤값
 
-        -- 처음에 tit이 나타나기전 영역(다른 콘텐츠와 같이 스크롤 되어 따라올라옴)
-        tit 고정되는 영역(고정되어 옆에 콘텐츠만 스크롤됨)- fixed클래스추가
-        tit 고정된 이후 영역(다른콘텐츠를 따라서 싱행)- end 클래스 추가
+        -- 처음에 tit이 나타나기전 영역 (다른 콘텐츠와 같이 스크롤되어 따라올라옴)
+           tit이 고정되는 영역 (고정되어 옆에 콘텐츠만 스크롤됨) - fixed 클래스 추가
+           tit이 고정된 이후 영역 (다른 콘텐츠를 따라서 사라짐) - end 클래스 추가
     */
     let fixObj = $('.product .list .tit'); //고정요소
     let fixArea = $('.product .list'); //고정요소를 감싸는 영역
     let fixTop = 130; //css에서 fixed에 준 top값
     let fixBtm = 100; //css에서 end에 준 bottom값
-    let fixStart;
-    let fixEnd;
+    let fixStart; //fixed 시작점
+    let fixEnd; //fixed 종료점
     // console.log(fixStart, 'fixStart');
     // console.log(fixEnd, 'fixEnd');
 
@@ -152,30 +137,39 @@ $(document).ready(function(){
             fixObj.removeClass('fixed');
             fixObj.addClass('end');
         }
-    }     
+    }
+    
+    /* 인스타 팝업 */
+    // const swiperInsta = new Swiper('.insta .list', { /* 팝업을 감싼는 요소의 class명 */
+    //     slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+    //     spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+    //     breakpoints: {
+    //         800: {    /* 640px 이상일때 적용 */
+    //             slidesPerView: 3,
+    //             spaceBetween: 30,
+    //         },
+    //         1200: {    /* 1200px 이상일때 적용 */
+    //             slidesPerView: 4,
+    //             spaceBetween: 40,
+    //         },
+    //         1440: {    /* 1200px 이상일때 적용 */
+    //             slidesPerView: 6,
+    //             spaceBetween: 40,
+    //         },
+    //     },
+    // });
 
     const swiperInsta = new Swiper('.insta .list', { /* 팝업을 감싼는 요소의 class명 */
-	slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
-	breakpoints: {
-		860: {    /* 860px 이상일때 적용 */
-            slidesPerView: 3,
-			spaceBetween: 30,
-		},
-        1200: {    /* 1200px 이상일때 적용 */
-            slidesPerView: 4,
-			spaceBetween: 40,
-		},
-        1440: {    /* 1440px 이상일때 적용 */
-            slidesPerView: 5,
-			spaceBetween: 40,
-		},
-        1670: {    /* 1670px 이상일때 적용 */
-            slidesPerView: 6,
-			spaceBetween: 40,
-		},
-	},
-
-});
+        slidesPerView: "auto", /* li의 넓이 비율로 안함 - css에서 준 넓이대로 함 */
+        spaceBetween: 16, /* li와 li사이 - 제일 작은 여백 */
+        breakpoints: {
+            640: {  /* 640~1000px까지 */
+                spaceBetween: 30, 
+            },
+            1000: {  /* 1000px 이상이 되면 적용 */
+                spaceBetween: 40, 
+            },
+        },
+    });
 
 });//document.ready

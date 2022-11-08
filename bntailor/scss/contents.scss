@@ -1,0 +1,97 @@
+@import "_var.scss";
+/* 각각의 콘텐츠 페이지 스타일 */
+/* Chairman > About Us > B&TAILOR */
+.cts_about1 {
+    margin: 38px 0 100px 0;
+    .about_top {
+        overflow: hidden;
+        position: relative;
+        padding: 146px 0 0 0;
+        p {
+            position: absolute;
+            top: 264px;
+            left: calc(50% - 700px);
+            color: $w_basic_color;
+            font-size: 30px;
+            line-height: 1.3;
+        }
+        img {
+            position: absolute;
+            top: 0;
+            left: calc(50% + 198px);
+        }
+        .bg {
+            height: 438px;
+            background: url(/design01/bntailor/images/contents/about_top_bg.png) no-repeat center center / cover;
+        }
+    }
+    .about_sub {
+        position: relative;
+        z-index: 10;
+        padding: 53px 0 0 100px;
+        margin-top: -131px;
+        margin-left: calc(50% - 191px);
+        background-color: #FFF;
+        .inner {
+            width: 790px;
+        }
+        .tit {
+            @include font_serif;
+            font-size: 40px;
+        }
+        .cnt {
+            margin: 20px 0 52px 0;
+        }
+        .sign {
+            font-size: 30px;
+            text-align: right;
+        }
+    }
+}
+@media screen and (max-width:640px){
+    .cts_about1 {
+        margin: 45px 0 100px 0;
+        .about_top {
+            padding: 26px 0 0 0;
+            p {
+                // top: 66px;
+                top: calc(50% + 10px);
+                transform: translateY(-50%);
+                left: 20px;
+                margin-right: 180px;
+                font-size: 15px;
+                .m_no { 
+                    display: none; 
+                }
+            }
+            img {
+                left: 60%;
+                top: -34px;
+                width: 147px
+            }
+            .bg {
+                height: 161px;
+            }
+        }
+        .about_sub {
+            position: relative;
+            z-index: 10;
+            padding: 20px 0 0 20px;
+            margin-top: 0;
+            margin-left: 0;
+            background-color: #FFF;
+            .inner {
+                width: auto;
+            }
+            .tit {
+                font-size: 20px;
+            }
+            .cnt {
+                margin: 20px 0 32px 0;
+            }
+            .sign {
+                font-size: 20px;
+            }
+        }
+    }
+}

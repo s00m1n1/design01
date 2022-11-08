@@ -25,28 +25,34 @@ $(document).ready(function(){
             $('.header').removeClass('fixed');
         }
     }
-    /*
-    모바일 메뉴 열기
-    .header .gnb .gnb_open을 클릭
-    1. 자기 자신한테 mobile_open 클래스 추가/삭제
-    2. .header .gnb .gnb_open strong의 글자 메뉴열기 -> 메뉴닫기 변경
 
-    메뉴 open 상태인지 close 상태인지 구분
-    close 시 > mobile_open addClass, "메뉴닫기" (문구변경)
-    open 시 > mobile_open removeClass, "메뉴열기" (문구변경)
+    /* 
+        모바일 메뉴 열기 
+        .header .gnb .gnb_open 을 클릭했을때
+        1. .header .gnb 한테 mobile_open 클래스를 추가하거나 삭제
+           (닫는 버튼과 여는 버튼 두가지 역할을 모두 함)
+        2. .header .gnb .gnb_open strong에 쓰여있는 글자를 
+           메뉴열기, 메뉴닫기로 변경해줘야 함
 
-    mobile_open class > X > close 상태
-    mobile_open class > O > open 상태
+        메뉴가 열린 있는 상태인지, 메뉴가 닫혀있는 상태인지 구분....
+        닫혀있으면 - mobile_open클래스를 추가, "메뉴닫기"라고 문구를 변경
+        열려있으면 - mobile_open클래스를 삭제, "메뉴열기"라고 문구를 변경
+
+        mobile_open 클래스가 없으면 - 닫혀있는 상태 / 있으면 열린 상태...
     */
-   let gnbStu // 메뉴 열림 닫힘 저장 변수
-   $('.header .gnb .gnb_open').on('click',function(){
+
+    let gnbStu;//메뉴가 열렸는지 여부를 저장 (true: 열린상태, flase: 닫힌상태)
+    $('.header .gnb .gnb_open').on('click', function(){
         gnbStu = $('.header .gnb').hasClass('mobile_open');
-        if(gnbStu == true){
-            $('.header .gnb').removeClass('mobile_open')
-            $('.header .gnb .gnb_open strong').text("메뉴열기");
-        }else{
-            $('.header .gnb').addClass('mobile_open')
-            $('.header .gnb .gnb_open strong').text("메뉴닫기");
+        if(gnbStu == true){ //열린상태 -- 닫는기능
+            //console.log(' true 열린상태');
+            $('.header .gnb').removeClass('mobile_open');
+            $('.header .gnb .gnb_open strong').text('메뉴열기');
+        }else{ //닫힌상태 -- 여는 기능
+            //console.log(' false 닫힌상태');
+            $('.header .gnb').addClass('mobile_open');
+            $('.header .gnb .gnb_open strong').text('메뉴닫기');
         }
-   });
-});
+    });
+
+});//document.ready

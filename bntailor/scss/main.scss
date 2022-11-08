@@ -22,11 +22,9 @@
         }
         h2 {
             @include font_serif; 
-            /*mixin으로 선언한font_serif 스타일을 불러오는 명령 
-              @mixin fint_serif로 선언된 스타일이 그대로 들어옴
-              <무조건 @mixin이 @include보다 먼전 선언되어야 함.>
-              (import로 먼저 mixin을 불렀기때문에 mixin이 먼저
-              선언된 것 맞음)*/
+            /* mixin으로 선언한 font_serif 스타일을 불러오는 명령 
+               @mixin font_serif 로 선언된 스타일이 그대로 이 안에 들어오는 것 
+               단, 무조건 @mixin이 @include보다 먼저 선언되어 있어야 함 */
             font-size: 60px;
             font-weight: 700;
             line-height: 1.2;
@@ -44,8 +42,8 @@
                     transform: scale3d(1.1,1.1,1);
                     transition: 2s;
                 }
+                /* 현재 나타나는 팝업에 swiper가 주는 class명 */
                 &.swiper-slide-active {
-                    // 현재 나타나는 팝업에 swiper가 주는 class명
                     img {
                         transform: scale3d(1,1,1);
                     }
@@ -60,44 +58,43 @@
             top: calc(50% + 110px);
             z-index: 10;
             .btn_paging {
-                display: flex;
-                // span이 여러개 발생해도 한줄
-                // 단 내가 준 넓이보다 작게 구현될 수 있음
+                display: flex; 
+                /* span이 여러개 발생해도 한줄로 나타남 
+                - 단, 내가 준 넓이보다 작게 구현될 수도 있음 */
                 font-size: 0;
                 line-height: 0;
                 span {
-                    opacity: 0.7;
+                    opacity: 0.5;
                     width: 70px;
                     height: 4px;
                     background-color: #FFF;
                     border-radius: 0;
-                    &.swiper-pagination-bullet-active {
-                    /*만약 li:last-child일 경우
-                      li {
-                        &:last-child { }
-                      }
+                    /* li:last-child 의 경우 아래와 같이 &로 표기
+                        li {
+                            &:last-child {  }
+                        }
                     */
+                    &.swiper-pagination-bullet-active {
                         opacity: 1;
-                    }/*&.swiper-pagination-bullet-active*/
-                }/*span*/
-            }/*btn_paging*/
+                    }
+                }
+            }
             .btn_stop {
-                width: 10px;
-                height: 13px;
-                margin: 5px 0 0 5px;
+                width: 7px;
+                height: 4px;
+                margin-left: 5px;
                 background-image: url(/design01/bntailor/images/main/visual_btn_stop.svg);
                 background-position: center center;
                 background-repeat: no-repeat;
                 font-size: 0;
                 line-height: 0;
-                &.play /*.btn_stop.play*/ {
+                &.play { /* .btn_stop.play */
                     background-image: url(/design01/bntailor/images/main/visual_btn_play.svg);
-                }/*.btn_stop.play*/
-            }/*btn_stop*/
-        }/*btn_wrap*/
-    }/*popup*/
-}/*visual*/
-
+                }
+            }
+        }
+    }
+}
 @media screen and (max-width:1440px){
     .visual {
         .tit {
@@ -111,21 +108,11 @@
     }
 }
 @media screen and (max-width:1000px){
-    .visual {
-        .tit {
-            h2 {
-                font-size: 40px;
-            }
-        }
-        .popup {
-            .btn_wrap {
-                top: calc(50% + 83px);
-            }
-        }
+    .visual .tit h2 {
+        font-size: 40px;
     }
-    
 }
-@media screen and (max-width:640px) {
+@media screen and (max-width:640px){
     .visual {
         .tit {
             left: 50%;
@@ -153,132 +140,174 @@
         }
     }
 }
+
 .fabric {
     position: relative;
-    background-color: #483D33;
-    padding: 0 0 213px 0;
+    padding: 0 0 338px 0;
+    background-color: #33302D;
+    color: $w_basic_color;
     .inner {
-        position: relative; /* position: relative; 있어야 z-index 들어감*/
-        z-index: 2;
-        padding: 197px 0 0 0;
-        color: $w_basic_color;
-        h2 {
-            font-size: 30px;
-            color: $w_tit_color;
-        }
-        .tit {
-            @include font_serif;
-            margin: 14px 0;
-            font-size: 40px;
-            line-height: 57px;
-        }
-        .cnt {
-            width: 725px;
-        }
-        .tag {
-            color: $point_color;
-            span {
-                display: inline-block;
-                margin: 60px 15px 0 0;
-            }
+        @include zindex_top;
+        width: 670px;
+    }
+    h2 {
+        padding: 256px 0 35px 0;
+        color: $w_tit_color;
+        font-size: 30px;
+    }
+    .tit {
+        @include font_serif;
+        color: $w_tit_color;
+        font-size: 40px;
+        font-weight: 700;
+    }
+    .cnt {
+        margin: 42px 0 60px 0;
+    }
+    .tag {
+        @include zindex_top;
+        color: $point_color;
+        span {
+            display: inline-block;
+            margin: 0 15px 0 0;
         }
     }
     .bg {
-        position: absolute; 
-        /*abolute는 높이를 인지하지못함 그래서 사진 하단이 짤림
-          따라서 다른것에 패딩을 줘서 영역을 넓혀주어야함 
-          ex) .inner {padding: 197px 0 293px 0;}*/
-        overflow: hidden;
-        // bg영역 안에는 bg보다 더 큰 이미지 포함
-        // 이미지는 스코롤에 따라 bg영역 안에서 이동
-        // 영역 밖에 나간거 안보이게 짤라야함
-        left: calc(50% - 260px);
-        top: 0;
+        position: absolute;
+        overflow: hidden; 
+        /* bg영역안에는 bg보다 더 큰 이미지가 포함됨, 
+           이미지는 스크롤에 따라 bg영역 안에서 이동할 예정. 
+           그래서 overflow:hidden 영역 밖에 나간 이미지는 안보이게함 */
+        left: calc(50% - 100px);
+        top: 85px;
         z-index: 1;
-        width: 920px;
-        height: 800px;
+        width: 800px;
+        height: 818px;
+        img {
+            display: block;
+            width: 120%;
+            height: 120%;
+            object-fit: cover;
+        }
+    }
+    .bg2 {
+        position: absolute;
+        overflow: hidden; 
+        left: calc(50% + 460px);
+        top: 279px;
+        z-index: 1;
+        width: 399px;
+        height: 499px;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
         img {
             display: block;
             width: 100%;
-            object-fit: cover; 
+            height: 100%;
+            object-fit: cover;
         }
     }
 }
-@media screen and (max-width:1000px) {
+@media screen and (max-width:1440px){
     .fabric {
-        padding: 0 0 251px 0;
+        .inner {
+            width: 55%;
+        }
+        .tit {
+            .m_no {
+                display: none;
+            }
+        }
+        .bg {
+            left: 50%;
+        }
+        .bg2 {
+            display: none;
+        }
     }
 }
-@media screen and (max-width:858px) {
+@media screen and (max-width:1200px){
     .fabric {
-        padding: 0 0 194px 0;
         .inner {
-            .tit {
-                .m_no {
-                    display: none;
-                }
-            }
+            width: 50%;
+        }
+        h2 {
+            font-size: 25px;
+        }
+        .tit {
+            font-size: 30px;
+        }
+        .bg {
+            left: 45%;
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    .fabric {
+        .inner {
+            width: 80%;
+        }
+        h2 {
+            padding-top: 150px;
         }
         .bg {
             left: 0;
-            img {
-                filter: grayscale(100%);
+            top: 0;
+            width: 100%;
+            height: 716px;
+            &::after {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.4);
+                content: "";
             }
         }
     }
 }
-@media screen and (max-width:751px) {
+@media screen and (max-width:640px){
     .fabric {
-        padding: 0 0 137px 0;
-        .inner {
-            .cnt {
-                width: auto;
-            }
+        padding: 0;
+        h2 {
+            padding: 64px 0 8px 0;
+            font-size: 20px;
         }
-    }
-}
-@media screen and (max-width:640px) {
-    .fabric {
-        padding: 0px 0 39px 0;
-        .inner {
-            padding: 64px 0  0 0;
-            h2 {
-                font-size: 20px;
-            }
-            .tit {
-                margin: 10px 0;
-                font-size: 25px;
-                line-height: 1.5;
-            }
-            .cnt {
+        .tit {
+            font-size: 25px;
+            .m_no {
                 display: none;
             }
-            .tag {
-                margin: 23px 0 15px 0;
-                span {
-                    margin: 0 11px 0 0;
-                }
+        }
+        .cnt {
+            display: none;
+        }
+        .tag {
+            margin: 23px 0 15px 0;
+            span {
+                margin: 0 11px 0 0;
             }
         }
         .bg {
-            position: relative; 
+            position: relative;
             overflow: hidden;
             left: auto;
             top: auto;
             width: auto;
             height: 165px;
             img {
-                display: block;
-                transform: translateY(0) !important; //애니메이션 취소
-                width: 100%;
-                height: 100%;
-                object-fit: cover; 
+                transform: translateY(0) !important; /* 애니메이션 안함 */
+                width: 150%;
+                height: 150%;
             }
+        }
+        .bg2 {
+            display: none;
         }
     }
 }
 .product {
-    background-color: #483D33;
+    background-color: #33302D;
     color: $w_basic_color;
     h2 {
         @include font_serif;
@@ -286,33 +315,33 @@
         color: $w_tit_color;
         font-size: 60px;
         font-weight: 700;
-        text-align: center;
     }
     .list {
         @include clearfix;
         position: relative;
         .tit {
-             /*scss mixin은 특정 스타일의 속성명과 선업값을 모두 선언
-              변수는 특정 속성값 단 한개를 저장하는 방식
-             변수의 값은 어느 속성에 사용하더라도 상관없음*/
-            //position: sticky;는 감싸는 요소에 overflow:hodden이 없어야한다
-            //하지만 홈페이지 전체에ㅡㄴ 주지 않고 id=wrap이 스타일에 overflow:hidden;이 들어감
-            //overflow:hidden을 주지 않고 코딩은 어려움 그래서 sticky 사용 불가
-            // 고정될 요소에 고정될 때는 position:fixed를 줘야함
-            //fixed는 body와 만 정렬 가능ition: fixed;
-            //<div class="list">          -- relative
-            //<div class="tit"></div>   -- absolute</div>
-            //tit이 absolute일때는 relative를 준 list를 기준으로 정렬함.
-            //하지만 fixed로 변경되면 무조건 body랑 정렬
-            //정렬의 기준값이 변경됨.... (left가 fixed일때랑 absolute일때랑 바뀜)
-            //실제 화면상에서도 left의 위치는 변경 X
-            //absolut 일 댸와 fixed일 때 위치 동일하게 left 값 부여
+            /* position: sticky는 감싸는 요소에 overflow:hidden이 없어야 한다.
+              하지만 홈페이지 전체에 id="wrap" 이 스타일에 overflow:hidden;이 들어감
+              overflow를 주지 않고 코딩은 어려움. 그래서 sticky는 사용불가 
+
+              고정될 요소에 고정될때는 position: fixed를 줘야함.
+              fixed는 body와만 정렬 
+              <div class="list">          -- relative
+                <div class="tit"></div>   -- absolute
+              </div>
+              tit이 absolute일때는 relative를 준 list를 기준으로 정렬함.
+              하지만 fixed로 변경되면 무조건 body랑 정렬
+              정렬의 기준값이 변경됨.... (left가 fixed일때랑 absolute일때랑 바뀜)
+              실제 화면상에서도 left의 위치는 변경X 
+              absolute일때와 fixed일때 위치를 동일하게 left값을 줘야함.
+            */
             position: absolute;
             left: calc(50% - 700px);
             top: 0;
             color: $w_tit_color;
             font-size: 30px;
             line-height: 1.3;
+
             &.fixed {
                 position: fixed;
                 top: 130px;
@@ -320,7 +349,7 @@
             &.end {
                 position: absolute;
                 top: auto;
-                bottom: 100%;
+                bottom: 100px;
             }
         }
         ul {
@@ -342,45 +371,64 @@
                         }
                     }
                     h3 {
-                        margin-top: -30px;
+                        margin-top: -35px;
                         color: $w_tit_color;
                         font-size: 40px;
-                        line-height: 1.2;
                         font-weight: 700;
-                    }
-                    strong {
-                        display: block;
-                        margin-left: 11px;
                     }
                     p {
                         margin: 10px 0 0 0;
                     }
                 }
+                // &:nth-child(1), &:nth-child(3), &:nth-child(5) {
+                //     display: flex;
+                //     justify-content: flex-end;
+                //     .inner {
+                //         position: absolute;
+                //         right: 780px;
+                //         top: 50%;
+                //         transform: translate(0, -50%);
+                //     }
+                // }
+                // &:nth-child(2), &:nth-child(4) {
+                //     display: flex;
+                //     .inner {
+                //         position: absolute;
+                //         left: 780px;
+                //         top: 50%;
+                //         transform: translate(0, -50%);
+                //     }
+                // }
             }//li종료
-            &.rowgroup2 {
-                margin: 283px 0 0 80px;
+            &.item1 {
+                margin: 283px 0 0 80px
             }
         }//ul종료
     }
 }
-@media screen and (max-width:1440px) {
-    .product {
-        h2 {
-            padding: 112px 0 30px 0;
+@media screen and (max-width:1440px){
+    .product .list .tit {
+        left: 0;
+        &.fixed {
+            left: 20px;
         }
+    }
+}
+@media screen and (max-width:1280px){
+    .product {
         .list {
-            margin-left: -40px;
             .tit {
                 position: relative;
                 left: auto;
                 top: auto;
-                padding: 0 0 50px 0;
-                text-align: center;
+                margin: 0 0 20px 0;
+                font-size: 20px;
                 .m_no {
                     display: none;
                 }
                 &.fixed {
                     position: relative;
+                    left: auto;
                     top: auto;
                 }
                 &.end {
@@ -388,30 +436,29 @@
                     bottom: auto;
                 }
             }
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    .product {
+        h2 {
+            padding: 50px 0 50px 0;
+            font-size: 45px;
+        }
+        .list {
             ul {
                 width: calc(50% - 40px);
                 li {
-                  width: 100%;
+                    width: auto;
                 }
-                &.rowgroup2 {
-                    margin: 283px 0 0 40px ;
+                &.item1 {
+                    margin: 283px 0 0 80px
                 }
             }
         }
     }
 }
-@media screen and (max-width:1000px) {
-    .product {
-        h2 {
-            font-size: 40px;
-        }
-        .list {
-            .tit {
-                font-size: 20px;
-            }
-        }
-    }
-}
+
 @media screen and (max-width:640px){
     .product {
         h2 {
@@ -419,13 +466,9 @@
             font-size: 30px;
         }
         .list {
-            margin-left: 0;
             .tit {
-                margin: 0;
+                margin: 0 0 10px 0;
                 font-size: 13px;
-                .m_no {
-                    display: none;
-                }
             }
             ul {
                 float: none;
@@ -437,53 +480,64 @@
                         display: block;
                         .pic {
                             overflow: hidden;
-                            height: 394px;
-                            img {
-                                display: block;
-                                width: 100%;
-                                height: 100%;
-                                object-fit: cover;
-                            }
+                            height: 98px;
                         }
                         h3 {
-                            margin-top: -12px;
-                            color: $w_tit_color;
-                            font-size: 20px;
-                            font-weight: 700;
-                            strong {
-                                margin-left: 5px;
-                            }
+                            margin-top: -20px;
+                            font-size: 25px;
                         }
                         p {
-                            margin: 10px 0 0 0;
+                            margin: 5px 0 0 0;
+                        }
+                    }
+                    &:nth-child(1), &:nth-child(3), &:nth-child(5) {
+                        .pic {
+                            width: 65%;
+                            margin-left: 35%;
+                        }
+                        p {
+                            margin-right: 35%;
+                        }
+                    }
+                    &:nth-child(2), &:nth-child(4) {
+                        .pic {
+                            width: 65%;
+                            margin-right: 35%;
+                        }
+                        h3 {
+                            margin-left: 35%;
+                        }
+                        p {
+                            margin-left: 35%;
                         }
                     }
                 }//li종료
-                &.rowgroup2 {
+                &.item1 {
                     margin: 0;
                 }
             }//ul종료
         }
     }
 }
+
 .insta {
     position: relative;
-    padding: 0 0 100px 0;
-    background-color: #483D33;
-    color: #FFF;
+    margin: 0 0 102px 0;
     h2 {
         @include font_serif;
-        padding: 10px 0 90px 0;
+        position: relative;
+        z-index: 10;
+        padding: 136px 0 68px 0;
         font-size: 60px;
         font-weight: 700;
+        line-height: 1.2;
     }
     .list {
         ul {
             li {
                 width: 320px;
-                font-size: 0;
+                font-size: 0; /* 이미지 하단 여백 삭제 */
                 line-height: 0;
-                // 이미지 하단 여백 삭제
                 a {
                     display: block;
                     overflow: hidden;
@@ -502,34 +556,35 @@
         }
     }
     .bg_txt {
+        @include font_serif;
         position: absolute;
         left: 0;
-        top: 2%;
-        color: rgba(255,255,255,0.1);
+        top: 75px;
+        color: $gray_light_color;
         font-size: 120px;
         font-weight: 300;
-        white-space: nowrap; //줄바꿈 금지
+        white-space: nowrap; /* 줄바꿈 금지 */
 
         animation-name: bg_txt_ani;
         animation-duration: 30s;
         animation-iteration-count: infinite;
-        animation-timing-function: linear;
+        animation-timing-function: linear; 
         /* 기본 ease 가속도 - 동일한 속도로 애니메이션 주려면 linear */
     }
 }
 @keyframes bg_txt_ani {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50.3%); } 
+    100% { transform: translateX(-50.3%); }
     /* 무조건 html에서 글자를 동일한 글자를 두번 입력
        css 애니메이션으로 절반을 이동 
        그럼 두번째 단락의 글자 다시 나타남.
     */
 }
-@media screen and (min-width:1441px) {
+@media screen and (min-width:1441px){
     .insta {
         .list {
-            width: calc(100% + 680px);
-            margin-left: -350px !important;
+            width: calc(100% + 680px); //320(하나의 넓이)+320+40(여백) = 680
+            margin-left: -360px !important;
         }
     }
 }
@@ -546,43 +601,43 @@
         }
     }
 }
-@media screen and (max-width:1000px) {
+@media screen and (max-width:1000px){
     .insta {
         h2 {
-            padding: 0 0 60px 0;
-             font-size: 50px;
+            padding: 80px 0 40px 0;
+            font-size: 45px;
+        }
+        .list {
+            ul {
+                li {
+                    width: 250px;
+                }
+            }
         }
         .bg_txt {
-            font-size: 85px;
+            font-size: 60px;
         }
     }
 }
-@media screen and (max-width:860px) {
-    .insta {
-        .bg_txt {
-            font-size: 70px;
-        }
-    }
-}
-@media screen and (max-width:665px) {
-    .insta {
-        .bg_txt {
-            font-size: 70px;
-            top: 14%;
-        }
-    }
-}
-@media screen and (max-width:640px) {
+@media screen and (max-width:800px){
     .insta {
         h2 {
-            padding: 43px 0 34px 0;
+            padding: 70px 0 20px 0;
+            font-size: 35px;
+        }
+    }
+}
+@media screen and (max-width:640px){
+    .insta {
+        h2 {
             font-size: 30px;
-            width: 192px;
         }
-        .bg_txt {
-            font-size: 70px;
-            top: 14%;
+        .list {
+            ul {
+                li {
+                    width: 200px;
+                }
+            }
         }
-        
     }
 }

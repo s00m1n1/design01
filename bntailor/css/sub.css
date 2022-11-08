@@ -1,10 +1,15 @@
 @charset "UTF-8";
-/*기본글자색*/
-/*제목글자색*/
-/*기본회색*/
-/*밝은회색*/
-/*어두운배경-흰글자색*/
-/*어두운배경-흰제목글자색*/
+/* 기본글자색상 */
+/* 제목에 들어가는 글자색상 */
+/* 기본회색 */
+/* 밝은 회색 */
+/* 어두운 배경에 기본 흰글씨 */
+/* 어두운 배경에 제목 흰글씨 */
+/*
+    scss에서 mixin은 특정스타일의 속성명과 속성값을 모두 선언하는 방식 (여러개)
+    변수는 특정 속성값 단 한개를 저장하는 방식 (변수 1개에 한개의 속성값)
+    --> 변수의 값은 어느 속성에 사용하더라도 상관없음
+*/
 /* 모든 태그의 스타일 초기화 */
 /* 모든 태그에 브라우저에서 주는 여백을 삭제 */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap");
@@ -71,7 +76,7 @@ h1, h2, h3, h4, h5, h6, strong, th {
 /* 모든 페이지에 공통 들어가는 스타일 (header/footer) */
 /* 본명조 */
 html, body {
-  color: #3D3D3D;
+  color: #3d3d3d;
   line-height: 1.5;
   font-family: "Noto Sans KR", "NanumGothic", "Malgun Gothic", "Apple SD Gothic", "Apple SD Gothic Neo", "Dotum", sans-serif;
   font-size: 16px;
@@ -187,6 +192,12 @@ html, body {
   float: left;
   margin: 30px 0 0 40px;
 }
+.header .logo svg {
+  width: 161px;
+}
+.header .logo svg text {
+  fill: #FFF;
+}
 .header .gnb {
   float: right;
   margin: 0 40px 0 0;
@@ -213,7 +224,7 @@ html, body {
 }
 
 @media screen and (max-width: 1440px) {
-  .header .logo a img {
+  .header .logo a svg {
     width: 130px;
   }
   .header .gnb .gnb_wrap ul li a {
@@ -221,7 +232,7 @@ html, body {
   }
 }
 @media screen and (max-width: 1440px) {
-  .header .logo a img {
+  .header .logo a svg {
     width: 120px;
   }
   .header .gnb .gnb_wrap ul li a {
@@ -236,7 +247,7 @@ html, body {
   .header .logo {
     margin: 16px 0 0 20px;
   }
-  .header .logo a img {
+  .header .logo a svg {
     width: 108px;
   }
   .header .gnb {
@@ -258,7 +269,7 @@ html, body {
     width: 21px;
     height: 2px;
     background-color: #FFF;
-    transition: 0.5s;
+    transition: 0.3s;
   }
   .header .gnb .gnb_open span.line1 { /*  span.line1  */
     top: 25px;
@@ -281,7 +292,7 @@ html, body {
     height: 100vh;
     background-color: #FFF;
     color: #3d3d3d;
-    transition: 0.5s;
+    transition: right 0.5s;
   }
   .header .gnb .gnb_wrap ul {
     margin: 60px 0 0 0;
@@ -293,7 +304,7 @@ html, body {
   .header .gnb .gnb_wrap ul li a {
     font-family: "Noto Serif KR", serif;
     padding: 0;
-    color: #3D3D3D;
+    color: #3d3d3d;
     font-size: 22px;
     line-height: 55px;
     text-align: center;
@@ -325,8 +336,9 @@ html, body {
         그 밖에 있는 gnb_open, gnb_wrap과의 순서를 절대 조정 불가능함
 
     */
+    display: none;
     opacity: 0;
-    transition: 0.5s;
+    transition: opacity 0.5s;
     position: fixed;
     left: 0;
     right: 0;
@@ -355,6 +367,7 @@ html, body {
     right: 0;
   }
   .header .gnb.mobile_open::after {
+    display: block;
     opacity: 1;
   }
 }
@@ -450,9 +463,11 @@ html, body {
     margin: 0 15px 5px 0;
   }
 }
+/* 서브 공통 레이아웃 */
 .sub_visual {
   position: relative;
-  height: 600px;
+  height: 640px;
+  margin: 0 0 18px 0;
 }
 .sub_visual .sub_visual_bg {
   position: absolute;
@@ -460,34 +475,39 @@ html, body {
   top: 0;
   z-index: -1;
   width: 100%;
-  height: 720px;
-  background-image: url(/design01/bntailor/images/sub/sub_bg1.png);
+  height: 700px; /* clip-path로 위치가 정확하지 않아 배경을 별도의 요소에 줌 */
+  background-image: url(/design01/bntailor/images/sub/sub_visual1.png);
   background-repeat: no-repeat;
-  background-position: center top -25px;
+  background-position: center center;
   background-size: cover;
   -webkit-clip-path: url(#sub_visual_path);
           clip-path: url(#sub_visual_path);
+  /* html에서 입력한 svg clipPath에 지정된 id값을 url로 연결하면 해당요소의 path값이 적용됨
+  배경이 표시될 영역으로 활용됨. 
+  path로 직접 경로를 사용했는데 안되는 경우, svg path의 크기를 변경해야 하는 경우 
+  이런 방식으로 사용함.
+  */
 }
 .sub_visual.sub_bg1 .sub_visual_bg {
-  background-image: url(/design01/bntailor/images/sub/sub_bg1.png);
+  background-image: url(/design01/bntailor/images/sub/sub_visual1.png);
 }
 .sub_visual.sub_bg2 .sub_visual_bg {
-  background-image: url(/design01/bntailor/images/sub/sub_bg2.png);
+  background-image: url(/design01/bntailor/images/sub/sub_visual2.png);
 }
 .sub_visual.sub_bg3 .sub_visual_bg {
-  background-image: url(/design01/bntailor/images/sub/sub_bg3.png);
+  background-image: url(/design01/bntailor/images/sub/sub_visual3.png);
 }
 .sub_visual.sub_bg4 .sub_visual_bg {
-  background-image: url(/design01/bntailor/images/sub/sub_bg4.png);
+  background-image: url(/design01/bntailor/images/sub/sub_visual4.png);
 }
 .sub_visual.sub_bg5 .sub_visual_bg {
-  background-image: url(/design01/bntailor/images/sub/sub_bg5.png);
+  background-image: url(/design01/bntailor/images/sub/sub_visual5.png);
 }
 .sub_visual.sub_bg6 .sub_visual_bg {
-  background-image: url(/design01/bntailor/images/sub/sub_bg6.png);
+  background-image: url(/design01/bntailor/images/sub/sub_visual6.png);
 }
 .sub_visual.sub_bg7 .sub_visual_bg {
-  background-image: url(/design01/bntailor/images/sub/sub_bg7.png);
+  background-image: url(/design01/bntailor/images/sub/sub_visual7.png);
 }
 .sub_visual .sub_visual_path {
   position: absolute;
@@ -500,30 +520,31 @@ html, body {
 }
 .sub_visual .location {
   display: flex;
-  font-family: "Noto Serif KR", serif;
-  padding: 357px 0 0 15px;
-  color: #FFFFFF;
+  padding: 340px 0 0 10px;
+  color: rgba(255, 255, 255, 0.8);
 }
 .sub_visual .location span {
   position: relative;
-  margin-right: 25px;
+  margin-right: 18px;
 }
 .sub_visual .location span::after {
   position: absolute;
-  right: -15px;
-  top: 8px;
-  width: 6px;
-  height: 10px;
-  background-color: rgba(255, 255, 255, 0.7);
+  right: -12px;
+  top: 11px;
+  width: 5px;
+  height: 7px;
+  background-color: rgba(255, 255, 255, 0.8);
   -webkit-clip-path: polygon(22% 0%, 50% 0%, 85% 51.8%, 50.5% 99.5%, 22% 100%, 57.5% 50.3%);
           clip-path: polygon(22% 0%, 50% 0%, 85% 51.8%, 50.5% 99.5%, 22% 100%, 57.5% 50.3%);
   /* 이미지로 하는것이 아니라 svg를 이용해서 아이콘을 그리는데, 여러번 반복해서 들어가는 경우
      css에서 원하는 도형의 크기와 넓이를 주고, 배경색으로 아이콘의 색상을 주고
-     clip-path: 로 path 값을 줌..
+     clip-path: 로 path 값을 줌.. 
      장점은 css로 여러요소를 선택해서 도형을 그릴 수 있다는 장점
-     단점은 사이즈 수정이 불가함(단, %로 path를 그릴 것은 가능) 
-     작은 것은 적용이 안됨 / 브라우저 호환성이 떨어짐
-     path를 그리는 방법은 많지만 일부는 적용이 안됨 (html에서 되도 css는 안됨)*/
+     단점 사이즈를 수정이 불가함 (단, %로 path를 그릴 것은 가능)
+          작은 것은 적용 안됨..
+          브라우저 호환성이 떨어짐 (안되는 브라우저가 있음)
+          path를 그리는 방법이 많은데... 일부는 적용이 안됨. (html에서는 되도 css에서 안됨)
+  */
   content: "";
 }
 .sub_visual .location span:last-child::after {
@@ -531,15 +552,15 @@ html, body {
 }
 .sub_visual .tit {
   font-family: "Noto Serif KR", serif;
+  color: #FFFFFF;
   font-size: 60px;
   font-weight: 700;
-  line-height: 1.2;
-  color: #FFFFFF;
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 1000px) {
   .sub_visual {
-    height: 300px;
+    height: 245px;
+    margin: 0 0 10px 0;
   }
   .sub_visual .sub_visual_bg {
     height: 100%;
@@ -547,42 +568,43 @@ html, body {
             clip-path: none;
   }
   .sub_visual .location {
-    display: flex;
-    justify-content: center;
-    padding: 145px 0 0 0;
+    padding: 150px 0 0 0;
   }
   .sub_visual .location span {
-    position: relative;
-    margin-right: 25px;
+    margin-right: 14px;
   }
   .sub_visual .location span::after {
-    right: -15px;
-    top: px;
-    width: 5px;
-    height: 9px;
-  }
-  .sub_visual .location span:last-child {
-    margin-right: 0;
-  }
-  .sub_visual .location span:last-child::after {
-    display: none;
+    right: -10px;
+    top: 8px;
   }
   .sub_visual .tit {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 .lnb {
-  margin: 54px 0 0 0;
   height: 80px;
 }
+.lnb .lnb_wrap {
+  overflow-x: auto; /* lnb_wrap의 넓이보다 ul의 넓이가 더 길어길때만 스크롤바가 생성 */
+  overflow-y: hidden;
+  padding: 20px 0 5px 0;
+}
+.lnb .lnb_wrap ul {
+  white-space: nowrap;
+  /* 하위 요소들 줄바꿈 금지 - 블럭요소는 안됨, float들어간 요소도 안됨.  
+     inline요소나 inline-block만 적용 됨. 
+     단, inline-block 요소의 사이사이에 space 한칸의 여백이 들어감.
+     그럼 요소들 사이의 여백을 이를 감안해서 줄이면 됨
+  */
+}
 .lnb .lnb_wrap ul li {
-  float: left;
+  display: inline-block;
 }
 .lnb .lnb_wrap ul li a {
   display: block;
-  padding: 0 34px;
+  padding: 0 30px;
   color: #999999;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 700;
 }
 .lnb .lnb_wrap ul li:first-child a {
@@ -594,21 +616,23 @@ html, body {
 }
 .lnb .lnb_wrap ul li.active a::before {
   position: absolute;
-  left: 4px;
-  top: -4px;
-  width: 4px;
-  height: 4px;
-  border-radius: 3px;
-  background-color: #3d3d3d;
+  left: 0;
+  top: 0;
+  width: 19px;
+  height: 2px;
+  background-color: #9D856D;
   content: "";
 }
-.lnb .lnb_wrap ul li.active a::after {
-  position: absolute;
-  left: 15px;
-  top: -4px;
-  width: 4px;
-  height: 4px;
-  border-radius: 3px;
-  background-color: #3d3d3d;
-  content: "";
+
+@media screen and (max-width: 640px) {
+  .lnb {
+    height: 45px;
+  }
+  .lnb .lnb_wrap {
+    padding: 17px 0 5px 0;
+  }
+  .lnb .lnb_wrap ul li a {
+    padding: 0 15px;
+    font-size: 15px;
+  }
 }
