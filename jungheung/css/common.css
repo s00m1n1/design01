@@ -87,8 +87,6 @@ html, body {
 }
 .header .logo {
     float: left;
-    width: 246px;
-    height: 100%;
 }
 .header .logo a {
     display: block;
